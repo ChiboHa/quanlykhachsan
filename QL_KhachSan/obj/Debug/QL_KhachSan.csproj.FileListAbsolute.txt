@@ -1,0 +1,83 @@
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\bin\Debug\QL_KhachSan.exe.config
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\bin\Debug\QL_KhachSan.exe
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\bin\Debug\QL_KhachSan.pdb
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.AssemblyReference.cache
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.Properties.Resources.resources
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.GenerateResource.cache
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.CoreCompileInputs.cache
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.exe
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.pdb
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.F_Login.resources
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.F_Customers.resources
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.F_ForgotPassword.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\QL_KhachSan.exe.config
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\QL_KhachSan.exe
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\QL_KhachSan.pdb
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\ReaLTaiizor.xml
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.AssemblyReference.cache
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_Customers.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_ForgotPassword.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_Home.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_Login.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.Properties.Resources.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.GenerateResource.cache
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.CoreCompileInputs.cache
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.CopyComplete
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.exe
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.pdb
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_Dashboard.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_DoUong.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_DVKhac.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_MonAn.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_NhanVien.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_ThuePhong.resources
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\bin\Debug\ReaLTaiizor.dll
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\bin\Debug\ReaLTaiizor.xml
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.F_Dashboard.resources
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.F_DoUong.resources
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.F_DVKhac.resources
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.F_Home.resources
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.F_MonAn.resources
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.F_NhanVien.resources
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.F_ThuePhong.resources
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_Khach.BD06C0C0.Up2Date
+C:\Users\Nguyen Long\Documents\Code\C#\QL_KhachSan\QL_KhachSan\obj\Debug\QL_KhachSan.F_ResetPassword.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_ResetPassword.resources
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\Bunifu.Charts.WinForms.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\Bunifu.Dataviz.WinForms.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\Bunifu.UI.WinForms.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\Microsoft.Win32.SystemEvents.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\RestSharp.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Buffers.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.CodeDom.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Data.Odbc.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Data.OleDb.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Data.SqlClient.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Diagnostics.EventLog.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Drawing.Common.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.IO.Packaging.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.IO.Ports.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Memory.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Security.Cryptography.Cng.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Security.Cryptography.Xml.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Security.Permissions.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.ServiceModel.Syndication.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.ServiceProcess.ServiceController.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\bin\Debug\System.Threading.AccessControl.xml
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.exe.licenses
+C:\Users\Nguyen thi ha chau\source\repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.Fody.CopyLocal.cache
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.CropForm.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\nguyenthihachau03\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_NhanVienCRUD.resources
