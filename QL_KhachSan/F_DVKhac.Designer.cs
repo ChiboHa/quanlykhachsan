@@ -28,28 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoEllipsis = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(213, 206);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(500, 161);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Đây là form dịch vụ khác của Bảo, có gì làm thì xóa label này đi cũng đc";
             // 
             // F_DVKhac
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.ControlBox = false;
-            this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "F_DVKhac";
             this.Text = "F_DVKhac";
             this.ResumeLayout(false);
@@ -57,7 +46,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
     }
 }
