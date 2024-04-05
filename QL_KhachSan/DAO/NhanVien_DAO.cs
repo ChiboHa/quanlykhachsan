@@ -149,6 +149,51 @@ namespace QL_KhachSan.DAO
             }
         }
 
+
+        public bool UpdateItemsInTable(string ID, string ho, string ten, string gioiTinh, DateTime ngaySinh, string CCCD, string email, string maSoThue, string soDienThoai, string luong1h, byte[] imgData, string role)
+        {
+            // Sử dụng kết nối từ lớp DataProvider
+            SqlConnection connect = new SqlConnection(DataProvider.Instance.ConnectionString);
+
+            if (connect.State == ConnectionState.Closed)
+            {
+                connect.Open();
+            }
+            string query = "UPDATE NhanVien SET ho = @Ho, ten = @Ten, gioiTinh = @GioiTinh, ngaySinh = @NgaySinh, CCCD = @CCCD, email = @Email, maSoThue = @MaSoThue, soDienThoai = @SoDienThoai, luong1h = @Luong1h, image = @Image, role = @Role WHERE ID = @ID";
+
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, connect))
+                {
+                    cmd.Parameters.AddWithValue("@ID", ID);
+                    cmd.Parameters.AddWithValue("@Ho", ho);
+                    cmd.Parameters.AddWithValue("@Ten", ten);
+                    cmd.Parameters.AddWithValue("@GioiTinh", gioiTinh);
+                    cmd.Parameters.AddWithValue("@NgaySinh", ngaySinh);
+                    cmd.Parameters.AddWithValue("@CCCD", CCCD);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@MaSoThue", maSoThue);
+                    cmd.Parameters.AddWithValue("@SoDienThoai", soDienThoai);
+                    cmd.Parameters.AddWithValue("@Luong1h", luong1h);
+                    cmd.Parameters.AddWithValue("@Image", imgData);
+                    cmd.Parameters.AddWithValue("@Role", role);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0; // Return true if rows were affected, indicating successful update
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while updating the employee: " + ex.Message);
+            }
+            finally
+            {
+                connect.Close();
+            }
+        }
+
+
+
     }
 
 }

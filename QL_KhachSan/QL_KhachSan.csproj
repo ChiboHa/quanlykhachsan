@@ -252,6 +252,12 @@
     <Compile Include="DAO\DataProvider .cs" />
     <Compile Include="DAO\Account_DAO.cs" />
     <Compile Include="DAO\NhanVien_DAO.cs" />
+    <Compile Include="F_BangLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_BangLuong.Designer.cs">
+      <DependentUpon>F_BangLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +334,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CropForm.resx">
       <DependentUpon>CropForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_BangLuong.resx">
+      <DependentUpon>F_BangLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Customers.resx">
       <DependentUpon>F_Customers.cs</DependentUpon>

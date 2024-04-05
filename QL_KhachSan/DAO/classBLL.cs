@@ -24,5 +24,18 @@ namespace QL_KhachSan.DAO
             }
         }
 
+        public bool UpdateItems(string ID, string ho, string ten, string gioiTinh, DateTime ngaySinh, string CCCD, string email, string maSoThue, string soDienThoai, string luong1h, byte[] imgData, string role)
+        {
+            try
+            {
+                NhanVien_DAO objdal = new NhanVien_DAO();
+                return objdal.UpdateItemsInTable(ID, ho, ten, gioiTinh, ngaySinh, CCCD, email, maSoThue, soDienThoai, luong1h, imgData, role);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+                return false;
+            }
+        }
     }
 }

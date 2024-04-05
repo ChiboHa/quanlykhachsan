@@ -224,9 +224,38 @@ namespace QL_KhachSan
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            F_NhanVienCRUD nhanVienCRUD = new F_NhanVienCRUD();
+            F_NhanVienCRUD nhanVienCRUD = new F_NhanVienCRUD(null);
             nhanVienCRUD.ShowDialog();
             LoadEmployeeData();
         }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            if (grid.SelectedRows.Count > 0)
+            {
+                // Lấy ID của nhân viên từ hàng được chọn
+                string employeeID = grid.SelectedRows[0].Cells["ID"].Value.ToString();
+
+                // Lấy thông tin của nhân viên dựa trên ID
+                NhanVien_DAO selectedEmployee = NhanVien_DAO.Instance.GetEmployeeByID(employeeID);
+
+                if (selectedEmployee != null)
+                {
+                    // Tạo một đối tượng của form F_NhanVienCRUD và truyền thông tin nhân viên đã chọn
+                    F_NhanVienCRUD nhanVienCRUD = new F_NhanVienCRUD(selectedEmployee);
+                    nhanVienCRUD.ShowDialog();
+                    LoadEmployeeData();
+                }
+                else
+                {
+                    MessageBox.Show("Cannot find the selected employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an employee to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
     }
 }

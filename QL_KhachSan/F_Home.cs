@@ -26,6 +26,7 @@ namespace QL_KhachSan
         bool menuExpand = false;
         bool menuExpand2 = false;
         bool sidebarExpand = true;
+        bool menuExpand3 = false;
 
         private string username;
         private string password;
@@ -324,5 +325,41 @@ namespace QL_KhachSan
             this.Hide();
         }
 
+        private void menuTransition3_Tick(object sender, EventArgs e)
+        {
+            if (menuExpand3 == false)
+            {
+                mQLNV.Height += 20;
+                if (mQLNV.Height >= 145)
+                {
+                    menuTransition3.Stop();
+                    menuExpand3 = true;
+                }
+            }
+            else
+            {
+                mQLNV.Height -= 20;
+                if (mQLNV.Height <= 46)
+                {
+                    menuTransition3.Stop();
+                    menuExpand3 = false;
+                }
+            }
+        }
+
+        private void b_QuanLyNV_Click(object sender, EventArgs e)
+        {
+            menuTransition3.Start();
+        }
+
+        private void bBangLuong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+        }
     }
 }
