@@ -1,22 +1,22 @@
-﻿using System;
+﻿using QL_KhachSan.DAO;
+using QL_KhachSan.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QL_KhachSan
 {
     public partial class F_AddRoom : Form
     {
-        public string RoomNumber { get; set; }
-        public string RoomType { get; set; }
-        public string BedType { get; set; }
-        public string RoomPrice { get; set; }
-
         public F_AddRoom()
         {
             InitializeComponent();
@@ -29,11 +29,15 @@ namespace QL_KhachSan
 
         private void btt_add_Click(object sender, EventArgs e)
         {
-            RoomNumber = txtBox_roomNumber.Text; // Lưu thông tin đã nhập vào thuộc tính của Form phụ
-            RoomType = comboBox_roomType.Text;
-            BedType = comboBox_bedType.Text;
-            RoomPrice = txtBox_roomPrice.Text;
-            this.DialogResult = DialogResult.OK; // Đặt kết quả của Form là OK để thông báo việc nhập đã hoàn thành
+            string roomNo = txtBox_roomNumber.Text;
+            string roomType = comboBox_roomType.SelectedItem.ToString();
+            string bedType = comboBox_bedType.SelectedItem.ToString();
+            int price = int.Parse(txtBox_roomPrice.Text);
+            string booked = "No";
+            Rooms newRoom = new Rooms(0, roomNo, roomType, bedType, price, booked);
+            Rooms_DAO.Instance.AddRoom(newRoom);
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

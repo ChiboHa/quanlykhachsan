@@ -142,3 +142,4 @@ D:\Git Learning\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.Fody.Cop
 D:\Git Learning\quanlykhachsan\QL_KhachSan\obj\Debug\QL_Khach.BD06C0C0.Up2Date
 D:\Git Learning\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.exe
 D:\Git Learning\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.pdb
+D:\Git Learning\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_UpdateRoom.resources
