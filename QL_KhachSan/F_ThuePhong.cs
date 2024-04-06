@@ -66,6 +66,7 @@ namespace QL_KhachSan
                 }
             }
         }
+
         private void ClearRoomDetails()
         {
             txt_roomNumber.Text = string.Empty;
@@ -73,6 +74,7 @@ namespace QL_KhachSan
             txt_bedType.Text = string.Empty;
             txt_roomPrice.Text = string.Empty;
         }
+
         private void DisplayRoomDetails(Rooms room)
         {
             // Hiển thị thông tin phòng trên các control tương ứng
@@ -93,6 +95,7 @@ namespace QL_KhachSan
             // Đổi lại màu của icon khi con trỏ chuột rời đi
             btn_addroom.Image = Properties.Resources.plus;
         }
+
         private void btn_removeRoom_MouseEnter(object sender, EventArgs e)
         {
             // Đổi màu của icon khi con trỏ chuột vào
@@ -104,6 +107,7 @@ namespace QL_KhachSan
             // Đổi lại màu của icon khi con trỏ chuột rời đi
             btt_removeRoom.Image = Properties.Resources.delete;
         }
+
         private void btn_updateRoom_MouseEnter(object sender, EventArgs e)
         {
             // Đổi màu của icon khi con trỏ chuột vào
@@ -128,16 +132,6 @@ namespace QL_KhachSan
                 }
         }
 
-        private void ReloadRooms()
-        {
-            // Xóa hết các control phòng hiện có trong FlowLayoutPanel
-            layoutpanel_vip.Controls.Clear();
-            layoutpanel_normal.Controls.Clear();
-
-            // Tải lại danh sách phòng
-            LoadRooms();
-        }
-
         private void btt_removeRoom_Click(object sender, EventArgs e)
         {
             // Lấy thông tin phòng đang được chọn
@@ -156,6 +150,16 @@ namespace QL_KhachSan
                 // Xóa nút căn phòng tương ứng khỏi FlowLayoutPanel
                 RemoveRoomButton(roomNo);
             }
+        }
+
+        private void ReloadRooms()
+        {
+            // Xóa hết các control phòng hiện có trong FlowLayoutPanel
+            layoutpanel_vip.Controls.Clear();
+            layoutpanel_normal.Controls.Clear();
+
+            // Tải lại danh sách phòng
+            LoadRooms();
         }
 
         private void RemoveRoomButton(string roomNo)
@@ -181,6 +185,11 @@ namespace QL_KhachSan
 
         private void btn_updateRoom_Click(object sender, EventArgs e)
         {
+            if (panel_properties.Controls.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn một căn phòng để cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             using (var f_updateRoom = new F_UpdateRoom())
                 if (f_updateRoom.ShowDialog() == DialogResult.OK)
                 {

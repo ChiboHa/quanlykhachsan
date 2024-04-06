@@ -248,11 +248,13 @@
     <Compile Include="CropForm.Designer.cs">
       <DependentUpon>CropForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Bill_Room_DAO.cs" />
     <Compile Include="DAO\classBLL.cs" />
     <Compile Include="DAO\DataProvider .cs" />
     <Compile Include="DAO\Account_DAO.cs" />
     <Compile Include="DAO\NhanVien_DAO.cs" />
     <Compile Include="DAO\Rooms_DAO.cs" />
+    <Compile Include="DTO\BillRoom.cs" />
     <Compile Include="DTO\Rooms.cs" />
     <Compile Include="F_AddRoom.cs">
       <SubType>Form</SubType>

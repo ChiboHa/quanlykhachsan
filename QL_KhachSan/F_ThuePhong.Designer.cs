@@ -29,16 +29,10 @@
         private void InitializeComponent()
         {
             this.panel_properties = new System.Windows.Forms.Panel();
-            this.foxLabel6 = new ReaLTaiizor.Controls.FoxLabel();
-            this.foxLabel5 = new ReaLTaiizor.Controls.FoxLabel();
-            this.foxLabel4 = new ReaLTaiizor.Controls.FoxLabel();
             this.txt_roomPrice = new ReaLTaiizor.Controls.FoxLabel();
             this.txt_bedType = new ReaLTaiizor.Controls.FoxLabel();
             this.txt_roomType = new ReaLTaiizor.Controls.FoxLabel();
             this.txt_roomNumber = new ReaLTaiizor.Controls.FoxLabel();
-            this.skyLabel9 = new ReaLTaiizor.Controls.SkyLabel();
-            this.skyLabel8 = new ReaLTaiizor.Controls.SkyLabel();
-            this.skyLabel7 = new ReaLTaiizor.Controls.SkyLabel();
             this.skyLabel6 = new ReaLTaiizor.Controls.SkyLabel();
             this.skyLabel5 = new ReaLTaiizor.Controls.SkyLabel();
             this.skyLabel4 = new ReaLTaiizor.Controls.SkyLabel();
@@ -60,16 +54,10 @@
             // panel_properties
             // 
             this.panel_properties.BackColor = System.Drawing.SystemColors.Window;
-            this.panel_properties.Controls.Add(this.foxLabel6);
-            this.panel_properties.Controls.Add(this.foxLabel5);
-            this.panel_properties.Controls.Add(this.foxLabel4);
             this.panel_properties.Controls.Add(this.txt_roomPrice);
             this.panel_properties.Controls.Add(this.txt_bedType);
             this.panel_properties.Controls.Add(this.txt_roomType);
             this.panel_properties.Controls.Add(this.txt_roomNumber);
-            this.panel_properties.Controls.Add(this.skyLabel9);
-            this.panel_properties.Controls.Add(this.skyLabel8);
-            this.panel_properties.Controls.Add(this.skyLabel7);
             this.panel_properties.Controls.Add(this.skyLabel6);
             this.panel_properties.Controls.Add(this.skyLabel5);
             this.panel_properties.Controls.Add(this.skyLabel4);
@@ -80,36 +68,6 @@
             this.panel_properties.Size = new System.Drawing.Size(286, 503);
             this.panel_properties.TabIndex = 12;
             this.panel_properties.Visible = false;
-            // 
-            // foxLabel6
-            // 
-            this.foxLabel6.BackColor = System.Drawing.SystemColors.Window;
-            this.foxLabel6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.foxLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
-            this.foxLabel6.Location = new System.Drawing.Point(128, 391);
-            this.foxLabel6.Name = "foxLabel6";
-            this.foxLabel6.Size = new System.Drawing.Size(123, 19);
-            this.foxLabel6.TabIndex = 21;
-            // 
-            // foxLabel5
-            // 
-            this.foxLabel5.BackColor = System.Drawing.SystemColors.Window;
-            this.foxLabel5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.foxLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
-            this.foxLabel5.Location = new System.Drawing.Point(48, 337);
-            this.foxLabel5.Name = "foxLabel5";
-            this.foxLabel5.Size = new System.Drawing.Size(123, 19);
-            this.foxLabel5.TabIndex = 20;
-            // 
-            // foxLabel4
-            // 
-            this.foxLabel4.BackColor = System.Drawing.SystemColors.Window;
-            this.foxLabel4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.foxLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
-            this.foxLabel4.Location = new System.Drawing.Point(93, 282);
-            this.foxLabel4.Name = "foxLabel4";
-            this.foxLabel4.Size = new System.Drawing.Size(123, 19);
-            this.foxLabel4.TabIndex = 19;
             // 
             // txt_roomPrice
             // 
@@ -150,39 +108,6 @@
             this.txt_roomNumber.Name = "txt_roomNumber";
             this.txt_roomNumber.Size = new System.Drawing.Size(123, 19);
             this.txt_roomNumber.TabIndex = 15;
-            // 
-            // skyLabel9
-            // 
-            this.skyLabel9.AutoSize = true;
-            this.skyLabel9.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
-            this.skyLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.skyLabel9.Location = new System.Drawing.Point(3, 396);
-            this.skyLabel9.Name = "skyLabel9";
-            this.skyLabel9.Size = new System.Drawing.Size(119, 14);
-            this.skyLabel9.TabIndex = 7;
-            this.skyLabel9.Text = "Thời gian còn lại:";
-            // 
-            // skyLabel8
-            // 
-            this.skyLabel8.AutoSize = true;
-            this.skyLabel8.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
-            this.skyLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.skyLabel8.Location = new System.Drawing.Point(3, 342);
-            this.skyLabel8.Name = "skyLabel8";
-            this.skyLabel8.Size = new System.Drawing.Size(39, 14);
-            this.skyLabel8.TabIndex = 6;
-            this.skyLabel8.Text = "SĐT:";
-            // 
-            // skyLabel7
-            // 
-            this.skyLabel7.AutoSize = true;
-            this.skyLabel7.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold);
-            this.skyLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-            this.skyLabel7.Location = new System.Drawing.Point(3, 287);
-            this.skyLabel7.Name = "skyLabel7";
-            this.skyLabel7.Size = new System.Drawing.Size(84, 14);
-            this.skyLabel7.TabIndex = 5;
-            this.skyLabel7.Text = "Người thuê:";
             // 
             // skyLabel6
             // 
@@ -349,9 +274,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_properties;
-        private ReaLTaiizor.Controls.SkyLabel skyLabel9;
-        private ReaLTaiizor.Controls.SkyLabel skyLabel8;
-        private ReaLTaiizor.Controls.SkyLabel skyLabel7;
         private ReaLTaiizor.Controls.SkyLabel skyLabel6;
         private ReaLTaiizor.Controls.SkyLabel skyLabel5;
         private ReaLTaiizor.Controls.SkyLabel skyLabel4;
@@ -362,9 +284,6 @@
         private System.Windows.Forms.FlowLayoutPanel layoutpanel_normal;
         private ReaLTaiizor.Controls.SkyLabel skyLabel2;
         private ReaLTaiizor.Controls.SkyLabel skyLabel1;
-        private ReaLTaiizor.Controls.FoxLabel foxLabel6;
-        private ReaLTaiizor.Controls.FoxLabel foxLabel5;
-        private ReaLTaiizor.Controls.FoxLabel foxLabel4;
         private ReaLTaiizor.Controls.FoxLabel txt_roomPrice;
         private ReaLTaiizor.Controls.FoxLabel txt_bedType;
         private ReaLTaiizor.Controls.FoxLabel txt_roomType;

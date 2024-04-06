@@ -29,15 +29,22 @@ namespace QL_KhachSan
 
         private void btt_add_Click(object sender, EventArgs e)
         {
-            string roomNo = txtBox_roomNumber.Text;
-            string roomType = comboBox_roomType.SelectedItem.ToString();
-            string bedType = comboBox_bedType.SelectedItem.ToString();
-            int price = int.Parse(txtBox_roomPrice.Text);
-            string booked = "No";
-            Rooms newRoom = new Rooms(0, roomNo, roomType, bedType, price, booked);
-            Rooms_DAO.Instance.AddRoom(newRoom);
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (txtBox_roomNumber.Text != "" && comboBox_roomType.Text != "" && comboBox_bedType.Text != "" && txtBox_roomPrice.Text != "")
+            {
+                string roomNo = txtBox_roomNumber.Text;
+                string roomType = comboBox_roomType.SelectedItem.ToString();
+                string bedType = comboBox_bedType.SelectedItem.ToString();
+                int price = int.Parse(txtBox_roomPrice.Text);
+                string booked = "No";
+                Rooms newRoom = new Rooms(0, roomNo, roomType, bedType, price, booked);
+                Rooms_DAO.Instance.AddRoom(newRoom);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Hãy nhập đầy đủ thông tin!!!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
