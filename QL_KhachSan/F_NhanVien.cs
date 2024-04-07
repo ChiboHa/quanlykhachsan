@@ -50,7 +50,8 @@ namespace QL_KhachSan
                 });
             }
             grid.Columns["ID"].Visible = false;
-
+            lblNoResults.ForeColor = Color.Gray;
+            lblNoResults.Visible = false;
         }
 
         private void bunifuVScrollBar1_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
@@ -61,7 +62,7 @@ namespace QL_KhachSan
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -73,7 +74,7 @@ namespace QL_KhachSan
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -85,7 +86,7 @@ namespace QL_KhachSan
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -98,7 +99,7 @@ namespace QL_KhachSan
             if (p_ThongtinExpand == false)
             {
                 p_Thongtin.Width += 20;
-                if (p_Thongtin.Width >= 325)
+                if (p_Thongtin.Width >= 310)
                 {
 
                     p_ThongtinExpand = true;
@@ -129,7 +130,8 @@ namespace QL_KhachSan
                     txt_Email.Text = selectedEmployee.Email;
                     txt_MaSoThue.Text = selectedEmployee.MaSoThue;
                     txt_Sdt.Text = selectedEmployee.SoDienThoai;
-                    txt_Luong1h.Text = selectedEmployee.Luong1h.ToString();
+                    //txt_Luong1h.Text = selectedEmployee.Luong1h.ToString();
+                    txt_Luong1h.Text = Convert.ToInt32(selectedEmployee.Luong1h).ToString("0");
                     txt_ChucVu.Text = selectedEmployee.Role;
 
                     // Hiển thị hình ảnh của nhân viên (giả sử bạn có một PictureBox có tên là pb_Image)
@@ -255,6 +257,65 @@ namespace QL_KhachSan
             {
                 MessageBox.Show("Please select an employee to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            // Lấy từ khóa tìm kiếm từ textbox
+            string keyword = txtSearch.Text.Trim().ToLower();
+
+            // Lấy danh sách nhân viên từ cơ sở dữ liệu
+            List<NhanVien_DAO> allEmployees = NhanVien_DAO.Instance.GetNhanViens();
+
+            // Tạo danh sách nhân viên phù hợp với từ khóa tìm kiếm
+            List<NhanVien_DAO> filteredEmployees = allEmployees.Where(emp =>
+                emp.Ho.ToLower().Contains(keyword) || emp.Ten.ToLower().Contains(keyword)
+            ).ToList();
+
+            if (filteredEmployees.Count == 0)
+            {
+                // Hiển thị thông báo trên Label nếu không có kết quả tìm kiếm
+                lblNoResults.Visible = true;
+                grid.Visible = false;
+            }
+            else
+            {
+                // Ẩn Label nếu có kết quả tìm kiếm và hiển thị dữ liệu trên grid
+                lblNoResults.Visible = false;
+                lblNoResults.Text = "Không có kết quả cho nhân viên tìm kiếm!";
+                grid.Visible = true;
+
+                // Xóa các dòng hiện tại trên grid
+                grid.Rows.Clear();
+
+                // Hiển thị kết quả tìm kiếm trên grid
+                int stt = 1; // Biến số thứ tự bắt đầu từ 1
+                foreach (NhanVien_DAO nhanVien in filteredEmployees)
+                {
+                    grid.Rows.Add(new object[]
+                    {
+                stt++,
+                nhanVien.ID, // Thêm giá trị ID nhưng ẩn cột đi
+                nhanVien.Ho,
+                nhanVien.Ten,
+                nhanVien.NgaySinh.ToShortDateString(), // Hiển thị ngày sinh dưới dạng ngày/tháng/năm
+                nhanVien.GioiTinh,
+                nhanVien.Role, // Chức vụ
+                nhanVien.Luong1h // Lương
+                    });
+                }
+
+                // Ẩn cột ID
+                grid.Columns["ID"].Visible = false;
+            }
+        }
+
+
+        private void btn_All_Click(object sender, EventArgs e)
+        {
+            LoadEmployeeData();
+            grid.Visible = true;
+            lblNoResults.Visible = false;
         }
 
     }

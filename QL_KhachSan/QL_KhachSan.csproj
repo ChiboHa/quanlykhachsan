@@ -251,7 +251,9 @@
     <Compile Include="DAO\classBLL.cs" />
     <Compile Include="DAO\DataProvider .cs" />
     <Compile Include="DAO\Account_DAO.cs" />
+    <Compile Include="DAO\Luong_DAO.cs" />
     <Compile Include="DAO\NhanVien_DAO.cs" />
+    <Compile Include="DAO\TongLuong_DAO.cs" />
     <Compile Include="F_BangLuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +301,12 @@
     </Compile>
     <Compile Include="F_Login.Designer.cs">
       <DependentUpon>F_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_LuongCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_LuongCRUD.Designer.cs">
+      <DependentUpon>F_LuongCRUD.cs</DependentUpon>
     </Compile>
     <Compile Include="F_MonAn.cs">
       <SubType>Form</SubType>
@@ -358,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_LuongCRUD.resx">
+      <DependentUpon>F_LuongCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_MonAn.resx">
       <DependentUpon>F_MonAn.cs</DependentUpon>

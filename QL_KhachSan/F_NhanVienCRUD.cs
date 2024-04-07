@@ -29,7 +29,8 @@ namespace QL_KhachSan
                 txt_Email.Text = selectedEmployee.Email;
                 txt_MaSoThue.Text = selectedEmployee.MaSoThue;
                 txt_Sdt.Text = selectedEmployee.SoDienThoai;
-                txt_Luong.Text = selectedEmployee.Luong1h.ToString();
+                //txt_Luong.Text = selectedEmployee.Luong1h.ToString();
+                txt_Luong.Text = Convert.ToInt32(selectedEmployee.Luong1h).ToString("0");
                 txt_ChucVu.Text = selectedEmployee.Role;
 
                 // Hiển thị hình ảnh của nhân viên

@@ -56,18 +56,18 @@
             this.bMonAn = new System.Windows.Forms.Button();
             this.pDoUong = new System.Windows.Forms.Panel();
             this.bDoUong = new System.Windows.Forms.Button();
+            this.mQLNV = new System.Windows.Forms.FlowLayoutPanel();
+            this.pQuanLyNV = new System.Windows.Forms.Panel();
+            this.b_QuanLyNV = new System.Windows.Forms.Button();
             this.pQLNV = new System.Windows.Forms.Panel();
             this.bQLNV = new System.Windows.Forms.Button();
+            this.pBangLuong = new System.Windows.Forms.Panel();
+            this.bBangLuong = new System.Windows.Forms.Button();
             this.pDangXuat = new System.Windows.Forms.Panel();
             this.bDangXuat = new System.Windows.Forms.Button();
             this.menuTransition = new System.Windows.Forms.Timer(this.components);
             this.menuTransition2 = new System.Windows.Forms.Timer(this.components);
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
-            this.mQLNV = new System.Windows.Forms.FlowLayoutPanel();
-            this.pQuanLyNV = new System.Windows.Forms.Panel();
-            this.b_QuanLyNV = new System.Windows.Forms.Button();
-            this.pBangLuong = new System.Windows.Forms.Panel();
-            this.bBangLuong = new System.Windows.Forms.Button();
             this.menuTransition3 = new System.Windows.Forms.Timer(this.components);
             this.pHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -83,11 +83,11 @@
             this.pQLTD.SuspendLayout();
             this.pMonAn.SuspendLayout();
             this.pDoUong.SuspendLayout();
-            this.pQLNV.SuspendLayout();
-            this.pDangXuat.SuspendLayout();
             this.mQLNV.SuspendLayout();
             this.pQuanLyNV.SuspendLayout();
+            this.pQLNV.SuspendLayout();
             this.pBangLuong.SuspendLayout();
+            this.pDangXuat.SuspendLayout();
             this.SuspendLayout();
             // 
             // pHome
@@ -113,7 +113,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(75, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 28);
+            this.label1.Size = new System.Drawing.Size(172, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "F4 | Quản Lý Khách Sạn";
             // 
@@ -189,7 +189,7 @@
             this.lXinChao.Margin = new System.Windows.Forms.Padding(0);
             this.lXinChao.Name = "lXinChao";
             this.lXinChao.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.lXinChao.Size = new System.Drawing.Size(86, 33);
+            this.lXinChao.Size = new System.Drawing.Size(71, 29);
             this.lXinChao.TabIndex = 0;
             this.lXinChao.Text = "Xin chào";
             // 
@@ -197,7 +197,7 @@
             // 
             this.lDisplayName.AutoEllipsis = true;
             this.lDisplayName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDisplayName.Location = new System.Drawing.Point(86, 0);
+            this.lDisplayName.Location = new System.Drawing.Point(71, 0);
             this.lDisplayName.Margin = new System.Windows.Forms.Padding(0);
             this.lDisplayName.Name = "lDisplayName";
             this.lDisplayName.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
@@ -431,6 +431,43 @@
             this.bDoUong.UseVisualStyleBackColor = false;
             this.bDoUong.Click += new System.EventHandler(this.bDoUong_Click);
             // 
+            // mQLNV
+            // 
+            this.mQLNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(40)))));
+            this.mQLNV.Controls.Add(this.pQuanLyNV);
+            this.mQLNV.Controls.Add(this.pQLNV);
+            this.mQLNV.Controls.Add(this.pBangLuong);
+            this.mQLNV.Location = new System.Drawing.Point(3, 285);
+            this.mQLNV.Name = "mQLNV";
+            this.mQLNV.Size = new System.Drawing.Size(355, 46);
+            this.mQLNV.TabIndex = 7;
+            // 
+            // pQuanLyNV
+            // 
+            this.pQuanLyNV.Controls.Add(this.b_QuanLyNV);
+            this.pQuanLyNV.Location = new System.Drawing.Point(0, 0);
+            this.pQuanLyNV.Margin = new System.Windows.Forms.Padding(0);
+            this.pQuanLyNV.Name = "pQuanLyNV";
+            this.pQuanLyNV.Size = new System.Drawing.Size(303, 46);
+            this.pQuanLyNV.TabIndex = 4;
+            // 
+            // b_QuanLyNV
+            // 
+            this.b_QuanLyNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(40)))));
+            this.b_QuanLyNV.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_QuanLyNV.Image = ((System.Drawing.Image)(resources.GetObject("b_QuanLyNV.Image")));
+            this.b_QuanLyNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.b_QuanLyNV.Location = new System.Drawing.Point(-22, -31);
+            this.b_QuanLyNV.Margin = new System.Windows.Forms.Padding(0);
+            this.b_QuanLyNV.Name = "b_QuanLyNV";
+            this.b_QuanLyNV.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.b_QuanLyNV.Size = new System.Drawing.Size(322, 113);
+            this.b_QuanLyNV.TabIndex = 2;
+            this.b_QuanLyNV.Text = "          Nhân viên";
+            this.b_QuanLyNV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.b_QuanLyNV.UseVisualStyleBackColor = false;
+            this.b_QuanLyNV.Click += new System.EventHandler(this.b_QuanLyNV_Click);
+            // 
             // pQLNV
             // 
             this.pQLNV.Controls.Add(this.bQLNV);
@@ -455,6 +492,32 @@
             this.bQLNV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bQLNV.UseVisualStyleBackColor = false;
             this.bQLNV.Click += new System.EventHandler(this.bQLNV_Click);
+            // 
+            // pBangLuong
+            // 
+            this.pBangLuong.Controls.Add(this.bBangLuong);
+            this.pBangLuong.Location = new System.Drawing.Point(0, 92);
+            this.pBangLuong.Margin = new System.Windows.Forms.Padding(0);
+            this.pBangLuong.Name = "pBangLuong";
+            this.pBangLuong.Size = new System.Drawing.Size(325, 46);
+            this.pBangLuong.TabIndex = 6;
+            // 
+            // bBangLuong
+            // 
+            this.bBangLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(84)))), ((int)(((byte)(79)))));
+            this.bBangLuong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bBangLuong.Image = ((System.Drawing.Image)(resources.GetObject("bBangLuong.Image")));
+            this.bBangLuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bBangLuong.Location = new System.Drawing.Point(-22, -31);
+            this.bBangLuong.Margin = new System.Windows.Forms.Padding(0);
+            this.bBangLuong.Name = "bBangLuong";
+            this.bBangLuong.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.bBangLuong.Size = new System.Drawing.Size(322, 113);
+            this.bBangLuong.TabIndex = 2;
+            this.bBangLuong.Text = "          Bảng lương";
+            this.bBangLuong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bBangLuong.UseVisualStyleBackColor = false;
+            this.bBangLuong.Click += new System.EventHandler(this.bBangLuong_Click);
             // 
             // pDangXuat
             // 
@@ -495,69 +558,6 @@
             this.sidebarTransition.Interval = 10;
             this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
             // 
-            // mQLNV
-            // 
-            this.mQLNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(40)))));
-            this.mQLNV.Controls.Add(this.pQuanLyNV);
-            this.mQLNV.Controls.Add(this.pQLNV);
-            this.mQLNV.Controls.Add(this.pBangLuong);
-            this.mQLNV.Location = new System.Drawing.Point(3, 285);
-            this.mQLNV.Name = "mQLNV";
-            this.mQLNV.Size = new System.Drawing.Size(355, 46);
-            this.mQLNV.TabIndex = 7;
-            // 
-            // pQuanLyNV
-            // 
-            this.pQuanLyNV.Controls.Add(this.b_QuanLyNV);
-            this.pQuanLyNV.Location = new System.Drawing.Point(0, 0);
-            this.pQuanLyNV.Margin = new System.Windows.Forms.Padding(0);
-            this.pQuanLyNV.Name = "pQuanLyNV";
-            this.pQuanLyNV.Size = new System.Drawing.Size(303, 46);
-            this.pQuanLyNV.TabIndex = 4;
-            // 
-            // b_QuanLyNV
-            // 
-            this.b_QuanLyNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(40)))));
-            this.b_QuanLyNV.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b_QuanLyNV.Image = ((System.Drawing.Image)(resources.GetObject("b_QuanLyNV.Image")));
-            this.b_QuanLyNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.b_QuanLyNV.Location = new System.Drawing.Point(-22, -31);
-            this.b_QuanLyNV.Margin = new System.Windows.Forms.Padding(0);
-            this.b_QuanLyNV.Name = "b_QuanLyNV";
-            this.b_QuanLyNV.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.b_QuanLyNV.Size = new System.Drawing.Size(322, 113);
-            this.b_QuanLyNV.TabIndex = 2;
-            this.b_QuanLyNV.Text = "          Nhân viên";
-            this.b_QuanLyNV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.b_QuanLyNV.UseVisualStyleBackColor = false;
-            this.b_QuanLyNV.Click += new System.EventHandler(this.b_QuanLyNV_Click);
-            // 
-            // pBangLuong
-            // 
-            this.pBangLuong.Controls.Add(this.bBangLuong);
-            this.pBangLuong.Location = new System.Drawing.Point(0, 92);
-            this.pBangLuong.Margin = new System.Windows.Forms.Padding(0);
-            this.pBangLuong.Name = "pBangLuong";
-            this.pBangLuong.Size = new System.Drawing.Size(325, 46);
-            this.pBangLuong.TabIndex = 6;
-            // 
-            // bBangLuong
-            // 
-            this.bBangLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(84)))), ((int)(((byte)(79)))));
-            this.bBangLuong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bBangLuong.Image = ((System.Drawing.Image)(resources.GetObject("bBangLuong.Image")));
-            this.bBangLuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bBangLuong.Location = new System.Drawing.Point(-22, -31);
-            this.bBangLuong.Margin = new System.Windows.Forms.Padding(0);
-            this.bBangLuong.Name = "bBangLuong";
-            this.bBangLuong.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.bBangLuong.Size = new System.Drawing.Size(322, 113);
-            this.bBangLuong.TabIndex = 2;
-            this.bBangLuong.Text = "          Bảng lương";
-            this.bBangLuong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bBangLuong.UseVisualStyleBackColor = false;
-            this.bBangLuong.Click += new System.EventHandler(this.bBangLuong_Click);
-            // 
             // menuTransition3
             // 
             this.menuTransition3.Interval = 10;
@@ -592,11 +592,11 @@
             this.pQLTD.ResumeLayout(false);
             this.pMonAn.ResumeLayout(false);
             this.pDoUong.ResumeLayout(false);
-            this.pQLNV.ResumeLayout(false);
-            this.pDangXuat.ResumeLayout(false);
             this.mQLNV.ResumeLayout(false);
             this.pQuanLyNV.ResumeLayout(false);
+            this.pQLNV.ResumeLayout(false);
             this.pBangLuong.ResumeLayout(false);
+            this.pDangXuat.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

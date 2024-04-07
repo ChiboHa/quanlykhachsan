@@ -20,6 +20,7 @@ namespace QL_KhachSan
         F_DoUong fDoUong;
         F_NhanVien fNhanVien;
         F_Dashboard fDashboard;
+        F_BangLuong fBangLuong;
 
         bool drag = false;
         Point start_point = new Point(0, 0);
@@ -351,10 +352,25 @@ namespace QL_KhachSan
         {
             menuTransition3.Start();
         }
+        private void FBangLuong_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            fBangLuong = null;
+        }
 
         private void bBangLuong_Click(object sender, EventArgs e)
         {
-
+            if (fBangLuong == null)
+            {
+                fBangLuong = new F_BangLuong();
+                fBangLuong.FormClosed += FBangLuong_FormClosed;
+                fBangLuong.MdiParent = this;
+                fBangLuong.Dock = DockStyle.Fill;
+                fBangLuong.Show();
+            }
+            else
+            {
+                fBangLuong.Activate();
+            }
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

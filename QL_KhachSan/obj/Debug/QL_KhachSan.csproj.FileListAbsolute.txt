@@ -141,3 +141,5 @@ C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.CopyComplete
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.exe
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.pdb
+C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_BangLuong.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_LuongCRUD.resources
