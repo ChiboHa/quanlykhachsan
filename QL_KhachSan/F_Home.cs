@@ -16,7 +16,7 @@ namespace QL_KhachSan
         F_Customers fCustomers;
         F_ThuePhong fThuePhong;
         F_DVKhac fDVKhac;
-        F_MonAn fMonAn;
+        F_FoodQL fFoodQL;
         F_DoUong fDoUong;
         F_NhanVien fNhanVien;
         F_Dashboard fDashboard;
@@ -262,33 +262,33 @@ namespace QL_KhachSan
             fNhanVien = null;
         }
 
-        private void bMonAn_Click(object sender, EventArgs e)
+        private void bDoUong_Click(object sender, EventArgs e)
         {
-            if (fMonAn == null)
+            if (fFoodQL == null)
             {
-                fMonAn = new F_MonAn();
-                fMonAn.FormClosed += FMonAn_FormClosed;
-                fMonAn.MdiParent = this;
-                fMonAn.Dock = DockStyle.Fill;
-                fMonAn.Show();
+                fFoodQL = new F_FoodQL();
+                fFoodQL.FormClosed += fFoodQL_FormClosed;
+                fFoodQL.MdiParent = this;
+                fFoodQL.Dock = DockStyle.Fill;
+                fFoodQL.Show();
             }
             else
             {
-                fMonAn.Activate();
+                fFoodQL.Activate();
             }
         }
 
-        private void FMonAn_FormClosed(object sender, FormClosedEventArgs e)
+        private void fFoodQL_FormClosed(object sender, FormClosedEventArgs e)
         {
-            fMonAn = null;
+            fFoodQL = null;
         }
 
-        private void bDoUong_Click(object sender, EventArgs e)
+        private void bMonAn_Click(object sender, EventArgs e)
         {
             if (fDoUong == null)
             {
                 fDoUong = new F_DoUong();
-                fDoUong.FormClosed += FDoUong_FormClosed;
+                fDoUong.FormClosed += FFood_FormClosed;
                 fDoUong.MdiParent = this;
                 fDoUong.Dock = DockStyle.Fill;
                 fDoUong.Show();
@@ -299,7 +299,7 @@ namespace QL_KhachSan
             }
         }
 
-        private void FDoUong_FormClosed(object sender, FormClosedEventArgs e)
+        private void FFood_FormClosed(object sender, FormClosedEventArgs e)
         {
             fDoUong = null;
         }

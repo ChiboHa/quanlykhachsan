@@ -16,9 +16,10 @@ namespace QL_KhachSan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new F_Login());
+            //Application.Run(new F_MonAn());
             //Application.Run(new F_Home());
             //Application.Run(new F_NhanVien());
+            Application.Run(new F_Login());
         }
     }
 }

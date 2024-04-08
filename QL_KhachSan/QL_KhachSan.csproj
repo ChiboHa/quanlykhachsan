@@ -284,6 +284,12 @@
     <Compile Include="F_DVKhac.Designer.cs">
       <DependentUpon>F_DVKhac.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_FoodQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_FoodQL.Designer.cs">
+      <DependentUpon>F_FoodQL.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -358,6 +364,9 @@
     <EmbeddedResource Include="F_DVKhac.resx">
       <DependentUpon>F_DVKhac.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_FoodQL.resx">
+      <DependentUpon>F_FoodQL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_ForgotPassword.resx">
       <DependentUpon>F_ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,19 +397,19 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -438,6 +447,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\106230_add_icon.png" />
+    <Content Include="Resources\icons8-delete-24.png" />
+    <None Include="Resources\icons8-delete-241.png" />
+    <Content Include="Resources\icons8-edit-24.png" />
+    <None Include="Resources\icons8-edit-241.png" />
     <Content Include="Resources\user.jpg" />
     <None Include="Resources\user1.jpg" />
   </ItemGroup>

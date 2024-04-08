@@ -117,25 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnGenerateHotelTotalSalary.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJYAAAAnCAYAAADtl7EyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACRSURBVHhe7dKxAUBAAMBAk/zK7GcM/WMAFdJdcVXaLGOb
-        +9jOE/4z93uspwDfGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuE
-        sUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFILGOdx1OA19Z5XLF9Eabs0yP2
-        AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnAddSalary.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJYAAAAnCAYAAADtl7EyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACRSURBVHhe7dKxAUBAAMBAk/zK7GcM/WMAFdJdcVXaLGOb
-        +9jOE/4z93uspwDfGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuE
-        sUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFIGIuEsUgYi4SxSBiLhLFILGOdx1OA19Z5XLF9Eabs0yP2
-        AAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="STTTL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -166,4 +147,45 @@
   <metadata name="Luong.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Edit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dataGridViewImageColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAHxJREFUSEvljUEKgDAQA/eFfZNHH9p/1C2sIEENc+lBB3IIzWzjH4yILTMkez0z
+        bg6h1JlnVKCpM++gcUL36z+g3aIC7RYVaLeoQLtFBdotKtBuUYF2iwq0W1Sg3aIC7RYVaLdQge6XfNBP
+        CaSX7slxm8JFdpnbVvqniDgAehlP+GqpEDYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="dataGridViewImageColumn2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAPBJREFUSEvtlDEKwjAUhuOsHsXBXdAbOLmLgzfwBA4iDtK8gpO4C24uTkWTunoR
+        NwcXpf4vSamFTm0chH7wSJOW789LacV/ocKe0HItFI3ciif0si00bSF/YUxshUN3tyJWrrHrI+qdBdDc
+        PVGBVK5pYeYqmNgQ+RRX6pi10mRy7FbO3CpCuBO5cbOS5ORpIYQ7Meu4X5rTqglZlJe7UhTX8lr+RS0v
+        5KfyJGngH3IulFf+/JlL0EfADbIDxrtfOaNoh5qaa017v/IobOHsHyIOuiaEOzHH5UPOaDm2O0YId8LH
+        xe/EG4oGJoQ7+S+E+ACuak7q9QmmcAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnAddSalary.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHAAAAAgCAYAAADKbvy8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB3SURBVGhD7dExEYAwAMBAlNRy8YeM7i0IwMDfZfgpY65x
+        72fc50S0n2/gX4iigbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG
+        4hqIayCugbgG4hqIayCugbhrzL3+QgBzrxes2mnG4GWIywAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnGenerateHotelTotalSalary.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHAAAAAgCAYAAADKbvy8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB3SURBVGhD7dExEYAwAMBAlNRy8YeM7i0IwMDfZfgpY65x
+        72fc50S0n2/gX4iigbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG
+        4hqIayCugbgG4hqIayCugbhrzL3+QgBzrxes2mnG4GWIywAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

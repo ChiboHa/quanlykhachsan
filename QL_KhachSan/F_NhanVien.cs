@@ -98,8 +98,8 @@ namespace QL_KhachSan
         {
             if (p_ThongtinExpand == false)
             {
-                p_Thongtin.Width += 20;
-                if (p_Thongtin.Width >= 310)
+                p_Thongtin.Width += 66;
+                if (p_Thongtin.Width >= 330)
                 {
 
                     p_ThongtinExpand = true;
@@ -231,34 +231,6 @@ namespace QL_KhachSan
             LoadEmployeeData();
         }
 
-        private void btn_Edit_Click(object sender, EventArgs e)
-        {
-            if (grid.SelectedRows.Count > 0)
-            {
-                // Lấy ID của nhân viên từ hàng được chọn
-                string employeeID = grid.SelectedRows[0].Cells["ID"].Value.ToString();
-
-                // Lấy thông tin của nhân viên dựa trên ID
-                NhanVien_DAO selectedEmployee = NhanVien_DAO.Instance.GetEmployeeByID(employeeID);
-
-                if (selectedEmployee != null)
-                {
-                    // Tạo một đối tượng của form F_NhanVienCRUD và truyền thông tin nhân viên đã chọn
-                    F_NhanVienCRUD nhanVienCRUD = new F_NhanVienCRUD(selectedEmployee);
-                    nhanVienCRUD.ShowDialog();
-                    LoadEmployeeData();
-                }
-                else
-                {
-                    MessageBox.Show("Cannot find the selected employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please select an employee to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             // Lấy từ khóa tìm kiếm từ textbox
@@ -310,7 +282,6 @@ namespace QL_KhachSan
             }
         }
 
-
         private void btn_All_Click(object sender, EventArgs e)
         {
             LoadEmployeeData();
@@ -318,5 +289,55 @@ namespace QL_KhachSan
             lblNoResults.Visible = false;
         }
 
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            // Lấy từ khóa tìm kiếm từ textbox
+            string keyword = txtSearch.Text.Trim().ToLower();
+
+            // Lấy danh sách nhân viên từ cơ sở dữ liệu
+            List<NhanVien_DAO> allEmployees = NhanVien_DAO.Instance.GetNhanViens();
+
+            // Tạo danh sách nhân viên phù hợp với từ khóa tìm kiếm
+            List<NhanVien_DAO> filteredEmployees = allEmployees.Where(emp =>
+                emp.Ho.ToLower().Contains(keyword) || emp.Ten.ToLower().Contains(keyword)
+            ).ToList();
+
+            if (filteredEmployees.Count == 0)
+            {
+                // Hiển thị thông báo trên Label nếu không có kết quả tìm kiếm
+                lblNoResults.Visible = true;
+                grid.Visible = false;
+            }
+            else
+            {
+                // Ẩn Label nếu có kết quả tìm kiếm và hiển thị dữ liệu trên grid
+                lblNoResults.Visible = false;
+                lblNoResults.Text = "Không có kết quả cho nhân viên tìm kiếm!";
+                grid.Visible = true;
+
+                // Xóa các dòng hiện tại trên grid
+                grid.Rows.Clear();
+
+                // Hiển thị kết quả tìm kiếm trên grid
+                int stt = 1; // Biến số thứ tự bắt đầu từ 1
+                foreach (NhanVien_DAO nhanVien in filteredEmployees)
+                {
+                    grid.Rows.Add(new object[]
+                    {
+                stt++,
+                nhanVien.ID, // Thêm giá trị ID nhưng ẩn cột đi
+                nhanVien.Ho,
+                nhanVien.Ten,
+                nhanVien.NgaySinh.ToShortDateString(), // Hiển thị ngày sinh dưới dạng ngày/tháng/năm
+                nhanVien.GioiTinh,
+                nhanVien.Role, // Chức vụ
+                nhanVien.Luong1h // Lương
+                    });
+                }
+
+                // Ẩn cột ID
+                grid.Columns["ID"].Visible = false;
+            }
+        }
     }
 }

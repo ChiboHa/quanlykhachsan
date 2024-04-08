@@ -54,34 +54,46 @@ namespace QL_KhachSan
             dgvEmployeeSalaries.Columns.Add("Ten", "Tên");
             dgvEmployeeSalaries.Columns.Add("GioiTinh", "Giới tính");
             dgvEmployeeSalaries.Columns.Add("Role", "Chức vụ");
-            dgvEmployeeSalaries.Columns.Add("Luong", "Lương");
+            dgvEmployeeSalaries.Columns.Add("TongLuong", "Tổng lương");
             dgvEmployeeSalaries.Columns.Add("Delete", "Xóa");
+            dgvEmployeeSalaries.Columns.Add("Edit", "Sửa");
 
             // Lặp qua từng dòng dữ liệu và hiển thị trên DataGridView
             int stt = 1; // Biến số thứ tự bắt đầu từ 1
             foreach (DataRow row in employeeSalaries.Rows)
             {
-                // Tạo một Button cho mỗi hàng
-                DataGridViewButtonCell btnDelete = new DataGridViewButtonCell();
-                btnDelete.Value = "Xóa";
-                dgvEmployeeSalaries.Rows.Add(new object[]
+                // Thêm dữ liệu vào từng ô dữ liệu của các cột
+                int rowIndex = dgvEmployeeSalaries.Rows.Add(new object[]
                 {
-            stt++,
-            row["ID"],
-            row["ID_nv"],
-            row["Ho"],
-            row["Ten"],
-            row["GioiTinh"],
-            row["Role"],
-            row["TongLuong"],
-            btnDelete
+                    stt++,
+                    row["ID"],
+                    row["ID_nv"],
+                    row["Ho"],
+                    row["Ten"],
+                    row["GioiTinh"],
+                    row["Role"],
+                    row["TongLuong"]
                 });
+
+                // Thêm cột "Xóa" với hình ảnh mặc định
+                DataGridViewImageCell deleteCell = new DataGridViewImageCell();
+                deleteCell.Value = Properties.Resources.icons8_delete_24;
+                //deleteCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvEmployeeSalaries.Rows[rowIndex].Cells["Delete"] = deleteCell;
+
+                // Thêm cột "Sửa" với hình ảnh mặc định
+                DataGridViewImageCell editCell = new DataGridViewImageCell();
+                editCell.Value = Properties.Resources.icons8_edit_24;
+                editCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                //dgvEmployeeSalaries.Rows[rowIndex].Cells["Edit"] = editCell;
             }
+
 
             // Ẩn cột ID
             dgvEmployeeSalaries.Columns["ID"].Visible = false;
             dgvEmployeeSalaries.Columns["ID_nv"].Visible = false;
         }
+
 
         private void btnAddSalary_Click(object sender, EventArgs e)
         {
@@ -173,7 +185,7 @@ namespace QL_KhachSan
                 });
             }
         }
-        
+
         private void btnGenerateHotelTotalSalary_Click(object sender, EventArgs e)
         {
             int month = dtpSalary.Value.Month;
