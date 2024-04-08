@@ -93,11 +93,12 @@
             this.lbl_GrandTotal.BackColor = System.Drawing.Color.Black;
             this.lbl_GrandTotal.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.lbl_GrandTotal.ForeColor = System.Drawing.Color.White;
-            this.lbl_GrandTotal.Location = new System.Drawing.Point(239, 31);
+            this.lbl_GrandTotal.Location = new System.Drawing.Point(257, 31);
             this.lbl_GrandTotal.Name = "lbl_GrandTotal";
             this.lbl_GrandTotal.Size = new System.Drawing.Size(73, 38);
             this.lbl_GrandTotal.TabIndex = 3;
             this.lbl_GrandTotal.Text = "0.00";
+            this.lbl_GrandTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // bunifuLabel2
             // 
