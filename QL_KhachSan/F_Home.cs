@@ -262,7 +262,7 @@ namespace QL_KhachSan
             fNhanVien = null;
         }
 
-        private void bDoUong_Click(object sender, EventArgs e)
+        private void bMonAn_Click(object sender, EventArgs e)
         {
             if (fFoodQL == null)
             {
@@ -283,7 +283,7 @@ namespace QL_KhachSan
             fFoodQL = null;
         }
 
-        private void bMonAn_Click(object sender, EventArgs e)
+        private void bDoUong_Click(object sender, EventArgs e)
         {
             if (fDoUong == null)
             {

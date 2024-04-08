@@ -251,9 +251,13 @@
     <Compile Include="DAO\classBLL.cs" />
     <Compile Include="DAO\DataProvider .cs" />
     <Compile Include="DAO\Account_DAO.cs" />
+    <Compile Include="DAO\Food_DAO.cs" />
     <Compile Include="DAO\Luong_DAO.cs" />
     <Compile Include="DAO\NhanVien_DAO.cs" />
+    <Compile Include="DAO\PosDAO.cs" />
     <Compile Include="DAO\TongLuong_DAO.cs" />
+    <Compile Include="DTO\Food.cs" />
+    <Compile Include="DTO\PosDTO.cs" />
     <Compile Include="F_BangLuong.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -90,30 +90,11 @@ namespace QL_KhachSan
             }
         }
 
-        F_FoodQL fFoodql;
 
         private void btn_foodmng_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btn_foodmng_Click_1(object sender, EventArgs e)
-        {
-            if (fFoodql == null)
-            {
-                fFoodql = new F_FoodQL();
-                fFoodql.FormClosed += FFoodql_FormClosed;
-                fFoodql.Show();
-            }
-            else
-            {
-                fFoodql.Activate();
-            }
-        }
-
-        private void FFoodql_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            fFoodql = null;
-        }
     }
 }

@@ -50,16 +50,17 @@ CREATE TABLE Luong
 GO
 
 -- Bang luong tong
-CREATE TABLE TongLuong
-(
-    ID INT PRIMARY KEY IDENTITY,
-    ten NVARCHAR(100) NOT NULL,
-    ID_LuongThangNhanVien INT, -- Khoa ngoai tham chieu den bang Luong
-    CONSTRAINT FK_Luong FOREIGN KEY (ID_LuongThangNhanVien) REFERENCES Luong(ID),
-    time DATE,
-    tongLuong DECIMAL(18, 2)
-)
+use QL_KhachSan;
 GO
+
+CREATE TABLE TongLuong (
+    ID INT PRIMARY KEY IDENTITY,
+    Thang INT,
+    Nam INT,
+    Ten NVARCHAR(100), -- Tên c?a b?ng TongLuong
+    TongLuong DECIMAL(18, 2)
+);
+
 
 USE QL_KhachSan;
 GO
