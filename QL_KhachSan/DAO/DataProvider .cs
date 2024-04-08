@@ -48,12 +48,10 @@ namespace QL_KhachSan
         }
 
         // Khởi tạo thông tin kết nối
-        private DataProvider()
-        {
+        private DataProvider() =>
             // Đặt thông tin kết nối mặc định ở đây hoặc để trống
             // và set ConnectionString từ bên ngoài trước khi sử dụng
-            connectionStr = @"Data Source=DESKTOP-VLFRITI\MSSQLSERVER2024;Initial Catalog=QL_KhachSan;Integrated Security=True;";
-        }
+            connectionStr = @"Data Source=DESKTOP-NT51Q2G\MSSQLSEVER2024;Initial Catalog=QL_KhachSan;Integrated Security=True;";
 
         // Trả về dữ liệu truy vấn
         public DataTable ExecuteQuery(String query, Object[] parameter = null)
