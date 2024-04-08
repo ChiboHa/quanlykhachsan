@@ -16,7 +16,7 @@ namespace QL_KhachSan
         F_Customers fCustomers;
         F_ThuePhong fThuePhong;
         F_DVKhac fDVKhac;
-        F_FoodQL fFoodQL;
+        F_MonAn fFoodQL;
         F_DoUong fDoUong;
         F_NhanVien fNhanVien;
         F_Dashboard fDashboard;
@@ -266,7 +266,7 @@ namespace QL_KhachSan
         {
             if (fFoodQL == null)
             {
-                fFoodQL = new F_FoodQL();
+                fFoodQL = new F_MonAn();
                 fFoodQL.FormClosed += fFoodQL_FormClosed;
                 fFoodQL.MdiParent = this;
                 fFoodQL.Dock = DockStyle.Fill;
