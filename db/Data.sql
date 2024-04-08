@@ -61,3 +61,31 @@ CREATE TABLE TongLuong
 )
 GO
 
+USE QL_KhachSan;
+GO
+
+CREATE TABLE Food
+(
+	ID int identity PRIMARY KEY,
+	Ten NVARCHAR(100) NOT NULL,
+	Muc VARCHAR(20) NOT NULL DEFAULT 'Food',
+	Gia INT NOT NULL
+)
+
+GO
+USE QL_KhachSan;
+GO
+
+CREATE TABLE Pos (
+  ID INT identity PRIMARY KEY,
+  idkh INT NOT NULL,
+  transdate DATE NOT NULL,
+  transmonth VARCHAR(100) NOT NULL,
+  foodcode INT NOT NULL,
+  foodname NVARCHAR(100) NOT NULL,
+  cost int NOT NULL,
+  qty INT NOT NULL,
+  totalprice int NOT NULL,
+  grandtotal int NOT NULL,
+);
+Go

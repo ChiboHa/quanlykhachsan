@@ -257,5 +257,9 @@ namespace QL_KhachSan
             }
         }
 
+        private void grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
