@@ -1,7 +1,36 @@
-﻿
+IF NOT EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE name = 'QL_KhachSan')
+BEGIN
+    CREATE DATABASE QL_KhachSan;
+END;
+
+	
 USE QL_KhachSan
 GO
 
+-- Account
+CREATE TABLE Account
+(
+	ID VARCHAR(10) PRIMARY KEY,
+	ID_NV VARCHAR(10) NOT NULL,
+	DisplayName NVARCHAR(100) NOT NULL DEFAULT N'User',
+	UserName NVARCHAR(100),
+	PassWord NVARCHAR(128) NOT NULL,
+	FOREIGN KEY (ID_NV) REFERENCES NhanVien(ID)
+)
+
+GO
+
+-- Khach Hang
+CREATE TABLE KhachHang
+(
+	ID VARCHAR(10) PRIMARY KEY,
+	name NVARCHAR(100) NOT NULL,
+	soDienThoai VARCHAR(10),
+	CCCD VARCHAR(12) NOT NULL,
+	diem INT NOT NULL DEFAULT '0'
+)
+
+	
 -- Nhan vien
 CREATE TABLE NhanVien
 (
