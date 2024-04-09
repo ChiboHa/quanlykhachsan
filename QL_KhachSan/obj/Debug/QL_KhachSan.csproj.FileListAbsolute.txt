@@ -143,3 +143,5 @@ C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.pdb
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_BangLuong.resources
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_LuongCRUD.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_AddRoom.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_UpdateRoom.resources

@@ -1,9 +1,6 @@
-IF NOT EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE name = 'QL_KhachSan')
-BEGIN
-    CREATE DATABASE QL_KhachSan;
-END;
+CREATE DATABASE QL_KhachSan;
+GO
 
-	
 USE QL_KhachSan
 GO
 
@@ -11,24 +8,31 @@ GO
 CREATE TABLE Account
 (
 	ID VARCHAR(10) PRIMARY KEY,
-	ID_NV VARCHAR(10) NOT NULL,
 	DisplayName NVARCHAR(100) NOT NULL DEFAULT N'User',
 	UserName NVARCHAR(100),
 	PassWord NVARCHAR(128) NOT NULL,
-	FOREIGN KEY (ID_NV) REFERENCES NhanVien(ID)
+	Role VARCHAR(10) NOT NULL DEFAULT 'USER',
+	email VARCHAR(100) NOT NULL
 )
 
 GO
 
 -- Khach Hang
-CREATE TABLE KhachHang
+CREATE TABLE Customer
 (
 	ID VARCHAR(10) PRIMARY KEY,
 	name NVARCHAR(100) NOT NULL,
-	soDienThoai VARCHAR(10),
+	phoneNumber VARCHAR(10),
 	CCCD VARCHAR(12) NOT NULL,
-	diem INT NOT NULL DEFAULT '0'
+	point INT NOT NULL DEFAULT '0'
 )
+
+
+-- them khach hang
+INSERT INTO Customer (ID, name, phoneNumber, CCCD, point)
+VALUES ('001','Long', '0987654321', '0272', '0'),
+		('002','Chau','0123456789','0324','1');
+
 
 	
 -- Nhan vien
@@ -50,20 +54,17 @@ CREATE TABLE NhanVien
 
 GO
 
--- Ban ghi mau
-/*
 USE [QL_KhachSan]
 GO
 
 INSERT INTO [dbo].[NhanVien] ([ID], [ho], [ten], [gioiTinh], [ngaySinh], [CCCD], [email], [maSoThue], [soDienThoai], [luong1h], [role])
 VALUES 
-    ('NV001', N'Nguyễn', N'Văn A', 'Nam', '1990-01-01', '123456789012', 'nv_a@example.com', '1234567890', '0123456789', 35000, N'Nhân viên'),
-    ('NV002', N'Nguyễn', N'Thị B', 'Nữ', '1995-06-03', '234567890123', 'nv_b@example.com', '2345678901', '1234567890', 35000, N'Nhân viên'),
-    ('BV001', N'Phạm', N'Bảo Vệ','Nam', '1991-05-01', '345678901234', 'bao_ve@example.com', '3456789012', '2345678901', 30000, N'Bảo vệ'),
-    ('KT001', N'Lý', N'Kế Toán', 'Nữ','1995-09-05', '456789012345', 'ke_toan@example.com', '4567890123', '3456789012', 45000, N'Kế toán'),
-    ('GD001', N'Phùng', N'Giám Đốc','Nam','1999-05-05', '567890123456', 'giam_doc@example.com', '5678901234', '4567890123', 80000, N'Giám đốc');
+    ('NV001', N'Nguyễn', N'Văn A', N'Nam', '1990-01-01', '123456789012', 'nv_a@example.com', '1234567890', '0123456789', 35000, N'Nhân viên'),
+    ('NV002', N'Nguyễn', N'Thị B', N'Nữ', '1995-06-03', '234567890123', 'nv_b@example.com', '2345678901', '1234567890', 35000, N'Nhân viên'),
+    ('BV001', N'Phạm', N'Bảo Vệ',N'Nam', '1991-05-01', '345678901234', 'bao_ve@example.com', '3456789012', '2345678901', 30000, N'Bảo vệ'),
+    ('KT001', N'Lý', N'Kế Toán', N'Nữ','1995-09-05', '456789012345', 'ke_toan@example.com', '4567890123', '3456789012', 45000, N'Kế toán'),
+    ('GD001', N'Phùng', N'Giám Đốc',N'Nam','1999-05-05', '567890123456', 'giam_doc@example.com', '5678901234', '4567890123', 80000, N'Giám đốc');
 GO
-*/
 
 -- Bang luong thang nhan vien
 CREATE TABLE Luong
@@ -119,3 +120,46 @@ CREATE TABLE Pos (
   grandtotal int NOT NULL,
 );
 Go
+
+create table Rooms
+(
+	id int primary key identity (1,1),
+	roomNo nvarchar(250) not null unique,
+	roomType nvarchar(250) not null,
+	bedType nvarchar(250) not null,
+	price int not null,
+	booked nvarchar(50) default 'NO'
+)
+GO
+
+
+-- Bang hoa don phong
+Create table BillRoom
+(
+	ID int identity (1,1) primary key,
+	room_No nvarchar(250) not null,
+    customer_id varchar(10) not null,
+    date_check_in DATE not null,
+    date_check_out DATE not null,
+    status int not null,
+    FOREIGN KEY (room_No) REFERENCES Rooms(roomNo),
+    FOREIGN KEY (customer_id) REFERENCES Customer(ID)
+)
+Go
+
+
+INSERT INTO Rooms (roomNo, roomType, bedType, price, booked)
+VALUES 
+    (101, N'Phòng thường', N'Giường đơn', 5000, 'YES'),
+    (102, N'Phòng thường', N'Giường đôi', 7000, 'YES'),
+    (103, N'Phòng thường', N'Giường đơn', 10000, 'NO'),
+    (104, N'Phòng VIP', N'Giường đôi', 15000, 'YES');
+GO
+
+
+
+INSERT INTO BillRoom (date_check_in, date_check_out, room_No, customer_id, status)
+VALUES ('2024-04-01', '2024-04-05', 101, '001', 1),
+		('2024-04-03', '2024-04-08', 103, '002', 0);
+
+-- Bang phong

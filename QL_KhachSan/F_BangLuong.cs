@@ -84,8 +84,8 @@ namespace QL_KhachSan
                 // Thêm cột "Sửa" với hình ảnh mặc định
                 DataGridViewImageCell editCell = new DataGridViewImageCell();
                 editCell.Value = Properties.Resources.icons8_edit_24;
-                editCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                //dgvEmployeeSalaries.Rows[rowIndex].Cells["Edit"] = editCell;
+                //editCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvEmployeeSalaries.Rows[rowIndex].Cells["Edit"] = editCell;
             }
 
 
@@ -156,7 +156,49 @@ namespace QL_KhachSan
                     MessageBox.Show("Giá trị của ID không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            // Kiểm tra nếu người dùng click vào nút Sửa
+            if (e.ColumnIndex == dgvEmployeeSalaries.Columns["Edit"].Index && e.RowIndex >= 0)
+            {
+                // Lấy giá trị của cell "ID", "ID_nv", và "TongLuong"
+                object cellValueID = dgvEmployeeSalaries.Rows[e.RowIndex].Cells["ID"].Value;
+                object cellValueID_nv = dgvEmployeeSalaries.Rows[e.RowIndex].Cells["ID_nv"].Value;
+                object cellValueTongLuong = dgvEmployeeSalaries.Rows[e.RowIndex].Cells["TongLuong"].Value;
+
+                // Kiểm tra giá trị của cell không null và không rỗng
+                if (cellValueID != null && !string.IsNullOrEmpty(cellValueID.ToString()) &&
+                    cellValueID_nv != null && !string.IsNullOrEmpty(cellValueID_nv.ToString()) &&
+                    cellValueTongLuong != null && !string.IsNullOrEmpty(cellValueTongLuong.ToString()))
+                {
+                    // Thử chuyển đổi giá trị của cell thành số nguyên và decimal
+                    if (int.TryParse(cellValueID.ToString(), out int luongID) &&
+                        decimal.TryParse(cellValueTongLuong.ToString(), out decimal tongLuong))
+                    {
+                        // Lấy thông tin cần thiết
+                        string employeeID = cellValueID_nv.ToString();
+                        DateTime salaryMonth = dtpSalaryMonth.Value;
+
+                        // Hiển thị form F_LuongCRUD để chỉnh sửa thông tin lương
+                        F_LuongCRUD editSalaryForm = new F_LuongCRUD(luongID, employeeID, salaryMonth, tongLuong);
+                        editSalaryForm.ShowDialog();
+
+                        // Sau khi chỉnh sửa, reload dữ liệu để cập nhật
+                        LoadDefaultData();
+                    }
+                    else
+                    {
+                        // Nếu không thể chuyển đổi thành số nguyên hoặc decimal, hiển thị thông báo lỗi
+                        MessageBox.Show("Giá trị của ID hoặc tổng lương không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    // Nếu giá trị của cell là null hoặc rỗng, hiển thị thông báo lỗi
+                    MessageBox.Show("Giá trị của ID hoặc tổng lương không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
+
 
 
 
@@ -224,17 +266,18 @@ namespace QL_KhachSan
 
         private void dgvEmployeeSalaries_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            // Kiểm tra nếu đang định dạng cell trong cột Lương
-            if (dgvEmployeeSalaries.Columns[e.ColumnIndex].Name == "Luong")
+            // Kiểm tra nếu đang định dạng cell trong cột "TongLuong"
+            if (dgvEmployeeSalaries.Columns[e.ColumnIndex].Name == "TongLuong")
             {
-                // Kiểm tra kiểu dữ liệu của cell
+                // Kiểm tra kiểu dữ liệu của cell và giá trị của cell
                 if (e.Value != null && e.Value.GetType() == typeof(decimal))
                 {
-                    // Định dạng giá trị để chỉ hiển thị số trước dấu phẩy
-                    e.Value = ((decimal)e.Value).ToString("#,0") + " đ";
+                    // Định dạng giá trị để hiển thị số với dấu phẩy ngăn cách hàng nghìn và thêm ký tự ₫ vào cuối
+                    e.Value = ((decimal)e.Value).ToString("#,##0") + " ₫";
                     e.FormattingApplied = true; // Đánh dấu đã xử lý định dạng
                 }
             }
         }
+
     }
 }

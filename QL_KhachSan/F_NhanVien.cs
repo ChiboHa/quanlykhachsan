@@ -339,5 +339,33 @@ namespace QL_KhachSan
                 grid.Columns["ID"].Visible = false;
             }
         }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem người dùng đã chọn một nhân viên trên lưới hay chưa
+            if (grid.SelectedRows.Count > 0)
+            {
+                // Lấy ID của nhân viên từ hàng được chọn trên lưới
+                string employeeID = grid.SelectedRows[0].Cells["ID"].Value.ToString();
+
+                // Gọi phương thức để lấy thông tin chi tiết của nhân viên từ cơ sở dữ liệu
+                NhanVien_DAO selectedEmployee = NhanVien_DAO.Instance.GetEmployeeByID(employeeID);
+
+                // Tạo một thể hiện mới của form chỉnh sửa thông tin nhân viên
+                F_NhanVienCRUD nhanVienCRUD = new F_NhanVienCRUD(selectedEmployee);
+
+                // Hiển thị form chỉnh sửa thông tin nhân viên
+                nhanVienCRUD.ShowDialog();
+
+                // Sau khi đóng form chỉnh sửa, làm mới lại danh sách nhân viên và lưới
+                LoadEmployeeData();
+            }
+            else
+            {
+                // Nếu người dùng chưa chọn nhân viên, hiển thị thông báo cảnh báo
+                MessageBox.Show("Vui lòng chọn một nhân viên để chỉnh sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
     }
 }
