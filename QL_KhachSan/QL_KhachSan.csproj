@@ -248,6 +248,7 @@
     <Compile Include="CropForm.Designer.cs">
       <DependentUpon>CropForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Bill_Room_DAO.cs" />
     <Compile Include="DAO\classBLL.cs" />
     <Compile Include="DAO\DataProvider .cs" />
     <Compile Include="DAO\Account_DAO.cs" />
@@ -263,6 +264,15 @@
     </Compile>
     <Compile Include="F_BangLuong.Designer.cs">
       <DependentUpon>F_BangLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Rooms_DAO.cs" />
+    <Compile Include="DTO\BillRoom.cs" />
+    <Compile Include="DTO\Rooms.cs" />
+    <Compile Include="F_AddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AddRoom.Designer.cs">
+      <DependentUpon>F_AddRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="F_Customers.cs">
       <SubType>Form</SubType>
@@ -342,10 +352,19 @@
     <Compile Include="F_ThuePhong.Designer.cs">
       <DependentUpon>F_ThuePhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_UpdateRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_UpdateRoom.Designer.cs">
+      <DependentUpon>F_UpdateRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CropForm.resx">
       <DependentUpon>CropForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_AddRoom.resx">
+      <DependentUpon>F_AddRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_BangLuong.resx">
       <DependentUpon>F_BangLuong.cs</DependentUpon>
@@ -388,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_ThuePhong.resx">
       <DependentUpon>F_ThuePhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_UpdateRoom.resx">
+      <DependentUpon>F_UpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -440,6 +462,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\plus_holder.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\delete_hover.png" />
+    <None Include="Resources\update.png" />
+    <None Include="Resources\update_hover.png" />
     <None Include="Resources\106230_add_icon.png" />
     <Content Include="Resources\icons8-delete-24.png" />
     <None Include="Resources\icons8-delete-241.png" />
