@@ -242,7 +242,8 @@ namespace QL_KhachSan
             // Tải lại danh sách món ăn
             dataGridView1.Rows.Clear(); // Xóa hết dữ liệu trong DataGridView
             flowLayoutPanel1.Controls.Clear();
-
+            LoadFoods();
+            txt_kh.SelectedIndex = -1;
             // Cập nhật lại các số liệu
             Get_grandTotal();
             Get_pricedata();
@@ -299,6 +300,7 @@ namespace QL_KhachSan
         private void btnAddBill_Click(object sender, EventArgs e)
         {
             ThanhToan();
+            new_order_1();
         }
 
         private void txt_kh_TextChanged(object sender, EventArgs e)
