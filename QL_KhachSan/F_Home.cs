@@ -13,7 +13,7 @@ namespace QL_KhachSan
 {
     public partial class F_Home : Form
     {
-        F_Customers fCustomers;
+        F_KhachHang fKhachHang;
         F_ThuePhong fThuePhong;
         F_DVKhac fDVKhac;
         F_MonAn fFoodQL;
@@ -21,14 +21,15 @@ namespace QL_KhachSan
         F_NhanVien fNhanVien;
         F_Dashboard fDashboard;
         F_BangLuong fBangLuong;
+        F_DatPhong fDatPhong;
 
         bool drag = false;
         Point start_point = new Point(0, 0);
-        bool menuExpand = false;
-        bool menuExpand2 = false;
-        bool sidebarExpand = true;
-        bool menuExpand3 = false;
-
+        bool menuExpand = false,
+             menuExpand2 = false,
+             menuExpand3 = false,
+             menuExpand4 = false,
+             sidebarExpand = true;
         private string username;
         private string password;
 
@@ -222,23 +223,12 @@ namespace QL_KhachSan
 
         private void bQLKH_Click(object sender, EventArgs e)
         {
-            if (fCustomers == null)
-            {
-                fCustomers = new F_Customers();
-                fCustomers.FormClosed += FCustomers_FormClosed;
-                fCustomers.MdiParent = this;
-                fCustomers.Dock = DockStyle.Fill;
-                fCustomers.Show();
-            }
-            else
-            {
-                fCustomers.Activate();
-            }
+            menuTransition4.Start();
         }
 
-        private void FCustomers_FormClosed(object sender, FormClosedEventArgs e)
+        private void fKhachHang_FormClosed(object sender, FormClosedEventArgs e)
         {
-            fCustomers = null;
+            fKhachHang = null;
         }
 
         private void bQLNV_Click(object sender, EventArgs e)
@@ -376,6 +366,65 @@ namespace QL_KhachSan
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
+        }
+
+        private void menuTransition4_Tick(object sender, EventArgs e)
+        {
+            if (menuExpand4 == false)
+            {
+                mQLKH.Height += 20;
+                if (mQLKH.Height >= 145)
+                {
+                    menuTransition4.Stop();
+                    menuExpand4 = true;
+                }
+            }
+            else
+            {
+                mQLKH.Height -= 20;
+                if (mQLKH.Height <= 46)
+                {
+                    menuTransition4.Stop();
+                    menuExpand4 = false;
+                }
+            }
+        }
+
+        private void bDatPhong_Click(object sender, EventArgs e)
+        {
+            if (fDatPhong == null)
+            {
+                fDatPhong = new F_DatPhong();
+                fDatPhong.FormClosed += fDatPhong_FormClosed;
+                fDatPhong.MdiParent = this;
+                fDatPhong.Dock = DockStyle.Fill;
+                fDatPhong.Show();
+            }
+            else
+            {
+                fDatPhong.Activate();
+            }
+        }
+
+        private void bTTDatPhong_Click(object sender, EventArgs e)
+        {
+            if (fKhachHang == null)
+            {
+                fKhachHang = new F_KhachHang();
+                fKhachHang.FormClosed += fKhachHang_FormClosed;
+                fKhachHang.MdiParent = this;
+                fKhachHang.Dock = DockStyle.Fill;
+                fKhachHang.Show();
+            }
+            else
+            {
+                fKhachHang.Activate();
+            }
+        }
+
+        private void fDatPhong_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            fDatPhong = null;
         }
     }
 }

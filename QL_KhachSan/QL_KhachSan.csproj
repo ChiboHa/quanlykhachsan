@@ -274,11 +274,17 @@
     <Compile Include="F_AddRoom.Designer.cs">
       <DependentUpon>F_AddRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Customers.cs">
+    <Compile Include="F_DatPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Customers.Designer.cs">
-      <DependentUpon>F_Customers.cs</DependentUpon>
+    <Compile Include="F_DatPhong.Designer.cs">
+      <DependentUpon>F_DatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_KhachHang.Designer.cs">
+      <DependentUpon>F_KhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="F_Dashboard.cs">
       <SubType>Form</SubType>
@@ -369,8 +375,11 @@
     <EmbeddedResource Include="F_BangLuong.resx">
       <DependentUpon>F_BangLuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Customers.resx">
-      <DependentUpon>F_Customers.cs</DependentUpon>
+    <EmbeddedResource Include="F_DatPhong.resx">
+      <DependentUpon>F_DatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_KhachHang.resx">
+      <DependentUpon>F_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Dashboard.resx">
       <DependentUpon>F_Dashboard.cs</DependentUpon>
@@ -473,6 +482,9 @@
     <None Include="Resources\icons8-delete-241.png" />
     <Content Include="Resources\icons8-edit-24.png" />
     <None Include="Resources\icons8-edit-241.png" />
+    <None Include="Resources\phone.png" />
+    <None Include="Resources\id.png" />
+    <None Include="Resources\name.png" />
     <Content Include="Resources\user.jpg" />
     <None Include="Resources\user1.jpg" />
   </ItemGroup>

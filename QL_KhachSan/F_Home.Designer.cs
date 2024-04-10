@@ -69,6 +69,12 @@
             this.menuTransition2 = new System.Windows.Forms.Timer(this.components);
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             this.menuTransition3 = new System.Windows.Forms.Timer(this.components);
+            this.mQLKH = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bDatPhong = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.bTTDatPhong = new System.Windows.Forms.Button();
+            this.menuTransition4 = new System.Windows.Forms.Timer(this.components);
             this.pHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.sidebar.SuspendLayout();
@@ -88,6 +94,9 @@
             this.pQLNV.SuspendLayout();
             this.pBangLuong.SuspendLayout();
             this.pDangXuat.SuspendLayout();
+            this.mQLKH.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pHome
@@ -157,7 +166,7 @@
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(40)))));
             this.sidebar.Controls.Add(this.pName);
             this.sidebar.Controls.Add(this.pDashboard);
-            this.sidebar.Controls.Add(this.pQLKH);
+            this.sidebar.Controls.Add(this.mQLKH);
             this.sidebar.Controls.Add(this.mQLDV);
             this.sidebar.Controls.Add(this.mQLTD);
             this.sidebar.Controls.Add(this.mQLNV);
@@ -232,7 +241,7 @@
             // pQLKH
             // 
             this.pQLKH.Controls.Add(this.bQLKH);
-            this.pQLKH.Location = new System.Drawing.Point(3, 129);
+            this.pQLKH.Location = new System.Drawing.Point(3, 3);
             this.pQLKH.Name = "pQLKH";
             this.pQLKH.Size = new System.Drawing.Size(300, 46);
             this.pQLKH.TabIndex = 4;
@@ -243,7 +252,7 @@
             this.bQLKH.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bQLKH.Image = ((System.Drawing.Image)(resources.GetObject("bQLKH.Image")));
             this.bQLKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bQLKH.Location = new System.Drawing.Point(-22, -31);
+            this.bQLKH.Location = new System.Drawing.Point(-26, -34);
             this.bQLKH.Name = "bQLKH";
             this.bQLKH.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.bQLKH.Size = new System.Drawing.Size(322, 113);
@@ -563,6 +572,74 @@
             this.menuTransition3.Interval = 10;
             this.menuTransition3.Tick += new System.EventHandler(this.menuTransition3_Tick);
             // 
+            // mQLKH
+            // 
+            this.mQLKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(40)))));
+            this.mQLKH.Controls.Add(this.pQLKH);
+            this.mQLKH.Controls.Add(this.panel1);
+            this.mQLKH.Controls.Add(this.panel2);
+            this.mQLKH.Location = new System.Drawing.Point(3, 129);
+            this.mQLKH.Name = "mQLKH";
+            this.mQLKH.Size = new System.Drawing.Size(355, 46);
+            this.mQLKH.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.bDatPhong);
+            this.panel1.Location = new System.Drawing.Point(0, 52);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(325, 46);
+            this.panel1.TabIndex = 7;
+            // 
+            // bDatPhong
+            // 
+            this.bDatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(84)))), ((int)(((byte)(79)))));
+            this.bDatPhong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("bDatPhong.Image")));
+            this.bDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bDatPhong.Location = new System.Drawing.Point(-22, -31);
+            this.bDatPhong.Margin = new System.Windows.Forms.Padding(0);
+            this.bDatPhong.Name = "bDatPhong";
+            this.bDatPhong.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.bDatPhong.Size = new System.Drawing.Size(322, 113);
+            this.bDatPhong.TabIndex = 2;
+            this.bDatPhong.Text = "          Đặt phòng / Thanh toán ";
+            this.bDatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bDatPhong.UseVisualStyleBackColor = false;
+            this.bDatPhong.Click += new System.EventHandler(this.bDatPhong_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.bTTDatPhong);
+            this.panel2.Location = new System.Drawing.Point(0, 98);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(325, 46);
+            this.panel2.TabIndex = 8;
+            // 
+            // bTTDatPhong
+            // 
+            this.bTTDatPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(84)))), ((int)(((byte)(79)))));
+            this.bTTDatPhong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTTDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("bTTDatPhong.Image")));
+            this.bTTDatPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bTTDatPhong.Location = new System.Drawing.Point(-22, -31);
+            this.bTTDatPhong.Margin = new System.Windows.Forms.Padding(0);
+            this.bTTDatPhong.Name = "bTTDatPhong";
+            this.bTTDatPhong.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.bTTDatPhong.Size = new System.Drawing.Size(322, 113);
+            this.bTTDatPhong.TabIndex = 2;
+            this.bTTDatPhong.Text = "          Thông tin đặt phòng";
+            this.bTTDatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bTTDatPhong.UseVisualStyleBackColor = false;
+            this.bTTDatPhong.Click += new System.EventHandler(this.bTTDatPhong_Click);
+            // 
+            // menuTransition4
+            // 
+            this.menuTransition4.Interval = 10;
+            this.menuTransition4.Tick += new System.EventHandler(this.menuTransition4_Tick);
+            // 
             // F_Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -597,6 +674,9 @@
             this.pQLNV.ResumeLayout(false);
             this.pBangLuong.ResumeLayout(false);
             this.pDangXuat.ResumeLayout(false);
+            this.mQLKH.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -642,5 +722,11 @@
         private System.Windows.Forms.Panel pBangLuong;
         private System.Windows.Forms.Button bBangLuong;
         private System.Windows.Forms.Timer menuTransition3;
+        private System.Windows.Forms.FlowLayoutPanel mQLKH;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button bDatPhong;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button bTTDatPhong;
+        private System.Windows.Forms.Timer menuTransition4;
     }
 }
