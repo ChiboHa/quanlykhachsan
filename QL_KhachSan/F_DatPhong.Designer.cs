@@ -958,7 +958,7 @@
             this.soPhongTTBox.Size = new System.Drawing.Size(260, 28);
             this.soPhongTTBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.soPhongTTBox.TabIndex = 20;
-            this.soPhongTTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.soPhongTTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.soPhongTTBox.TextMarginBottom = 0;
             this.soPhongTTBox.TextMarginLeft = 3;
             this.soPhongTTBox.TextMarginTop = 1;
@@ -1050,7 +1050,7 @@
             this.hoTenTTBox.Size = new System.Drawing.Size(260, 28);
             this.hoTenTTBox.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Material;
             this.hoTenTTBox.TabIndex = 18;
-            this.hoTenTTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.hoTenTTBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.hoTenTTBox.TextMarginBottom = 0;
             this.hoTenTTBox.TextMarginLeft = 3;
             this.hoTenTTBox.TextMarginTop = 1;
