@@ -110,11 +110,12 @@ go
 
 CREATE TABLE BillFood (
   ID INT identity PRIMARY KEY,
-  idkh INT NOT NULL,
+  idkh [varchar](10) NOT NULL,
   transdate DATE NOT NULL,
   transmonth VARCHAR(100) NOT NULL,
   GrandToTal int not null,
   trangthai varchar(10) not null default 'NO',
+  CONSTRAINT FK_Bill_Customer FOREIGN KEY (IDKH) REFERENCES Customer (ID)
 );
 Go
 
@@ -127,21 +128,12 @@ CREATE TABLE Pos (
   cost int NOT NULL,
   qty INT NOT NULL,
   totalprice int NOT NULL,
-  
+  CONSTRAINT FK_Pos_Food Foreign key (foodcode) references Food(ID),
+  CONSTRAINT FK_Pos_BillFood Foreign key (BillID) references BillFood(ID)
+
 );
 Go
 
-ALTER TABLE Pos
-ADD CONSTRAINT FK_Pos_BillFood FOREIGN KEY (BillID)
-REFERENCES BillFood(ID);
-
-ALTER TABLE Pos
-ADD CONSTRAINT FK_Pos_Food FOREIGN KEY (foodcode)
-REFERENCES Food(ID);
-
-ALTER TABLE BillFood
-ADD CONSTRAINT FK_BillFood_Customer FOREIGN KEY (IDKH)
-REFERENCES Customer(ID);
 
 create table Rooms
 (
