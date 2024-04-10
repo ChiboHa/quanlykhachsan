@@ -29,7 +29,7 @@ namespace QL_KhachSan.DAO
             List<PosDTO> list = new List<PosDTO>();
             string query = string.Format("Select * From Pos");
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            foreach(DataRow item in data.Rows) 
+            foreach (DataRow item in data.Rows)
             {
                 PosDTO pos = new PosDTO();
                 list.Add(pos);
@@ -38,21 +38,17 @@ namespace QL_KhachSan.DAO
             return list;
         }
 
-        public bool AddBill(int idKhachHang, DateTime transDate, string transMonth, int foodCode, string foodName, int cost, int quantity, int totalPrice, int grandTotal)
+        public bool AddPos(int billID, int foodCode, string foodName, int cost, int quantity, int totalPrice)
         {
-            try
-            {
-                string query = string.Format("INSERT INTO dbo.Pos (idkh, transdate, transmonth, foodcode, foodname, cost, qty, totalPrice, grandTotal) " +
-                    "VALUES   ({0}, '{1}', '{2}', {3}, N'{4}', {5}, {6}, {7}, {8})", idKhachHang, transDate, transMonth, foodCode, foodName, cost, quantity, totalPrice, grandTotal);
-                int result = DataProvider.Instance.ExecuteNonQuery(query);
-                return result > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
+            string query = string.Format("INSERT INTO dbo.Pos (billID, foodcode, foodname, cost, qty, totalPrice) " +
+                                         "VALUES ({0}, {1}, N'{2}', {3}, {4}, {5})", billID, foodCode, foodName, cost, quantity, totalPrice);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
+
+        // Phương thức để thêm hóa đơn mới và các món ăn vào bảng Pos
+        
+
 
 
     }

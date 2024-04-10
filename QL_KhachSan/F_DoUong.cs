@@ -54,18 +54,34 @@ namespace QL_KhachSan
 
         private void dtgfmenu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtNameF.Text = dtgfmenu.CurrentRow.Cells[1].Value.ToString();
-            txtCostF.Text = dtgfmenu.CurrentRow.Cells[3].Value.ToString();
-            txtID.Text = dtgfmenu.CurrentRow.Cells[0].Value.ToString();
+            if (e.RowIndex >= 0 && dtgfmenu.CurrentRow != null) // Check for valid row selection
+            {
+                txtNameF.Text = dtgfmenu.CurrentRow.Cells[1].Value.ToString();
+                txtCostF.Text = dtgfmenu.CurrentRow.Cells[3].Value.ToString();
+                string cate = dtgfmenu.CurrentRow.Cells[2].Value.ToString();
+                switch (cate)
+                {
+                    case "Food":
+                        cbCateF.Text ="Food";
+                        break;
+                    case "Drink":
+                        cbCateF.Text = "Drink";
+                        break;
+                    default:
+                        cbCateF.SelectedIndex = -1;
+                        break;
+                }
+                // Assuming 'cbCate' is your combobox and 'cateColIndex' is the index of the category column:
+               
+            }
         }
-
         private void btneditF_Click(object sender, EventArgs e)
         {
             string name = txtNameF.Text;
             string catgory = cbCateF.Text;
             int cost = Convert.ToInt32(txtCostF.Text);
-            int id = Convert.ToInt32(txtID.Text);
-            if (Food_DAO.Instance.EditFood(name, catgory, cost,id))
+            
+            if (Food_DAO.Instance.EditFood(name, catgory, cost))
             {
                 MessageBox.Show("Sửa thành công.");
                 LoadFood();
@@ -78,7 +94,7 @@ namespace QL_KhachSan
 
         private void btndelF_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txtID.Text);
+            string id = txtNameF.Text ;
             if (Food_DAO.Instance.DelFood(id))
             {
                 MessageBox.Show("Xóa thành công.");
@@ -96,5 +112,16 @@ namespace QL_KhachSan
 
         }
 
+        private void F_DoUong_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnreset_Click(object sender, EventArgs e)
+        {
+            txtNameF.Clear();
+            txtCostF.Clear();
+            cbCateF.SelectedIndex=-1;
+        }
     }
 }

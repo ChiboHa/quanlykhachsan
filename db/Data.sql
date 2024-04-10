@@ -104,22 +104,44 @@ CREATE TABLE Food
 )
 
 GO
-USE QL_KhachSan;
-GO
+use QL_KhachSan
+go
 
-CREATE TABLE Pos (
+
+CREATE TABLE BillFood (
   ID INT identity PRIMARY KEY,
   idkh INT NOT NULL,
   transdate DATE NOT NULL,
   transmonth VARCHAR(100) NOT NULL,
+  GrandToTal int not null,
+  trangthai varchar(10) not null default 'NO',
+);
+Go
+
+
+CREATE TABLE Pos (
+  ID INT identity PRIMARY KEY,
+  BillID int not null,
   foodcode INT NOT NULL,
   foodname NVARCHAR(100) NOT NULL,
   cost int NOT NULL,
   qty INT NOT NULL,
   totalprice int NOT NULL,
-  grandtotal int NOT NULL,
+  
 );
 Go
+
+ALTER TABLE Pos
+ADD CONSTRAINT FK_Pos_BillFood FOREIGN KEY (BillID)
+REFERENCES BillFood(ID);
+
+ALTER TABLE Pos
+ADD CONSTRAINT FK_Pos_Food FOREIGN KEY (foodcode)
+REFERENCES Food(ID);
+
+ALTER TABLE BillFood
+ADD CONSTRAINT FK_BillFood_Customer FOREIGN KEY (IDKH)
+REFERENCES Customer(ID);
 
 create table Rooms
 (

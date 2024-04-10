@@ -47,15 +47,15 @@ namespace QL_KhachSan.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public bool EditFood(string name, string category, int cost, int id)
+        public bool EditFood(string name, string category, int cost)
         {
-            string query = string.Format("UPDATE dbo.Food SET Ten = N'{0}', Muc = '{1}', Gia = {2} WHERE ID = {3}",name,category,cost,id);
+            string query = string.Format("UPDATE dbo.Food SET Ten = N'{0}', Muc = '{1}', Gia = {2} WHERE ID = {3}",name,category,cost,name);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public bool DelFood(int id)
+        public bool DelFood(string name)
         {
-            string query = string.Format("DELETE dbo.Food WHERE ID = {0}", id);
+            string query = string.Format("DELETE dbo.Food WHERE ID = {0}", name);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
