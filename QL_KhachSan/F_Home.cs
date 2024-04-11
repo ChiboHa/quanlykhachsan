@@ -38,6 +38,11 @@ namespace QL_KhachSan
             InitializeComponent();
             this.username = username;
             this.password = password;
+
+            fDashboard = new F_Dashboard();
+            fDashboard.MdiParent = this;
+            fDashboard.Dock = DockStyle.Fill;
+            fDashboard.Show();
         }
 
         private void pHome_MouseDown(object sender, MouseEventArgs e)
@@ -132,7 +137,7 @@ namespace QL_KhachSan
                     pQLDV.Width = sidebar.Width;
                     pQLNV.Width = sidebar.Width;
                     pDangXuat.Width = sidebar.Width;
-
+                    pBangLuong.Width = sidebar.Width;
                 }
             }
             else
@@ -149,7 +154,7 @@ namespace QL_KhachSan
                     pQLDV.Width = sidebar.Width;
                     pQLNV.Width = sidebar.Width;
                     pDangXuat.Width = sidebar.Width;
-
+                    pBangLuong.Width = sidebar.Width;
                 }
             }
         }
@@ -166,6 +171,7 @@ namespace QL_KhachSan
                 fDashboard = new F_Dashboard();
                 fDashboard.FormClosed += FDashboard_FormClosed;
                 fDashboard.MdiParent = this;
+                fDashboard.Dock = DockStyle.Fill;
                 fDashboard.Show();
             }
             else
