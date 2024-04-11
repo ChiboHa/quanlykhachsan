@@ -110,6 +110,7 @@
             // submitButton
             // 
             this.submitButton.BackColor = System.Drawing.Color.White;
+            this.submitButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.submitButton.FlatAppearance.BorderSize = 0;
             this.submitButton.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitButton.ForeColor = System.Drawing.Color.Black;
@@ -123,6 +124,7 @@
             // 
             // show1
             // 
+            this.show1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.show1.Image = ((System.Drawing.Image)(resources.GetObject("show1.Image")));
             this.show1.Location = new System.Drawing.Point(347, 119);
             this.show1.Name = "show1";
@@ -134,6 +136,7 @@
             // 
             // show2
             // 
+            this.show2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.show2.Image = ((System.Drawing.Image)(resources.GetObject("show2.Image")));
             this.show2.Location = new System.Drawing.Point(347, 191);
             this.show2.Name = "show2";
@@ -154,6 +157,7 @@
             // 
             // minimizationButton
             // 
+            this.minimizationButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minimizationButton.Image = global::QL_KhachSan.Properties.Resources.minus;
             this.minimizationButton.Location = new System.Drawing.Point(342, 8);
             this.minimizationButton.Name = "minimizationButton";
@@ -165,6 +169,7 @@
             // 
             // ExitButton_2
             // 
+            this.ExitButton_2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ExitButton_2.Image = global::QL_KhachSan.Properties.Resources.close;
             this.ExitButton_2.Location = new System.Drawing.Point(384, 8);
             this.ExitButton_2.Name = "ExitButton_2";

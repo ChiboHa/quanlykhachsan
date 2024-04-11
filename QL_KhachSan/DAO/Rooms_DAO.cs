@@ -87,5 +87,21 @@ namespace QL_KhachSan.DAO
                 MessageBox.Show("Cập nhật thông tin phòng không thành công!");
             }
         }
+
+        public List<String> getRoomNo(String RoomType, String BedType)
+        {
+            List<String> result = new List<String>();
+            object[] parameters = { RoomType, BedType };
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT roomNo FROM Rooms WHERE roomType = @roomType AND bedType = @bedType", parameters);
+
+            foreach (DataRow item in data.Rows)
+            {
+                result.Add(item["roomNo"].ToString());
+            }
+
+            return result;
+        }
+
     }
 }

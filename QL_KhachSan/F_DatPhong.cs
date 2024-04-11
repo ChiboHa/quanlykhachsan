@@ -18,21 +18,8 @@ namespace QL_KhachSan
 
         private void setup()
         {
-            List<Rooms> list = Rooms_DAO.Instance.LoadRoomsList();
-            List<String> roomNo = new List<String>();
-            HashSet<String> roomType = new HashSet<String>(),
-                            bedType = new HashSet<String>();
-
-            foreach (var item in list)
-            {
-                roomNo.Add(item.RoomNo);
-                roomType.Add(item.RoomType);
-                bedType.Add(item.BedType);
-            }
-
-            loaiPhongBox.Items.AddRange(roomType.ToArray());
-            loaiGiuongBox.Items.AddRange(bedType.ToArray());
-            soPhongBox.Items.AddRange(roomNo.ToArray());
+            loaiPhongBox.Items.AddRange(new String[] { "Phòng thường", "Phòng VIP" });
+            loaiGiuongBox.Items.AddRange(new String[] { "Giường đơn", "Giường đôi" });
         }
 
 
@@ -47,30 +34,81 @@ namespace QL_KhachSan
             bunifuPages1.PageIndex = 1;
         }
 
+            //if (MessageBox.Show("Bạn có muốn tiếp tục không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
         private void bunifuButton21_Click(object sender, EventArgs e)
         {
-            /*if (MessageBox.Show("Bạn có muốn tiếp tục không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                MessageBox.Show("Bạn đã chọn tiếp tục.", "Thông báo");
-            }
-            else
-            {
-                MessageBox.Show("Bạn đã chọn hủy bỏ.", "Thông báo");
-            }*/
-
             if (hoTenBox.Text.Trim().Equals(""))
                 txt_error1.Text = "Vui lòng nhập họ tên!";
             if (sdtBox.Text.Trim().Equals(""))
                 txt_error2.Text = "Vui lòng nhập số điện thoại!";
             if (cccdBox.Text.Trim().Equals(""))
                 txt_error3.Text = "Vui lòng nhập CCCD!";
+            if (loaiPhongBox.Text == null || loaiPhongBox.Text.Equals(""))
+                txt_error4.Text = "Vui lòng lựa chọn loại phòng!";
+            if (loaiGiuongBox.Text == null || loaiPhongBox.Text.Equals(""))
+                txt_error5.Text = "Vui lòng lựa chọn loại giường!";
+            if (soPhongBox.Text == null)
+                txt_error6.Text = "Vui lòng lựa chọn số phòng!";
 
-            /* if (loaiPhongBox.SelectedItem.ToString().Trim().Equals(""))
-                 txt_error4.Text = "Vui lòng nhập loại phòng!";
-             if (loaiGiuongBox.SelectedItem.ToString().Trim().Equals(""))
-                 txt_error5.Text = "Vui lòng nhập loại giường!";
-             if (soPhongBox.SelectedItem.ToString().Trim().Equals(""))
-                 txt_error6.Text = "Vui lòng nhập số phòng!";*/
+            
+        }
+
+        private void reset()
+        {
+            hoTenBox.Text = "";
+            sdtBox.Text = "";
+            cccdBox.Text = "";
+            loaiPhongBox.Text = "";
+            loaiGiuongBox.Text = "";
+            soPhongBox.Text = "";
+            txt_error1.Text = "";
+            txt_error2.Text = "";
+            txt_error3.Text = "";
+            txt_error4.Text = "";
+            txt_error5.Text = "";
+            txt_error6.Text = "";
+            soPhongBox.Items.Clear();
+        }
+
+        private void n_reset_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+
+        private void loaiPhongBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_error4.Text = "";
+            List<String> roomNo = Rooms_DAO.Instance.getRoomNo(loaiPhongBox.Text, loaiGiuongBox.Text);
+            soPhongBox.Items.Clear();
+            soPhongBox.Items.AddRange(roomNo.ToArray());
+        }
+
+        private void loaiGiuongBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_error5.Text = "";
+            List<String> roomNo = Rooms_DAO.Instance.getRoomNo(loaiPhongBox.Text, loaiGiuongBox.Text);
+            soPhongBox.Items.Clear();
+            soPhongBox.Items.AddRange(roomNo.ToArray());
+        }
+
+        private void soPhongBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_error6.Text = "";
+        }
+
+        private void hoTenBox_TextChanged(object sender, EventArgs e)
+        {
+            txt_error1.Text = "";
+        }
+
+        private void sdtBox_TextChanged(object sender, EventArgs e)
+        {
+            txt_error2.Text = "";
+        }
+
+        private void cccdBox_TextChanged(object sender, EventArgs e)
+        {
+            txt_error3.Text = "";
         }
     }
 }

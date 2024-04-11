@@ -128,7 +128,7 @@ create table Rooms
 	roomType nvarchar(250) not null,
 	bedType nvarchar(250) not null,
 	price int not null,
-	booked nvarchar(50) default 'NO'
+	booked varchar(10) default 'NO'
 )
 GO
 
@@ -137,13 +137,13 @@ GO
 Create table BillRoom
 (
 	ID int identity (1,1) primary key,
-	room_No nvarchar(250) not null,
-    customer_id varchar(10) not null,
-    date_check_in DATE not null,
-    date_check_out DATE not null,
-    status int not null,
-    FOREIGN KEY (room_No) REFERENCES Rooms(roomNo),
-    FOREIGN KEY (customer_id) REFERENCES Customer(ID)
+	room_ID int not null,
+    	customer_id varchar(10) not null,
+    	date_check_in DATE DEFAULT CURRENT_TIMESTAMP not null,
+    	date_check_out DATE,
+    	status int not null,
+    	FOREIGN KEY (room_ID) REFERENCES Rooms(ID),
+    	FOREIGN KEY (customer_id) REFERENCES Customer(ID)
 )
 Go
 
@@ -158,8 +158,8 @@ GO
 
 
 
-INSERT INTO BillRoom (date_check_in, date_check_out, room_No, customer_id, status)
-VALUES ('2024-04-01', '2024-04-05', 101, '001', 1),
-		('2024-04-03', '2024-04-08', 103, '002', 0);
+INSERT INTO BillRoom ((SELECT  RoomNo from Rooms where id = room_ID), customer_id, status)
+VALUES (101, '001', 1),
+		( 103, '002', 0);
 
 -- Bang phong
