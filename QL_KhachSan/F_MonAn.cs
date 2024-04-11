@@ -18,14 +18,46 @@ namespace QL_KhachSan
         public F_MonAn()
         {
             InitializeComponent();
-
+            LoadFoods();
+        }
+        public class CustomButton : Button
+        {
+            public CustomButton()
+            {
+                // Set default properties
+                Width = 90;
+                Height = 90;
+                BackColor = Color.Black;
+                ForeColor = Color.White;
+                Font = new Font("Arial", 14);
+                FlatStyle = FlatStyle.Flat;
+                FlatAppearance.MouseOverBackColor = Color.Silver;
+                FlatAppearance.MouseDownBackColor = Color.DimGray;
+                FlatAppearance.BorderColor = Color.Black;
+                FlatAppearance.BorderSize = 2;
+            }
         }
 
+        public class CustomLabel : Label 
+        {
+            public CustomLabel()
+            {
+                ForeColor = Color.Black;
+                BackColor = Color.White;
+                Font = new Font("Arial", 12);
+                AutoSize = true;
+
+                Dock = DockStyle.Bottom;
+                TextAlign = ContentAlignment.MiddleCenter;
+                BorderStyle = BorderStyle.FixedSingle;
+                  
+            }
+        }
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
+        
         void LoadFoods()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -35,7 +67,15 @@ namespace QL_KhachSan
             {
                 if (item.Muc.Equals("Food"))
                 {
-                    Button btn = new Button() { Width = 90, Height = 90, BackColor = Color.Black, Font = new Font("Arial", 14) };
+                    CustomButton btn = new CustomButton();
+                    btn.Click += (sender, e) =>
+                    {
+                        btn.ForeColor = Color.White;
+                        btn.BackColor = Color.Black;
+                    };
+                    CustomLabel lbl = new CustomLabel();
+                    lbl.Text = item.Gia.ToString();
+                    btn.Controls.Add(lbl);
                     btn.Text = item.Ten;
                     btn.Tag = item.ID;
                     flowLayoutPanel1.Controls.Add(btn);
@@ -52,7 +92,15 @@ namespace QL_KhachSan
             {
                 if (item.Muc.Equals("Drink"))
                 {
-                    Button btn = new Button() { Width = 90, Height = 90, BackColor = Color.Black, Font = new Font("Arial", 14) };
+                    CustomButton btn = new CustomButton();
+                    btn.Click += (sender, e) =>
+                    {
+                        btn.ForeColor = Color.White;
+                        btn.BackColor = Color.Black;
+                    };
+                    CustomLabel lbl = new CustomLabel();
+                    lbl.Text = item.Gia.ToString();
+                    btn.Controls.Add(lbl);
                     btn.Text = item.Ten;
                     btn.Tag = item.ID;
                     flowLayoutPanel1.Controls.Add(btn);
@@ -194,7 +242,8 @@ namespace QL_KhachSan
             // Tải lại danh sách món ăn
             dataGridView1.Rows.Clear(); // Xóa hết dữ liệu trong DataGridView
             flowLayoutPanel1.Controls.Clear();
-
+            LoadFoods();
+            txt_kh.SelectedIndex = -1;
             // Cập nhật lại các số liệu
             Get_grandTotal();
             Get_pricedata();
@@ -207,36 +256,56 @@ namespace QL_KhachSan
         }
         private void ThanhToan()
         {
-            // Thu thập thông tin về các mặt hàng đã chọn và tính toán tổng số tiền
-            int totalPayment = 0;
-            int idkh = Convert.ToInt32(txt_kh.Text);
-            List<string> selectedItems = new List<string>();
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            int grandtotal = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                int idfood = Convert.ToInt32(row.Cells[1].Value);
-                string itemName = row.Cells[2].Value.ToString();
-                int itemPrice = Convert.ToInt32(row.Cells[3].Value);
-                int itemQuantity = Convert.ToInt32(row.Cells[4].Value);
-                int itemTotal = Convert.ToInt32(row.Cells[5].Value);
-                DateTime currentDate = DateTime.Now;
-                totalPayment += itemTotal;
-
-                PosDAO.Instance.AddBill(idkh, currentDate, currentDate.Month.ToString(), idfood, itemName, itemPrice, itemQuantity, itemTotal, totalPayment);
+                grandtotal += Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
             }
 
-            // Hiển thị thông tin thanh toán cho người dùn
-            // Xử lý thanh toán, ví dụ: gửi thông tin đến máy chủ
+            string idkh = txt_kh.Text;
+            DateTime currentDate = DateTime.Now;
 
-            // Xóa dữ liệu trong DataGridView và cập nhật lại giao diện người dùng sau khi thanh toán
-            dataGridView1.Rows.Clear();
-            Get_grandTotal();
-            Get_pricedata();
+            // Thêm hóa đơn mới và lấy ID của hóa đơn vừa được tạo ra
+            BillFoodDAO.Instance.AddBill(idkh,currentDate,currentDate.Month.ToString(),grandtotal,"NO");
+            int billID = BillFoodDAO.Instance.GetUncheckBillID();
+            // Kiểm tra xem có lỗi xảy ra khi thêm hóa đơn hay không
+            if (billID != -1)
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    int idfood = Convert.ToInt32(row.Cells[1].Value);
+                    string itemName = row.Cells[2].Value.ToString();
+                    int itemPrice = Convert.ToInt32(row.Cells[3].Value);
+                    int itemQuantity = Convert.ToInt32(row.Cells[4].Value);
+                    int itemTotal = Convert.ToInt32(row.Cells[5].Value);
+
+                    // Thêm thông tin về món ăn vào bảng Pos, sử dụng billID lấy được ở bước trước
+                    PosDAO.Instance.AddPos(billID,idfood,itemName,itemPrice,itemQuantity,itemTotal);
+                }
+
+                // Hiển thị thông báo cho người dùng về việc thanh toán thành công
+
+                // Xóa dữ liệu trong DataGridView và cập nhật lại giao diện người dùng sau khi thanh toán
+                dataGridView1.Rows.Clear();
+                Get_grandTotal();
+                Get_pricedata();
+            }
+            else
+            {
+                // Hiển thị thông báo cho người dùng về việc có lỗi xảy ra khi thêm hóa đơn
+            }
         }
+
 
         private void btnAddBill_Click(object sender, EventArgs e)
         {
             ThanhToan();
+            new_order_1();
         }
 
+        private void txt_kh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
