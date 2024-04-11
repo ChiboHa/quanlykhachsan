@@ -13,7 +13,6 @@ namespace QL_KhachSan
         {
             InitializeComponent();
             this.CenterToScreen();
-            setup();
         }
 
         private void setup()
@@ -47,7 +46,7 @@ namespace QL_KhachSan
                 txt_error4.Text = "Vui lòng lựa chọn loại phòng!";
             if (loaiGiuongBox.Text == null || loaiPhongBox.Text.Equals(""))
                 txt_error5.Text = "Vui lòng lựa chọn loại giường!";
-            if (soPhongBox.Text == null)
+            if (soPhongBox.Text == null || soPhongBox.Text.Equals(""))
                 txt_error6.Text = "Vui lòng lựa chọn số phòng!";
 
             

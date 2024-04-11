@@ -65,6 +65,7 @@
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
             this.tab_DatPhong = new System.Windows.Forms.TabPage();
+            this.n_reset = new Bunifu.UI.WinForms.BunifuLabel();
             this.txt_error6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.txt_error5 = new Bunifu.UI.WinForms.BunifuLabel();
             this.txt_error4 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -100,7 +101,6 @@
             this.searchTTBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.b_ThanhToanTab = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.b_DatPhongTab = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.n_reset = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1.SuspendLayout();
             this.bunifuPages1.SuspendLayout();
             this.tab_DatPhong.SuspendLayout();
@@ -193,6 +193,23 @@
             this.tab_DatPhong.Size = new System.Drawing.Size(924, 448);
             this.tab_DatPhong.TabIndex = 0;
             this.tab_DatPhong.Text = "tabPage1";
+            // 
+            // n_reset
+            // 
+            this.n_reset.AllowParentOverrides = false;
+            this.n_reset.AutoEllipsis = false;
+            this.n_reset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.n_reset.CursorType = System.Windows.Forms.Cursors.Hand;
+            this.n_reset.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.n_reset.Location = new System.Drawing.Point(827, 361);
+            this.n_reset.Name = "n_reset";
+            this.n_reset.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.n_reset.Size = new System.Drawing.Size(41, 19);
+            this.n_reset.TabIndex = 27;
+            this.n_reset.Text = "Reset";
+            this.n_reset.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.n_reset.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.n_reset.Click += new System.EventHandler(this.n_reset_Click);
             // 
             // txt_error6
             // 
@@ -356,6 +373,9 @@
             this.loaiGiuongBox.ItemHeight = 26;
             this.loaiGiuongBox.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.loaiGiuongBox.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.loaiGiuongBox.Items.AddRange(new object[] {
+            "Giường đơn",
+            "Giường đôi"});
             this.loaiGiuongBox.ItemTopMargin = 3;
             this.loaiGiuongBox.Location = new System.Drawing.Point(598, 214);
             this.loaiGiuongBox.Name = "loaiGiuongBox";
@@ -402,6 +422,9 @@
             this.loaiPhongBox.ItemHeight = 26;
             this.loaiPhongBox.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.loaiPhongBox.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.loaiPhongBox.Items.AddRange(new object[] {
+            "Phòng thường",
+            "Phòng VIP"});
             this.loaiPhongBox.ItemTopMargin = 3;
             this.loaiPhongBox.Location = new System.Drawing.Point(598, 113);
             this.loaiPhongBox.Name = "loaiPhongBox";
@@ -1598,23 +1621,6 @@
             this.b_DatPhongTab.TextPadding = new System.Windows.Forms.Padding(0);
             this.b_DatPhongTab.UseDefaultRadiusAndThickness = true;
             this.b_DatPhongTab.Click += new System.EventHandler(this.b_DatPhongTab_Click);
-            // 
-            // n_reset
-            // 
-            this.n_reset.AllowParentOverrides = false;
-            this.n_reset.AutoEllipsis = false;
-            this.n_reset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.n_reset.CursorType = System.Windows.Forms.Cursors.Hand;
-            this.n_reset.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
-            this.n_reset.Location = new System.Drawing.Point(827, 361);
-            this.n_reset.Name = "n_reset";
-            this.n_reset.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.n_reset.Size = new System.Drawing.Size(41, 19);
-            this.n_reset.TabIndex = 27;
-            this.n_reset.Text = "Reset";
-            this.n_reset.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.n_reset.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.n_reset.Click += new System.EventHandler(this.n_reset_Click);
             // 
             // F_DatPhong
             // 

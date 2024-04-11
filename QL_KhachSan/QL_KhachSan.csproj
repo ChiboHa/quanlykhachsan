@@ -253,6 +253,7 @@
     <Compile Include="DAO\DataProvider .cs" />
     <Compile Include="DAO\Account_DAO.cs" />
     <Compile Include="DAO\Food_DAO.cs" />
+    <Compile Include="DAO\KhachHang_DAO.cs" />
     <Compile Include="DAO\Luong_DAO.cs" />
     <Compile Include="DAO\NhanVien_DAO.cs" />
     <Compile Include="DAO\PosDAO.cs" />
