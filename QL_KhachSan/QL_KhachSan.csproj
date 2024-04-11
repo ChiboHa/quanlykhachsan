@@ -252,6 +252,7 @@
     <Compile Include="DAO\BillFoodDAO.cs" />
     <Compile Include="DAO\Bill_Room_DAO.cs" />
     <Compile Include="DAO\classBLL.cs" />
+    <Compile Include="DAO\Dashboard.cs" />
     <Compile Include="DAO\DataProvider .cs" />
     <Compile Include="DAO\Account_DAO.cs" />
     <Compile Include="DAO\Food_DAO.cs" />

@@ -39,9 +39,10 @@ namespace QL_KhachSan.DAO
         
         public bool AddBill(string idKhachHang, DateTime transDate, string transMonth, int grandTotal, string trangthai)
         {
-            string query = string.Format( "INSERT INTO dbo.BillFood (idkh, transdate, transmonth, grandTotal, trangthai) " +
-                                          
-                                          "VALUES ('{0}', '{1}', '{2}', {3}, '{4}');", idKhachHang, transDate, transMonth, grandTotal, trangthai);
+            string query = string.Format("INSERT INTO dbo.BillFood (idkh, transdate, transmonth, grandTotal, trangthai) " +
+                              "VALUES ('{0}', '{1}', '{2}', {3}, '{4}');",
+                              idKhachHang, transDate.ToString("yyyy-MM-dd"), transMonth, grandTotal, trangthai);
+
             int result = DataProvider.Instance.ExecuteNonQuery(query);
            
             return result > 0;
