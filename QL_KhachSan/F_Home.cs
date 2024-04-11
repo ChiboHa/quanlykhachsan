@@ -29,7 +29,7 @@ namespace QL_KhachSan
              menuExpand2 = false,
              menuExpand3 = false,
              menuExpand4 = false,
-             sidebarExpand = true;
+             sidebarExpand = false;
         private string username;
         private string password;
 
@@ -38,6 +38,9 @@ namespace QL_KhachSan
             InitializeComponent();
             this.username = username;
             this.password = password;
+
+            lXinChao.Hide();
+            lDisplayName.Hide();
 
             fDashboard = new F_Dashboard();
             fDashboard.MdiParent = this;
@@ -115,6 +118,29 @@ namespace QL_KhachSan
             }
         }
 
+
+        private void menuTransition3_Tick(object sender, EventArgs e)
+        {
+            if (menuExpand3 == false)
+            {
+                mQLNV.Height += 20;
+                if (mQLNV.Height >= 145)
+                {
+                    menuTransition3.Stop();
+                    menuExpand3 = true;
+                }
+            }
+            else
+            {
+                mQLNV.Height -= 20;
+                if (mQLNV.Height <= 46)
+                {
+                    menuTransition3.Stop();
+                    menuExpand3 = false;
+                }
+            }
+        }
+
         private void bQLTD_Click(object sender, EventArgs e)
         {
             menuTransition2.Start();
@@ -122,7 +148,26 @@ namespace QL_KhachSan
 
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {
-            if (sidebarExpand)
+            if (sidebarExpand == false)
+            {
+                sidebar.Width += 20;
+                if (sidebar.Width >= 243)
+                {
+                    sidebarExpand = true;
+                    sidebarTransition.Stop();
+
+                    pDashboard.Width = sidebar.Width;
+                    pQLKH.Width = sidebar.Width;
+                    pQLTD.Width = sidebar.Width;
+                    pQLDV.Width = sidebar.Width;
+                    pQLNV.Width = sidebar.Width;
+                    pDangXuat.Width = sidebar.Width;
+
+                    lXinChao.Show();
+                    lDisplayName.Show();
+                }
+            }
+            else
             {
                 sidebar.Width -= 20;
                 if (sidebar.Width <= 53)
@@ -137,27 +182,13 @@ namespace QL_KhachSan
                     pQLDV.Width = sidebar.Width;
                     pQLNV.Width = sidebar.Width;
                     pDangXuat.Width = sidebar.Width;
-                    pBangLuong.Width = sidebar.Width;
-                }
-            }
-            else
-            {
-                sidebar.Width += 20;
-                if (sidebar.Width >= 243)
-                {
-                    sidebarExpand = true;
-                    sidebarTransition.Stop();
 
-                    pDashboard.Width = sidebar.Width;
-                    pQLKH.Width = sidebar.Width;
-                    pQLTD.Width = sidebar.Width;
-                    pQLDV.Width = sidebar.Width;
-                    pQLNV.Width = sidebar.Width;
-                    pDangXuat.Width = sidebar.Width;
-                    pBangLuong.Width = sidebar.Width;
+                    lXinChao.Hide();
+                    lDisplayName.Hide();
                 }
             }
         }
+
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -237,21 +268,7 @@ namespace QL_KhachSan
             fKhachHang = null;
         }
 
-        private void bQLNV_Click(object sender, EventArgs e)
-        {
-            if (fNhanVien == null)
-            {
-                fNhanVien = new F_NhanVien();
-                fNhanVien.FormClosed += FNhanVien_FormClosed;
-                fNhanVien.MdiParent = this;
-                fNhanVien.Dock = DockStyle.Fill;
-                fNhanVien.Show();
-            }
-            else
-            {
-                fNhanVien.Activate();
-            }
-        }
+        
 
         private void FNhanVien_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -322,35 +339,38 @@ namespace QL_KhachSan
             this.Hide();
         }
 
-        private void menuTransition3_Tick(object sender, EventArgs e)
+
+        private void FBangLuong_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (menuExpand3 == false)
-            {
-                mQLNV.Height += 20;
-                if (mQLNV.Height >= 145)
-                {
-                    menuTransition3.Stop();
-                    menuExpand3 = true;
-                }
-            }
-            else
-            {
-                mQLNV.Height -= 20;
-                if (mQLNV.Height <= 46)
-                {
-                    menuTransition3.Stop();
-                    menuExpand3 = false;
-                }
-            }
+            fBangLuong = null;
+        }
+
+        
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
         }
 
         private void b_QuanLyNV_Click(object sender, EventArgs e)
         {
             menuTransition3.Start();
         }
-        private void FBangLuong_FormClosed(object sender, FormClosedEventArgs e)
+
+        private void bQLNV_Click(object sender, EventArgs e)
         {
-            fBangLuong = null;
+            if (fNhanVien == null)
+            {
+                fNhanVien = new F_NhanVien();
+                fNhanVien.FormClosed += FNhanVien_FormClosed;
+                fNhanVien.MdiParent = this;
+                fNhanVien.Dock = DockStyle.Fill;
+                fNhanVien.Show();
+            }
+            else
+            {
+                fNhanVien.Activate();
+            }
         }
 
         private void bBangLuong_Click(object sender, EventArgs e)
@@ -367,11 +387,6 @@ namespace QL_KhachSan
             {
                 fBangLuong.Activate();
             }
-        }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            base.OnFormClosing(e);
         }
 
         private void menuTransition4_Tick(object sender, EventArgs e)
