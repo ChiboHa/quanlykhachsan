@@ -121,7 +121,6 @@ C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\bin\
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\bin\Debug\System.Threading.AccessControl.xml
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.AssemblyReference.cache
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.CropForm.resources
-C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_Customers.resources
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_Dashboard.resources
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_DoUong.resources
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_DVKhac.resources
@@ -210,3 +209,5 @@ C:\Users\Nguyen Long\Documents\Code\C#\quanlykhachsan\QL_KhachSan\obj\Debug\QL_K
 C:\Users\Nguyen Long\Documents\Code\C#\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.pdb
 C:\Users\Nguyen Long\Documents\Code\C#\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_DatPhong.resources
 C:\Users\Nguyen Long\Documents\Code\C#\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_KhachHang.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_DatPhong.resources
+C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_KhachHang.resources
