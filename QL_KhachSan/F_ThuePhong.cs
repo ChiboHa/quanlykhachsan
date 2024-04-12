@@ -121,9 +121,6 @@ namespace QL_KhachSan
             btn_updateRoom.Image = Properties.Resources.update;
         }
 
-        // Tạo danh sách lưu trữ roomNumber đã tồn tại
-        List<string> existingRoomNumbers = new List<string>();
-
         private void btn_addroom_Click(object sender, EventArgs e)
         {
             using (var f_addRoom = new F_AddRoom())

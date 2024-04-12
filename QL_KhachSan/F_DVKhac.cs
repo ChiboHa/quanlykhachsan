@@ -62,7 +62,7 @@ namespace QL_KhachSan
                 {
                     // Đặt màu cho hàng là màu đỏ
                     dgv_bookedRoom.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
-                    dgv_bookedRoom.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White; // Thiết lập màu chữ trắng để nổi bật trên nền đỏ
+                    dgv_bookedRoom.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
                 }
                 else
                 {
