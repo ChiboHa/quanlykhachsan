@@ -1,11 +1,13 @@
 ﻿using QL_KhachSan.DTO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace QL_KhachSan.DAO
 {
@@ -55,6 +57,83 @@ namespace QL_KhachSan.DAO
                 return false;
             }
         }
+
+        public bool InsertBillRoom(String room_ID, String customer_id)
+        {
+            string query = "INSERT INTO BillRoom(room_ID,customer_id,status) VALUES( @room_ID , @customer_id , '0' )";
+            return (DataProvider.Instance.ExecuteNonQuery(query, new object[] { room_ID, customer_id })) > 0;
+        }
+
+
+        public DataTable GetBillRoomsWithStatus()
+        {
+            List<BillRoom> billRooms = new List<BillRoom>();
+            string query = "SELECT BillRoom.ID, BillRoom.customer_id as 'Mã khách hàng', Customer.name as 'Họ tên', Customer.cccd as 'Căn cước', Rooms.roomNo as 'Số phòng', Rooms.roomType as 'Loại phòng', BillRoom.date_check_in as 'Ngày checkin' "
+                + "FROM BillRoom INNER JOIN Rooms ON BillRoom.room_ID = Rooms.id "
+                + "INNER JOIN Customer ON BillRoom.customer_id = Customer.ID "
+                + "WHERE BillRoom.status=0";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable GetAllBillRooms()
+        {
+            List<BillRoom> billRooms = new List<BillRoom>();
+            string query = "SELECT Customer.name as 'Họ tên', Customer.cccd as 'Căn cước', Customer.phoneNumber as 'SDT', Rooms.roomNo as 'Số phòng', BillRoom.date_check_in as 'Check In', BillRoom.date_check_out as 'Check Out' "
+                + "FROM BillRoom INNER JOIN Rooms ON BillRoom.room_ID = Rooms.id "
+                + "INNER JOIN Customer ON BillRoom.customer_id = Customer.ID ";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable GetAllBillRoomsInside()
+        {
+            List<BillRoom> billRooms = new List<BillRoom>();
+            string query = "SELECT Customer.name as 'Họ tên', Customer.cccd as 'Căn cước', Customer.phoneNumber as 'SDT', Rooms.roomNo as 'Số phòng', BillRoom.date_check_in as 'Check In'"
+                + "FROM BillRoom INNER JOIN Rooms ON BillRoom.room_ID = Rooms.id "
+                + "INNER JOIN Customer ON BillRoom.customer_id = Customer.ID WHERE status = 0";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable GetAllBillRoomsOutside()
+        {
+            List<BillRoom> billRooms = new List<BillRoom>();
+            string query = "SELECT Customer.name as 'Họ tên', Customer.cccd as 'Căn cước', Customer.phoneNumber as 'SDT', Rooms.roomNo as 'Số phòng', BillRoom.date_check_in as 'Check In', BillRoom.date_check_out as 'Check Out' "
+                + "FROM BillRoom INNER JOIN Rooms ON BillRoom.room_ID = Rooms.id "
+                + "INNER JOIN Customer ON BillRoom.customer_id = Customer.ID WHERE status = 1";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public bool checkOut(String id)
+        {
+            string query = "UPDATE BillRoom SET date_check_out = GETDATE() ,status = 1 WHERE id = @id ";
+            return (DataProvider.Instance.ExecuteNonQuery(query, new object[] { id })) > 0;
+        }
+
+        public string GetRoomID(String id)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT room_id FROM BillRoom WHERE id = " + id);
+            return data.Rows[0][0] + "";
+        }
+
+        public String getTotalHours(String id)
+        {
+            id = "1";
+            string query = "SELECT DATEDIFF(HOUR, date_check_in, date_check_out) AS TotalHours FROM BillRoom WHERE id = @id";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { id });
+            return data.Rows[0][0] + "";
+        }
+
+        public DataTable searchBillRooms(String name)
+        {
+            List<BillRoom> billRooms = new List<BillRoom>();
+            string query = "SELECT BillRoom.ID as 'Mã HĐ Phòng', BillRoom.customer_id as 'Mã khách hàng', Customer.name as 'Họ tên', Customer.cccd as 'Căn cước', Rooms.roomNo as 'Số phòng', BillRoom.date_check_in as 'Ngày checkin' "
+                + "FROM BillRoom INNER JOIN Rooms ON BillRoom.room_ID = Rooms.id "
+                + "INNER JOIN Customer ON BillRoom.customer_id = Customer.ID "
+                + "WHERE BillRoom.status=0 AND (Customer.name LIKE '%" + name + "%' OR Customer.cccd LIKE '%" + name + "%')";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+
+
 
     }
 }

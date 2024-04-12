@@ -1,8 +1,10 @@
-﻿using System;
+﻿using QL_KhachSan.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QL_KhachSan.DAO
 {
@@ -19,7 +21,15 @@ namespace QL_KhachSan.DAO
                 return instance;
             }
             private set => instance = value;
-
         }
+
+        public Boolean InsertKhachHang(KhachHang kh)
+        {
+            string query = "INSERT INTO Customer (ID, name, phoneNumber, CCCD) VALUES ( @ID , @name , @phoneNumber , @CCCD )";
+            object[] parameters = { kh.Id, kh.Name, kh.PhoneNumber, kh.Cccd };
+            int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+            return result > 0;
+        }
+
     }
 }

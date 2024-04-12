@@ -114,7 +114,7 @@ CREATE TABLE BillFood (
   transdate DATE NOT NULL,
   transmonth VARCHAR(100) NOT NULL,
   GrandToTal int not null,
-  trangthai varchar(10) not null default 'NO',
+  status varchar(10) not null default 'NO',
   CONSTRAINT FK_Bill_Customer FOREIGN KEY (IDKH) REFERENCES Customer (ID)
 );
 Go
@@ -132,8 +132,7 @@ CREATE TABLE Pos (
   CONSTRAINT FK_Pos_BillFood Foreign key (BillID) references BillFood(ID)
 
 );
-Go
-
+Go 
 
 create table Rooms
 (
@@ -153,13 +152,18 @@ Create table BillRoom
 	ID int identity (1,1) primary key,
 	room_ID int not null,
     	customer_id varchar(10) not null,
-    	date_check_in DATE DEFAULT CURRENT_TIMESTAMP not null,
-    	date_check_out DATE,
-    	status int not null,
-    	FOREIGN KEY (room_ID) REFERENCES Rooms(ID),
+    	date_check_in DATETIME2 DEFAULT CURRENT_TIMESTAMP not null,
+    	date_check_out DATETIME2,
+    	status BIT DEFAULT '0' NOT NULL,
+    	FOREIGN KEY (room_ID) REFERENCES Rooms(id),
     	FOREIGN KEY (customer_id) REFERENCES Customer(ID)
 )
 Go
+
+INSERT INTO BillRoom (room_ID, customer_id, status)
+VALUES (
+    	(SELECT id FROM Rooms WHERE roomNo = '101'),'001','0');
+GO
 
 
 INSERT INTO Rooms (roomNo, roomType, bedType, price, booked)
@@ -177,3 +181,5 @@ VALUES (101, '001', 1),
 		( 103, '002', 0);
 
 -- Bang phong
+
+

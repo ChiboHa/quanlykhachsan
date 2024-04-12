@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,19 +89,32 @@ namespace QL_KhachSan.DAO
             }
         }
 
-        public List<String> getRoomNo(String RoomType, String BedType)
+        public List<Rooms> getRooms(String RoomType, String BedType)
         {
-            List<String> result = new List<String>();
+            List<Rooms> result = new List<Rooms>();
             object[] parameters = { RoomType, BedType };
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT roomNo FROM Rooms WHERE roomType = @roomType AND bedType = @bedType", parameters);
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Rooms WHERE roomType = @roomType AND bedType = @bedType AND booked = 'NO'", parameters);
 
             foreach (DataRow item in data.Rows)
             {
-                result.Add(item["roomNo"].ToString());
+                Rooms room = new Rooms(Convert.ToInt32(item["ID"]), item["roomNo"].ToString(), item["roomType"].ToString(), item["bedType"].ToString(), Convert.ToInt32(item["price"]), item["booked"].ToString());
+                result.Add(room);
             }
 
             return result;
+        }
+
+
+        public bool setBooked(String status, String id)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("UPDATE Rooms SET booked = @booked WHERE id = @id ", new object[] { status, id }) > 0;
+        }
+
+        public double GetPrice(String id)
+        {
+            string query = "SELECT price FROM Rooms WHERE id = @id";
+            return Convert.ToDouble(DataProvider.Instance.ExecuteQuery(query, new object[] { id }).Rows[0][0].ToString());
         }
 
     }

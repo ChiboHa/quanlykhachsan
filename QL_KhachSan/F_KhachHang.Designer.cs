@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_KhachHang));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
-            this.directorySearcher2 = new System.DirectoryServices.DirectorySearcher();
             this.dropDown_Search = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.listInfo = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
+            this.directorySearcher2 = new System.DirectoryServices.DirectorySearcher();
             ((System.ComponentModel.ISupportInitialize)(this.listInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,18 +56,6 @@
             this.bunifuLabel1.Text = "THÔNG TIN ĐẶT PHÒNG";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // directorySearcher1
-            // 
-            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            // 
-            // directorySearcher2
-            // 
-            this.directorySearcher2.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher2.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher2.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
             // 
             // dropDown_Search
             // 
@@ -125,7 +113,7 @@
             this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(384, 96);
+            this.bunifuLabel2.Location = new System.Drawing.Point(384, 105);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel2.Size = new System.Drawing.Size(90, 30);
@@ -137,21 +125,21 @@
             // listInfo
             // 
             this.listInfo.AllowCustomTheming = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            this.listInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.listInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.listInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listInfo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.listInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.listInfo.ColumnHeadersHeight = 40;
             this.listInfo.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.listInfo.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -171,33 +159,45 @@
             this.listInfo.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.listInfo.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.listInfo.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listInfo.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listInfo.DefaultCellStyle = dataGridViewCellStyle3;
             this.listInfo.EnableHeadersVisualStyles = false;
             this.listInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.listInfo.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.listInfo.HeaderBgColor = System.Drawing.Color.Empty;
             this.listInfo.HeaderForeColor = System.Drawing.Color.White;
-            this.listInfo.Location = new System.Drawing.Point(39, 229);
+            this.listInfo.Location = new System.Drawing.Point(12, 229);
             this.listInfo.Name = "listInfo";
             this.listInfo.RowHeadersVisible = false;
             this.listInfo.RowTemplate.Height = 40;
             this.listInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listInfo.Size = new System.Drawing.Size(999, 334);
+            this.listInfo.Size = new System.Drawing.Size(1000, 334);
             this.listInfo.TabIndex = 3;
             this.listInfo.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // directorySearcher1
+            // 
+            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
+            // 
+            // directorySearcher2
+            // 
+            this.directorySearcher2.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher2.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher2.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
             // 
             // F_KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1058, 845);
+            this.ClientSize = new System.Drawing.Size(1024, 845);
             this.ControlBox = false;
             this.Controls.Add(this.listInfo);
             this.Controls.Add(this.bunifuLabel2);
@@ -207,6 +207,7 @@
             this.Name = "F_KhachHang";
             this.Text = "F_Customers";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
+            this.Load += new System.EventHandler(this.F_KhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,10 +217,10 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
-        private System.DirectoryServices.DirectorySearcher directorySearcher1;
-        private System.DirectoryServices.DirectorySearcher directorySearcher2;
         private Bunifu.UI.WinForms.BunifuDropdown dropDown_Search;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.UI.WinForms.BunifuDataGridView listInfo;
+        private System.DirectoryServices.DirectorySearcher directorySearcher1;
+        private System.DirectoryServices.DirectorySearcher directorySearcher2;
     }
 }

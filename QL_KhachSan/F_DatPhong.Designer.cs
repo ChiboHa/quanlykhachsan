@@ -91,6 +91,7 @@
             this.sdtBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.hoTenBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tab_ThanhToan = new System.Windows.Forms.TabPage();
+            this.b_Refresh = new Bunifu.UI.WinForms.BunifuLabel();
             this.b_ThanhToan = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.soPhongTTBox = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -134,10 +135,10 @@
             this.bunifuPages1.Location = new System.Drawing.Point(2, 12);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.tab_DatPhong;
-            this.bunifuPages1.PageIndex = 0;
-            this.bunifuPages1.PageName = "tab_DatPhong";
-            this.bunifuPages1.PageTitle = "tabPage1";
+            this.bunifuPages1.Page = this.tab_ThanhToan;
+            this.bunifuPages1.PageIndex = 1;
+            this.bunifuPages1.PageName = "tab_ThanhToan";
+            this.bunifuPages1.PageTitle = "tabPage2";
             this.bunifuPages1.SelectedIndex = 0;
             this.bunifuPages1.Size = new System.Drawing.Size(932, 474);
             this.bunifuPages1.TabIndex = 1;
@@ -220,9 +221,8 @@
             this.txt_error6.Location = new System.Drawing.Point(598, 352);
             this.txt_error6.Name = "txt_error6";
             this.txt_error6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_error6.Size = new System.Drawing.Size(44, 15);
+            this.txt_error6.Size = new System.Drawing.Size(0, 0);
             this.txt_error6.TabIndex = 0;
-            this.txt_error6.Text = "txt_error";
             this.txt_error6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.txt_error6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -235,9 +235,8 @@
             this.txt_error5.Location = new System.Drawing.Point(598, 256);
             this.txt_error5.Name = "txt_error5";
             this.txt_error5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_error5.Size = new System.Drawing.Size(44, 15);
+            this.txt_error5.Size = new System.Drawing.Size(0, 0);
             this.txt_error5.TabIndex = 0;
-            this.txt_error5.Text = "txt_error";
             this.txt_error5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.txt_error5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -250,9 +249,8 @@
             this.txt_error4.Location = new System.Drawing.Point(598, 155);
             this.txt_error4.Name = "txt_error4";
             this.txt_error4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_error4.Size = new System.Drawing.Size(44, 15);
+            this.txt_error4.Size = new System.Drawing.Size(0, 0);
             this.txt_error4.TabIndex = 0;
-            this.txt_error4.Text = "txt_error";
             this.txt_error4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.txt_error4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -266,9 +264,8 @@
             this.txt_error3.Location = new System.Drawing.Point(68, 354);
             this.txt_error3.Name = "txt_error3";
             this.txt_error3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_error3.Size = new System.Drawing.Size(44, 15);
+            this.txt_error3.Size = new System.Drawing.Size(0, 0);
             this.txt_error3.TabIndex = 26;
-            this.txt_error3.Text = "txt_error";
             this.txt_error3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.txt_error3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -283,9 +280,8 @@
             this.txt_error2.Location = new System.Drawing.Point(68, 253);
             this.txt_error2.Name = "txt_error2";
             this.txt_error2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_error2.Size = new System.Drawing.Size(44, 15);
+            this.txt_error2.Size = new System.Drawing.Size(0, 0);
             this.txt_error2.TabIndex = 25;
-            this.txt_error2.Text = "txt_error";
             this.txt_error2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.txt_error2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -300,9 +296,8 @@
             this.txt_error1.Location = new System.Drawing.Point(68, 153);
             this.txt_error1.Name = "txt_error1";
             this.txt_error1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_error1.Size = new System.Drawing.Size(44, 15);
+            this.txt_error1.Size = new System.Drawing.Size(0, 0);
             this.txt_error1.TabIndex = 24;
-            this.txt_error1.Text = "txt_error";
             this.txt_error1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.txt_error1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -666,7 +661,7 @@
             this.b_DatPhong.TextMarginLeft = 0;
             this.b_DatPhong.TextPadding = new System.Windows.Forms.Padding(0);
             this.b_DatPhong.UseDefaultRadiusAndThickness = true;
-            this.b_DatPhong.Click += new System.EventHandler(this.bunifuButton21_Click);
+            this.b_DatPhong.Click += new System.EventHandler(this.b_DatPhong_Click);
             // 
             // panel4
             // 
@@ -929,6 +924,7 @@
             // tab_ThanhToan
             // 
             this.tab_ThanhToan.BackColor = System.Drawing.Color.White;
+            this.tab_ThanhToan.Controls.Add(this.b_Refresh);
             this.tab_ThanhToan.Controls.Add(this.b_ThanhToan);
             this.tab_ThanhToan.Controls.Add(this.soPhongTTBox);
             this.tab_ThanhToan.Controls.Add(this.bunifuLabel10);
@@ -943,6 +939,23 @@
             this.tab_ThanhToan.Size = new System.Drawing.Size(924, 448);
             this.tab_ThanhToan.TabIndex = 1;
             this.tab_ThanhToan.Text = "tabPage2";
+            // 
+            // b_Refresh
+            // 
+            this.b_Refresh.AllowParentOverrides = false;
+            this.b_Refresh.AutoEllipsis = false;
+            this.b_Refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.b_Refresh.CursorType = System.Windows.Forms.Cursors.Hand;
+            this.b_Refresh.Font = new System.Drawing.Font("Bahnschrift Light", 11F);
+            this.b_Refresh.Location = new System.Drawing.Point(806, 362);
+            this.b_Refresh.Name = "b_Refresh";
+            this.b_Refresh.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.b_Refresh.Size = new System.Drawing.Size(53, 18);
+            this.b_Refresh.TabIndex = 23;
+            this.b_Refresh.Text = "Refresh";
+            this.b_Refresh.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.b_Refresh.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.b_Refresh.Click += new System.EventHandler(this.b_Refresh_Click);
             // 
             // b_ThanhToan
             // 
@@ -991,7 +1004,7 @@
             this.b_ThanhToan.IdleIconLeftImage = null;
             this.b_ThanhToan.IdleIconRightImage = null;
             this.b_ThanhToan.IndicateFocus = false;
-            this.b_ThanhToan.Location = new System.Drawing.Point(722, 382);
+            this.b_ThanhToan.Location = new System.Drawing.Point(722, 385);
             this.b_ThanhToan.Name = "b_ThanhToan";
             this.b_ThanhToan.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.b_ThanhToan.OnDisabledState.BorderRadius = 30;
@@ -1032,6 +1045,7 @@
             this.b_ThanhToan.TextMarginLeft = 0;
             this.b_ThanhToan.TextPadding = new System.Windows.Forms.Padding(0);
             this.b_ThanhToan.UseDefaultRadiusAndThickness = true;
+            this.b_ThanhToan.Click += new System.EventHandler(this.b_ThanhToan_Click);
             // 
             // soPhongTTBox
             // 
@@ -1055,6 +1069,7 @@
             this.soPhongTTBox.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.soPhongTTBox.DefaultText = "";
             this.soPhongTTBox.FillColor = System.Drawing.Color.White;
+            this.soPhongTTBox.ForeColor = System.Drawing.Color.Black;
             this.soPhongTTBox.HideSelection = true;
             this.soPhongTTBox.IconLeft = null;
             this.soPhongTTBox.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -1085,14 +1100,14 @@
             this.soPhongTTBox.OnHoverState = stateProperties15;
             stateProperties16.BorderColor = System.Drawing.Color.Silver;
             stateProperties16.FillColor = System.Drawing.Color.White;
-            stateProperties16.ForeColor = System.Drawing.Color.Empty;
+            stateProperties16.ForeColor = System.Drawing.Color.Black;
             stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.soPhongTTBox.OnIdleState = stateProperties16;
             this.soPhongTTBox.Padding = new System.Windows.Forms.Padding(3);
             this.soPhongTTBox.PasswordChar = '\0';
             this.soPhongTTBox.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.soPhongTTBox.PlaceholderText = "";
-            this.soPhongTTBox.ReadOnly = false;
+            this.soPhongTTBox.ReadOnly = true;
             this.soPhongTTBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.soPhongTTBox.SelectedText = "";
             this.soPhongTTBox.SelectionLength = 0;
@@ -1147,6 +1162,7 @@
             this.hoTenTTBox.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
             this.hoTenTTBox.DefaultText = "";
             this.hoTenTTBox.FillColor = System.Drawing.Color.White;
+            this.hoTenTTBox.ForeColor = System.Drawing.Color.Black;
             this.hoTenTTBox.HideSelection = true;
             this.hoTenTTBox.IconLeft = null;
             this.hoTenTTBox.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
@@ -1177,14 +1193,14 @@
             this.hoTenTTBox.OnHoverState = stateProperties19;
             stateProperties20.BorderColor = System.Drawing.Color.Silver;
             stateProperties20.FillColor = System.Drawing.Color.White;
-            stateProperties20.ForeColor = System.Drawing.Color.Empty;
+            stateProperties20.ForeColor = System.Drawing.Color.Black;
             stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.hoTenTTBox.OnIdleState = stateProperties20;
             this.hoTenTTBox.Padding = new System.Windows.Forms.Padding(3);
             this.hoTenTTBox.PasswordChar = '\0';
             this.hoTenTTBox.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.hoTenTTBox.PlaceholderText = "";
-            this.hoTenTTBox.ReadOnly = false;
+            this.hoTenTTBox.ReadOnly = true;
             this.hoTenTTBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.hoTenTTBox.SelectedText = "";
             this.hoTenTTBox.SelectionLength = 0;
@@ -1267,14 +1283,15 @@
             this.listKhachHang.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.listKhachHang.HeaderBgColor = System.Drawing.Color.Empty;
             this.listKhachHang.HeaderForeColor = System.Drawing.Color.White;
-            this.listKhachHang.Location = new System.Drawing.Point(53, 98);
+            this.listKhachHang.Location = new System.Drawing.Point(22, 92);
             this.listKhachHang.Name = "listKhachHang";
             this.listKhachHang.RowHeadersVisible = false;
             this.listKhachHang.RowTemplate.Height = 40;
             this.listKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listKhachHang.Size = new System.Drawing.Size(814, 264);
+            this.listKhachHang.Size = new System.Drawing.Size(881, 270);
             this.listKhachHang.TabIndex = 16;
             this.listKhachHang.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.listKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listKhachHang_CellContentClick);
             // 
             // b_searchTT
             // 
@@ -1364,6 +1381,7 @@
             this.b_searchTT.TextMarginLeft = 0;
             this.b_searchTT.TextPadding = new System.Windows.Forms.Padding(0);
             this.b_searchTT.UseDefaultRadiusAndThickness = true;
+            this.b_searchTT.Click += new System.EventHandler(this.b_searchTT_Click);
             // 
             // searchTTBox
             // 
@@ -1634,6 +1652,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "F_DatPhong";
             this.Text = "F_DatPhong";
+            this.Load += new System.EventHandler(this.F_DatPhong_Load);
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPages1.ResumeLayout(false);
             this.tab_DatPhong.ResumeLayout(false);
@@ -1685,5 +1704,6 @@
         private Bunifu.UI.WinForms.BunifuLabel txt_error3;
         private Bunifu.UI.WinForms.BunifuLabel txt_error2;
         private Bunifu.UI.WinForms.BunifuLabel n_reset;
+        private Bunifu.UI.WinForms.BunifuLabel b_Refresh;
     }
 }
