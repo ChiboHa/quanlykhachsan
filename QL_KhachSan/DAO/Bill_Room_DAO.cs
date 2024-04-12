@@ -26,7 +26,7 @@ namespace QL_KhachSan.DAO
         {
             List<BillRoom> billRooms = new List<BillRoom>();
 
-            string query = "SELECT ID, room_No, customer_id, date_check_in, date_check_out FROM BillRoom WHERE status = 0";
+            string query = "SELECT br.ID, r.roomNo, br.customer_id, br.date_check_in, br.date_check_out\r\nFROM BillRoom br\r\nINNER JOIN Rooms r ON br.room_ID = r.id\r\nWHERE br.status = 0;";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {

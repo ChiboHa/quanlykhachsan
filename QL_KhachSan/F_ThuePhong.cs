@@ -47,6 +47,7 @@ namespace QL_KhachSan
                     panel_properties.Visible = true;
                     DisplayRoomDetails(room);
                 };
+                /*
                 switch (item.Booked)
                 {
                     case "NO":
@@ -55,7 +56,7 @@ namespace QL_KhachSan
                     default:
                         btn.BackColor = Color.SpringGreen;
                         break;
-                }
+                }*/
                 if (item.RoomType == "Phòng VIP")
                 {
                     layoutpanel_vip.Controls.Add(btn);

@@ -24,6 +24,8 @@ namespace QL_KhachSan
             dgv_bookedRoom.Columns.Add("IDKhach", "ID khách");
             dgv_bookedRoom.Columns.Add("NgayNhan", "Ngày nhận");
             dgv_bookedRoom.Columns.Add("NgayTra", "Ngày trả");
+            dgv_bookedRoom.Columns["NgayNhan"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgv_bookedRoom.Columns["NgayTra"].DefaultCellStyle.Format = "dd/MM/yyyy";
             // Gán sự kiện RowPrePaint cho DataGridVie
             dgv_bookedRoom.RowPrePaint += List_RowPrePaint;
             // Tắt dòng "New Row"
@@ -44,6 +46,7 @@ namespace QL_KhachSan
                 dgv_bookedRoom.Columns["NgayNhan"].Width = 140;
                 dgv_bookedRoom.Columns["NgayTra"].Width = 140;
                 dgv_bookedRoom.Rows.Add(billRoom.ID, billRoom.Room_No, billRoom.Customer_id, billRoom.Date_check_in, billRoom.Date_check_out);
+                
             }
         }
         private void List_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
