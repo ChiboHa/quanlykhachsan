@@ -263,6 +263,7 @@
     <Compile Include="DAO\TongLuong_DAO.cs" />
     <Compile Include="DTO\BillFood.cs" />
     <Compile Include="DTO\Food.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\PosDTO.cs" />
     <Compile Include="F_BangLuong.cs">
       <SubType>Form</SubType>
