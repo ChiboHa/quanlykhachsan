@@ -36,11 +36,12 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -72,8 +73,8 @@
             this.b_30DaysAgo = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.c_ThongKeDoanhThu = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.c_TopFood = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.b_TodayFood = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.c_TopFood = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.b_AllFood = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -553,6 +554,7 @@
             this.b_Today.TextMarginLeft = 0;
             this.b_Today.TextPadding = new System.Windows.Forms.Padding(0);
             this.b_Today.UseDefaultRadiusAndThickness = true;
+            this.b_Today.Click += new System.EventHandler(this.b_Today_Click);
             // 
             // b_ThisYear
             // 
@@ -841,7 +843,8 @@
             this.c_ThongKeDoanhThu.Name = "c_ThongKeDoanhThu";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "TotalRevenue";
+            series1.Points.Add(dataPoint1);
             this.c_ThongKeDoanhThu.Series.Add(series1);
             this.c_ThongKeDoanhThu.Size = new System.Drawing.Size(877, 395);
             this.c_ThongKeDoanhThu.TabIndex = 0;
@@ -860,34 +863,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(396, 506);
             this.panel7.TabIndex = 2;
-            // 
-            // c_TopFood
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.c_TopFood.ChartAreas.Add(chartArea2);
-            legend2.Alignment = System.Drawing.StringAlignment.Center;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Name = "Legend1";
-            legend2.TitleFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.c_TopFood.Legends.Add(legend2);
-            this.c_TopFood.Location = new System.Drawing.Point(0, 67);
-            this.c_TopFood.Name = "c_TopFood";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series2.IsValueShownAsLabel = true;
-            series2.LabelForeColor = System.Drawing.Color.White;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.c_TopFood.Series.Add(series2);
-            this.c_TopFood.Size = new System.Drawing.Size(396, 439);
-            this.c_TopFood.TabIndex = 1;
-            this.c_TopFood.Text = "chart2";
-            title1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            title1.Name = "Title1";
-            title1.Text = "Top Món Ăn Bán Chạy";
-            this.c_TopFood.Titles.Add(title1);
             // 
             // b_TodayFood
             // 
@@ -980,6 +955,34 @@
             this.b_TodayFood.TextMarginLeft = 0;
             this.b_TodayFood.TextPadding = new System.Windows.Forms.Padding(0);
             this.b_TodayFood.UseDefaultRadiusAndThickness = true;
+            // 
+            // c_TopFood
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.c_TopFood.ChartAreas.Add(chartArea2);
+            legend2.Alignment = System.Drawing.StringAlignment.Center;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Name = "Legend1";
+            legend2.TitleFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.c_TopFood.Legends.Add(legend2);
+            this.c_TopFood.Location = new System.Drawing.Point(0, 67);
+            this.c_TopFood.Name = "c_TopFood";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series2.IsValueShownAsLabel = true;
+            series2.LabelForeColor = System.Drawing.Color.White;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.c_TopFood.Series.Add(series2);
+            this.c_TopFood.Size = new System.Drawing.Size(396, 439);
+            this.c_TopFood.TabIndex = 1;
+            this.c_TopFood.Text = "chart2";
+            title1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
+            title1.Name = "Title1";
+            title1.Text = "Top Món Ăn Bán Chạy";
+            this.c_TopFood.Titles.Add(title1);
             // 
             // b_AllFood
             // 
