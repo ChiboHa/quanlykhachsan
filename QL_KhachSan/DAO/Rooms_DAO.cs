@@ -89,7 +89,7 @@ namespace QL_KhachSan.DAO
             }
         }
 
-        public List<Rooms> getRooms(String RoomType, String BedType)
+        /*public List<Rooms> getRooms(String RoomType, String BedType)
         {
             List<Rooms> result = new List<Rooms>();
             object[] parameters = { RoomType, BedType };
@@ -103,6 +103,19 @@ namespace QL_KhachSan.DAO
             }
 
             return result;
+        }*/
+
+        public List<Rooms> getRooms(string roomType, string bedType)
+        {
+            List<Rooms> rooms = new List<Rooms>();
+            string query = "SELECT * FROM Rooms WHERE roomType = @roomType AND bedType = @bedType AND booked = 'NO'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { roomType, bedType });
+            foreach (DataRow item in data.Rows)
+            {
+                Rooms room = new Rooms(item);
+                rooms.Add(room);
+            }
+            return rooms;
         }
 
 

@@ -57,7 +57,9 @@ namespace QL_KhachSan.DAO
             string query = @"SELECT SUM(ISNULL(Total, 0)) AS TotalRevenue 
             FROM (SELECT BillRoom.ID, (DATEDIFF(DAY, date_check_in, date_check_out) + 1) * ISNULL(Rooms.price, 0) AS Total 
             FROM BillRoom
-            INNER JOIN Rooms ON BillRoom.room_ID = Rooms.ID) AS RevenueData";
+            INNER JOIN Rooms ON BillRoom.room_ID = Rooms.ID
+            WHERE BillRoom.status = '1'
+            ) AS RevenueData";
             object result = DataProvider.Instance.ExecuteScalar(query);
 
             // Kiểm tra xem kết quả có phải là NULL không

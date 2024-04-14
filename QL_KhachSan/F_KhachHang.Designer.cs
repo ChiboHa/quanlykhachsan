@@ -48,12 +48,13 @@
             this.bunifuLabel1.AutoSize = false;
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel1.Location = new System.Drawing.Point(54, 33);
+            this.bunifuLabel1.Location = new System.Drawing.Point(72, 41);
+            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(255, 46);
+            this.bunifuLabel1.Size = new System.Drawing.Size(595, 57);
             this.bunifuLabel1.TabIndex = 0;
-            this.bunifuLabel1.Text = "THÔNG TIN ĐẶT PHÒNG";
+            this.bunifuLabel1.Text = "THÔNG TIN HÓA ĐƠN KHÁCH HÀNG";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -97,9 +98,10 @@
             "Khách hàng trong khách sạn",
             "Khách hàng đã thanh toán"});
             this.dropDown_Search.ItemTopMargin = 3;
-            this.dropDown_Search.Location = new System.Drawing.Point(407, 146);
+            this.dropDown_Search.Location = new System.Drawing.Point(543, 180);
+            this.dropDown_Search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dropDown_Search.Name = "dropDown_Search";
-            this.dropDown_Search.Size = new System.Drawing.Size(260, 32);
+            this.dropDown_Search.Size = new System.Drawing.Size(345, 32);
             this.dropDown_Search.TabIndex = 1;
             this.dropDown_Search.Text = null;
             this.dropDown_Search.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -113,10 +115,11 @@
             this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(384, 105);
+            this.bunifuLabel2.Location = new System.Drawing.Point(512, 129);
+            this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(90, 30);
+            this.bunifuLabel2.Size = new System.Drawing.Size(113, 37);
             this.bunifuLabel2.TabIndex = 2;
             this.bunifuLabel2.Text = "Search By";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -172,12 +175,14 @@
             this.listInfo.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.listInfo.HeaderBgColor = System.Drawing.Color.Empty;
             this.listInfo.HeaderForeColor = System.Drawing.Color.White;
-            this.listInfo.Location = new System.Drawing.Point(12, 229);
+            this.listInfo.Location = new System.Drawing.Point(16, 282);
+            this.listInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listInfo.Name = "listInfo";
             this.listInfo.RowHeadersVisible = false;
+            this.listInfo.RowHeadersWidth = 51;
             this.listInfo.RowTemplate.Height = 40;
             this.listInfo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listInfo.Size = new System.Drawing.Size(1000, 334);
+            this.listInfo.Size = new System.Drawing.Size(1333, 411);
             this.listInfo.TabIndex = 3;
             this.listInfo.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -195,15 +200,16 @@
             // 
             // F_KhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 845);
+            this.ClientSize = new System.Drawing.Size(1365, 1040);
             this.ControlBox = false;
             this.Controls.Add(this.listInfo);
             this.Controls.Add(this.bunifuLabel2);
             this.Controls.Add(this.dropDown_Search);
             this.Controls.Add(this.bunifuLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "F_KhachHang";
             this.Text = "F_Customers";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;

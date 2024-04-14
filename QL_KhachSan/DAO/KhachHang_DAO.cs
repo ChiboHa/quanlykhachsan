@@ -1,6 +1,7 @@
 ﻿using QL_KhachSan.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,10 +26,29 @@ namespace QL_KhachSan.DAO
 
         public Boolean InsertKhachHang(KhachHang kh)
         {
-            string query = "INSERT INTO Customer (ID, name, phoneNumber, CCCD) VALUES ( @ID , @name , @phoneNumber , @CCCD )";
-            object[] parameters = { kh.Id, kh.Name, kh.PhoneNumber, kh.Cccd };
+            string query = "INSERT INTO Customer (ID, name, CCCD) VALUES ( @ID , @name , @CCCD )";
+            object[] parameters = { kh.Id, kh.Name, kh.Cccd };
             int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
             return result > 0;
+        }
+
+        public KhachHang GetCustomerById(string customerId)
+        {
+            string query = "SELECT * FROM Customer WHERE ID = @customerId";
+            object[] parameters = { customerId };
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
+
+            if (data.Rows.Count > 0)
+            {
+                DataRow row = data.Rows[0];
+                KhachHang customer = new KhachHang(
+                    row["ID"].ToString(),
+                    row["name"].ToString(),
+                    row["CCCD"].ToString()
+                );
+                return customer;
+            }
+            return null;
         }
 
     }

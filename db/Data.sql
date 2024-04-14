@@ -17,23 +17,12 @@ CREATE TABLE Account
 
 GO
 
--- Khach Hang
 CREATE TABLE Customer
 (
 	ID VARCHAR(10) PRIMARY KEY,
 	name NVARCHAR(100) NOT NULL,
-	phoneNumber VARCHAR(10),
 	CCCD VARCHAR(12) NOT NULL,
-	point INT NOT NULL DEFAULT '0'
 )
-
-
--- them khach hang
-INSERT INTO Customer (ID, name, phoneNumber, CCCD, point)
-VALUES ('001','Long', '0987654321', '0272', '0'),
-		('002','Chau','0123456789','0324','1');
-
-
 	
 -- Nhan vien
 CREATE TABLE NhanVien
@@ -162,18 +151,11 @@ Create table BillRoom
 	ID int identity (1,1) primary key,
 	room_ID int not null,
     	customer_id varchar(10) not null,
-    	date_check_in DATE DEFAULT CURRENT_TIMESTAMP not null,
+    	date_check_in DATE,
     	date_check_out DATE,
     	status int not null,
     	FOREIGN KEY (room_ID) REFERENCES Rooms(id),
     	FOREIGN KEY (customer_id) REFERENCES Customer(ID)
 )
 Go
-INSERT INTO BillRoom (room_ID, customer_id, status)
-VALUES (
-    	(SELECT id FROM Rooms WHERE roomNo = '101'),'001','0');
-GO
-
-
-
 
