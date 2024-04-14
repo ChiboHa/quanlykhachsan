@@ -81,6 +81,7 @@ namespace QL_KhachSan
                 hoTenBox.Text = customer.Name;
                 cccdBox.Text = customer.Cccd;
                 b_Next.Show();
+                b_Add.Hide();
             }
             else
             {
@@ -195,6 +196,7 @@ namespace QL_KhachSan
 
                         MessageBox.Show("Đặt phòng thành công!");
                         reset();
+                        tabControl1.SelectedIndex = 0;
                     }
                     catch (Exception ex)
                     {
@@ -253,7 +255,8 @@ namespace QL_KhachSan
             id_HDP = listKhachHang.CurrentRow.Cells[0].Value.ToString();
             id_KH = listKhachHang.CurrentRow.Cells[1].Value.ToString();
             hoTenTTBox.Text = listKhachHang.CurrentRow.Cells[2].Value.ToString();
-            soPhongTTBox.Text = listKhachHang.CurrentRow.Cells[3].Value.ToString();
+            cccdBox.Text = listKhachHang.CurrentRow.Cells[3].Value.ToString();
+            soPhongTTBox.Text = listKhachHang.CurrentRow.Cells[4].Value.ToString();
         }
 
         private void listBillRoom()
@@ -378,7 +381,7 @@ namespace QL_KhachSan
             Rooms_DAO.Instance.setBooked("NO", room_id);
             Bill_Room_DAO.Instance.checkOut(id_HDP);
 
-            string totalDays = Bill_Room_DAO.Instance.getTotalDays(id_HDP) + 1;
+            string totalDays = Bill_Room_DAO.Instance.getTotalDays(id_HDP);
 
             double pricePerDay = Rooms_DAO.Instance.GetPrice(room_id);
 

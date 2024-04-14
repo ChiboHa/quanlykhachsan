@@ -203,7 +203,7 @@ namespace QL_KhachSan.DAO
 
         public string getTotalDays(String id)
         {
-            string query = "SELECT DATEDIFF(DAY, date_check_in, date_check_out) AS TotalDays FROM BillRoom WHERE ID = @id";
+            string query = "SELECT DATEDIFF(DAY, date_check_in, date_check_out) + 1 AS TotalDays FROM BillRoom WHERE ID = @id";
             DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { id });
             if (data.Rows.Count > 0)
             {
