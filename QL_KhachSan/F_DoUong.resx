@@ -124,9 +124,9 @@
   <data name="txtNameF.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANcAAAAdCAYAAAA5DvlnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVHhe7dOxDcMwAANB7T+VDI2RMTJADAFqUtvf3QFs
-        2P8AQmutz5zzZ2bPt3s6aY2xD+Adu6eTlrjgTeKCiLggIi6IiAsi4oKIuCAiLoiICyLigoi4ICIuiIgL
-        IuKCiLggIi6IiAsi4oKIuCAiLoiICyLigoi4ICIuiPzFdV3Xdx9m9ny7p5MW8L4xbuFTJ5l+/loTAAAA
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVHhe7dOxDcMwAANBjS640ZAZIwPEEKAmtf3dHcCG
+        /Q8gtNb6zDl/ZvZ8u6eT1hj7AN6xezppiQveJC6IiAsi4oKIuCAiLoiICyLigoi4ICIuiIgLIuKCiLgg
+        Ii6IiAsi4oKIuCAiLoiICyLigoi4ICIuiIgLIuKCyF9c13V992Fmz7d7OmkB7xvjBvaJwpmxyNIVAAAA
         AElFTkSuQmCC
 </value>
   </data>
@@ -223,10 +223,22 @@
   <data name="txtCostF.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANcAAAAdCAYAAAA5DvlnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVHhe7dOxDcMwAANB7T+VDI2RMTJADAFqUtvf3QFs
-        2P8AQmutz5zzZ2bPt3s6aY2xD+Adu6eTlrjgTeKCiLggIi6IiAsi4oKIuCAiLoiICyLigoi4ICIuiIgL
-        IuKCiLggIi6IiAsi4oKIuCAiLoiICyLigoi4ICIuiPzFdV3Xdx9m9ny7p5MW8L4xbuFTJ5l+/loTAAAA
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACOSURBVHhe7dOxDcMwAANBjS640ZAZIwPEEKAmtf3dHcCG
+        /Q8gtNb6zDl/ZvZ8u6eT1hj7AN6xezppiQveJC6IiAsi4oKIuCAiLoiICyLigoi4ICIuiIgLIuKCiLgg
+        Ii6IiAsi4oKIuCAiLoiICyLigoi4ICIuiIgLIuKCyF9c13V992Fmz7d7OmkB7xvjBvaJwpmxyNIVAAAA
         AElFTkSuQmCC
 </value>
   </data>
+  <data name="txtSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAQQAAAAnCAYAAADpRzYmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACmSURBVHhe7dRRCQMxAETB+FeVIzIqowJaAuHBacgM7M8K
+        eAPgZa31mXP+zOzO7QacHIyxD+BeuwEnB4IAtxMEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQ
+        QQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIK8gPM/z
+        3YeZ3bndgJMDgG2MPyiB6n34dP1xAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

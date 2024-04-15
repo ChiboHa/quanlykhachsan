@@ -19,6 +19,8 @@ namespace QL_KhachSan
         {
             InitializeComponent();
             LoadFoods();
+            AddComboBox();
+            namekh.Hide();
         }
         public class CustomButton : Button
         {
@@ -128,13 +130,13 @@ namespace QL_KhachSan
                     int numtext = 0;
                     foreach (DataGridViewRow itm in dataGridView1.Rows)
                     {
-                        if (itm.Cells[1].Value != null)
+                        if (itm.Cells[0].Value != null)
                         {
-                            if (itm.Cells[1].Value.ToString() == food.ID.ToString())
+                            if (itm.Cells[0].Value.ToString() == food.ID.ToString())
                             {
                                 exist = true;
                                 numrow = itm.Index;
-                                numtext = Convert.ToInt32(itm.Cells[4].Value);
+                                numtext = Convert.ToInt32(itm.Cells[3].Value);
                                 break;
                             }
                         }
@@ -143,12 +145,13 @@ namespace QL_KhachSan
                     {
                         int cost = Convert.ToInt32(food.Gia);
                         int subtotalprice = Convert.ToInt32(cost) * 1;
-                        dataGridView1.Rows.Add(dataGridView1.Rows.Count + 1, food.ID, food.Ten, food.Gia, 1, subtotalprice);
+                        dataGridView1.Rows.Add(food.ID, food.Ten, food.Gia, 1, subtotalprice);
+
                     }
                     else
                     {
-                        dataGridView1.Rows[numrow].Cells[4].Value = Convert.ToInt32("1") + numtext;
-                        dataGridView1.Rows[numrow].Cells[5].Value = Convert.ToInt32(dataGridView1.Rows[numrow].Cells[3].Value) * Convert.ToInt32(dataGridView1.Rows[numrow].Cells[4].Value);
+                        dataGridView1.Rows[numrow].Cells[3].Value = Convert.ToInt32("1") + numtext;
+                        dataGridView1.Rows[numrow].Cells[4].Value = Convert.ToInt32(dataGridView1.Rows[numrow].Cells[2].Value) * Convert.ToInt32(dataGridView1.Rows[numrow].Cells[3].Value);
                     }
                 }
             }
@@ -165,7 +168,7 @@ namespace QL_KhachSan
             int grandtotal = 0;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                grandtotal = grandtotal + Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
+                grandtotal = grandtotal + Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value);
             }
             lbl_GrandTotal.Text = grandtotal.ToString();
 
@@ -179,7 +182,7 @@ namespace QL_KhachSan
                 double noofProducts = 0;
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    noofProducts = noofProducts + Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
+                    noofProducts = noofProducts + Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value);
                 }
                 lbl_noOfProducts.Text = noofProducts.ToString();
             }
@@ -205,17 +208,14 @@ namespace QL_KhachSan
 
 
         }
-
-
-
-        private void F_MonAn_Load(object sender, EventArgs e)
+        void AddComboBox()
         {
-
-
+            List<KhachHang> list = KhachHang_DAO.Instance.GetListKH();
+            foreach (KhachHang khach in list)
+            {
+                txt_kh.Items.Add(khach.Id);
+            }
         }
-
-        
-
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
@@ -243,6 +243,7 @@ namespace QL_KhachSan
             dataGridView1.Rows.Clear(); // Xóa hết dữ liệu trong DataGridView
             flowLayoutPanel1.Controls.Clear();
             LoadFoods();
+            txtPayment.SelectedIndex = -1;
             txt_kh.SelectedIndex = -1;
             // Cập nhật lại các số liệu
             Get_grandTotal();
@@ -259,25 +260,25 @@ namespace QL_KhachSan
             int grandtotal = 0;
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                grandtotal += Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value);
+                grandtotal += Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value);
             }
 
             string idkh = txt_kh.Text;
             DateTime currentDate = DateTime.Now;
-
+            string pay = txtPayment.Text;
             // Thêm hóa đơn mới và lấy ID của hóa đơn vừa được tạo ra
-            BillFoodDAO.Instance.AddBill(idkh,currentDate,currentDate.Month.ToString(),grandtotal,"NO");
+            BillFoodDAO.Instance.AddBill(idkh,currentDate,currentDate.Month.ToString(),grandtotal,pay);
             int billID = BillFoodDAO.Instance.GetUncheckBillID();
             // Kiểm tra xem có lỗi xảy ra khi thêm hóa đơn hay không
             if (billID != -1)
             {
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    int idfood = Convert.ToInt32(row.Cells[1].Value);
-                    string itemName = row.Cells[2].Value.ToString();
-                    int itemPrice = Convert.ToInt32(row.Cells[3].Value);
-                    int itemQuantity = Convert.ToInt32(row.Cells[4].Value);
-                    int itemTotal = Convert.ToInt32(row.Cells[5].Value);
+                    int idfood = Convert.ToInt32(row.Cells[0].Value);
+                    string itemName = row.Cells[1].Value.ToString();
+                    int itemPrice = Convert.ToInt32(row.Cells[2].Value);
+                    int itemQuantity = Convert.ToInt32(row.Cells[3].Value);
+                    int itemTotal = Convert.ToInt32(row.Cells[4].Value);
 
                     // Thêm thông tin về món ăn vào bảng Pos, sử dụng billID lấy được ở bước trước
                     PosDAO.Instance.AddPos(billID,idfood,itemName,itemPrice,itemQuantity,itemTotal);
@@ -302,10 +303,56 @@ namespace QL_KhachSan
             ThanhToan();
             new_order_1();
         }
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3 && e.RowIndex != -1)
+            {
+                int currentQuantity = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+                if (currentQuantity <= 1)
+                {
+                    dataGridView1.Rows.RemoveAt(e.RowIndex);
+                }
+                else
+                {
+                    // Giảm số lượng của hàng được chọn đi 1
+                    dataGridView1.Rows[e.RowIndex].Cells[4].Value = currentQuantity - 1;
 
-        private void txt_kh_TextChanged(object sender, EventArgs e)
+                    // Cập nhật tổng tiền của hàng
+                    int price = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+                    dataGridView1.Rows[e.RowIndex].Cells[4].Value = price * (currentQuantity - 1);
+                }
+            }
+        }
+
+        private void namekh_Click(object sender, EventArgs e)
         {
 
         }
+        private void txt_kh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txt_kh.SelectedItem == null)
+            {
+                // Ẩn nhãn 'namekh' nếu không có mục nào được chọn
+                namekh.Hide();
+                return; // Thoát khỏi phương thức để tránh thực hiện các thao tác tiếp theo
+            }
+            namekh.Text = "";
+
+            string selectedId = txt_kh.SelectedItem.ToString();
+
+            KhachHang kh = KhachHang_DAO.Instance.GetCustomerById(selectedId);
+
+            if (kh != null)
+            {
+                namekh.Text = kh.Name;
+                namekh.Show();
+            }
+            else
+            {
+                namekh.Hide();
+            }
+        }
+
+
     }
 }

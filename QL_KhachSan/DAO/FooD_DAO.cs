@@ -59,6 +59,18 @@ namespace QL_KhachSan.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+        public List<Food> SearchFood(string searchTerm)
+        {
+            List<Food> list = new List<Food>();
+            string query = "SELECT * FROM dbo.Food WHERE Ten LIKE N'%" + searchTerm + "%'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                Food food = new Food(item);
+                list.Add(food);
+            }
+            return list;
+        }
         public Food GetFoodByID(int id)
         {
             Food food = null;

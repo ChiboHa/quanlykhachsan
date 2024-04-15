@@ -24,6 +24,23 @@ namespace QL_KhachSan.DAO
             private set => instance = value;
         }
 
+        public List<KhachHang> GetListKH()
+        {
+            List<KhachHang> list = new List<KhachHang>();
+
+            string query = "select * from Customer";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                KhachHang kh = new KhachHang(item);
+                list.Add(kh);
+            }
+            
+            return list;
+        }
+
         public Boolean InsertKhachHang(KhachHang kh)
         {
             string query = "INSERT INTO Customer (ID, name, CCCD) VALUES ( @ID , @name , @CCCD )";

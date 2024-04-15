@@ -33,6 +33,9 @@ namespace QL_KhachSan
         {
             dtgfmenu.DataSource = Food_DAO.Instance.GetListFood();
             dtgfmenu.Columns["ID"].Visible = false;
+            dtgfmenu.Columns["Ten"].HeaderText = "Tên món";
+            dtgfmenu.Columns["Muc"].HeaderText = "Mục";
+            dtgfmenu.Columns["Gia"].HeaderText = "Giá";
         }
 
         private void btnAddF_Click(object sender, EventArgs e)
@@ -71,8 +74,6 @@ namespace QL_KhachSan
                         cbCateF.SelectedIndex = -1;
                         break;
                 }
-                // Assuming 'cbCate' is your combobox and 'cateColIndex' is the index of the category column:
-               
             }
         }
         private void btneditF_Click(object sender, EventArgs e)
@@ -122,6 +123,33 @@ namespace QL_KhachSan
             txtNameF.Clear();
             txtCostF.Clear();
             cbCateF.SelectedIndex=-1;
+        }
+        void Search()
+        {
+
+            string tk = txtSearch.Text;
+            if (string.IsNullOrEmpty(tk))
+            {
+                // Nếu ô tìm kiếm trống, hiển thị tất cả các dữ liệu
+                LoadFood();
+            }
+            else
+            {
+                // Nếu có từ khóa tìm kiếm, thực hiện tìm kiếm bình thường
+                dtgfmenu.DataSource = Food_DAO.Instance.SearchFood(tk);
+            }
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            txtNameF.Clear();
+            txtCostF.Clear();
+            cbCateF.SelectedIndex = -1;
+            Search();
         }
     }
 }
