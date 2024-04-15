@@ -15,101 +15,70 @@ namespace QL_KhachSan
 {
     public partial class F_DVKhac : Form
     {
-
+        String id_KH, id_HDP;
         public F_DVKhac()
         {
             InitializeComponent();
-            dgv_bookedRoom.Columns.Add("ID", "ID");
-            dgv_bookedRoom.Columns.Add("SoPhong", "Số phòng");
-            dgv_bookedRoom.Columns.Add("IDKhach", "ID khách");
-            dgv_bookedRoom.Columns.Add("NgayNhan", "Ngày nhận");
-            dgv_bookedRoom.Columns.Add("NgayTra", "Ngày trả");
-            // Gán sự kiện RowPrePaint cho DataGridVie
-            dgv_bookedRoom.RowPrePaint += List_RowPrePaint;
-            // Tắt dòng "New Row"
-            dgv_bookedRoom.AllowUserToAddRows = false;
-            // Load dữ liệu từ database và gán vào DataGridView
-            LoadBillRooms();
         }
-        private void LoadBillRooms()
+
+        private void b_ThanhToan_Click(object sender, EventArgs e)
         {
-            List<BillRoom> billRooms = Bill_Room_DAO.Instance.GetBillRoomsByStatus0();
-
-            // Duyệt qua danh sách các BillRoom và thêm vào DataGridView
-            foreach (BillRoom billRoom in billRooms)
-            {
-                dgv_bookedRoom.Columns["ID"].Width = 30;
-                dgv_bookedRoom.Columns["SoPhong"].Width = 80;
-                dgv_bookedRoom.Columns["IDKhach"].Width = 80;
-                dgv_bookedRoom.Columns["NgayNhan"].Width = 140;
-                dgv_bookedRoom.Columns["NgayTra"].Width = 140;
-                dgv_bookedRoom.Rows.Add(billRoom.ID, billRoom.Room_No, billRoom.Customer_id, billRoom.Date_check_in, billRoom.Date_check_out);
-            }
+            hoTenTTBox.Text = "";
+            soPhongTTBox.Text = "";
+            checkOut();
+            listBillRoom();
         }
-        private void List_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+
+        private void b_searchTT_Click(object sender, EventArgs e)
         {
-            // Kiểm tra nếu hàng hiện tại không phải là hàng header
-            if (e.RowIndex >= 0)
+            try
             {
-                // Lấy giá trị date_check_out từ cột thứ 4 (index 3) của hàng hiện tại
-                DateTime date_check_out = Convert.ToDateTime(dgv_bookedRoom.Rows[e.RowIndex].Cells[4].Value);
-
-                // Kiểm tra nếu date_check_out nhỏ hơn ngày hiện tại
-                if (date_check_out.Date < DateTime.Now.Date)
-                {
-                    // Đặt màu cho hàng là màu đỏ
-                    dgv_bookedRoom.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
-                    dgv_bookedRoom.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White; // Thiết lập màu chữ trắng để nổi bật trên nền đỏ
-                }
-                else
-                {
-                    // Đặt màu mặc định cho hàng
-                    dgv_bookedRoom.Rows[e.RowIndex].DefaultCellStyle.BackColor = dgv_bookedRoom.DefaultCellStyle.BackColor;
-                    dgv_bookedRoom.Rows[e.RowIndex].DefaultCellStyle.ForeColor = dgv_bookedRoom.DefaultCellStyle.ForeColor;
-                }
+                using (DataTable data = Bill_Room_DAO.Instance.searchBillRooms(searchTTBox.Text))
+                { listKhachHang.DataSource = data; }
             }
+            catch (Exception ex) { }
         }
-        private void ReloadData()
+
+        private void checkOut()
         {
-            // Xóa dữ liệu hiện tại của DataGridView
-            dgv_bookedRoom.Rows.Clear();
+            String room_id = Bill_Room_DAO.Instance.GetRoomID(id_HDP);
+            Rooms_DAO.Instance.setBooked("NO", room_id);
+            Bill_Room_DAO.Instance.checkOut(id_HDP);
 
-            // Load lại dữ liệu từ cơ sở dữ liệu và gán vào DataGridView
-            LoadBillRooms();
+            string totalDays = Bill_Room_DAO.Instance.getTotalDays(id_HDP);
+
+            double pricePerDay = Rooms_DAO.Instance.GetPrice(room_id);
+
+            double totalAmount = Convert.ToDouble(totalDays) * pricePerDay;
+
+            MessageBox.Show("Số tiền phải trả là: " + totalDays + " Ngày * " + pricePerDay + " = " + totalAmount + " VND", "Hóa đơn", MessageBoxButtons.OK);
         }
 
-        private void btn_pay_Click(object sender, EventArgs e)
+        private void F_DVKhac_Load(object sender, EventArgs e)
         {
-
-            // Kiểm tra xem có hàng nào được chọn trong DataGridView không
-            if (dgv_bookedRoom.SelectedRows.Count > 0)
-            {
-                // Hiển thị hộp thoại xác nhận
-                DialogResult result = MessageBox.Show("Bạn có muốn thanh toán cho căn phòng này?", "Xác nhận thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                // Kiểm tra kết quả từ hộp thoại xác nhận
-                if (result == DialogResult.Yes)
-                {
-                    // Lấy index của hàng đang được chọn
-                    int rowIndex = dgv_bookedRoom.CurrentRow.Index;
-
-                    // Lấy giá trị ID của bản ghi tương ứng
-                    int ID = Convert.ToInt32(dgv_bookedRoom.Rows[rowIndex].Cells["ID"].Value);
-
-                    // Thực hiện cập nhật trạng thái trong cơ sở dữ liệu
-                    bool success = Bill_Room_DAO.Instance.UpdateStatus(ID);
-                    ReloadData();
-                }
-                else
-                {
-                    // Không làm gì nếu người dùng chọn "Không"
-                }
-            }
-            else
-            {
-                // Hiển thị thông báo nếu không có hàng nào được chọn
-                MessageBox.Show("Vui lòng chọn một căn phòng để thanh toán!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            listBillRoom();
         }
+
+        private void b_Refresh_Click(object sender, EventArgs e)
+        {
+            listBillRoom();
+        }
+
+        private void listKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id_HDP = listKhachHang.CurrentRow.Cells[0].Value.ToString();
+            id_KH = listKhachHang.CurrentRow.Cells[1].Value.ToString();
+            hoTenTTBox.Text = listKhachHang.CurrentRow.Cells[2].Value.ToString();
+            //cccdBox.Text = listKhachHang.CurrentRow.Cells[3].Value.ToString();
+            soPhongTTBox.Text = listKhachHang.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void listBillRoom()
+        {
+            try
+            { using (DataTable data = Bill_Room_DAO.Instance.GetBillRoomsWithStatus()) { listKhachHang.DataSource = data; } }
+            catch (Exception ex) { }
+        }
+
     }
 }

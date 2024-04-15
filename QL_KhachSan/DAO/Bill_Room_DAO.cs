@@ -194,7 +194,7 @@ namespace QL_KhachSan.DAO
         public DataTable searchBillRooms(String name)
         {
             List<BillRoom> billRooms = new List<BillRoom>();
-            string query = "SELECT BillRoom.ID as 'Mã HĐ Phòng', BillRoom.customer_id as 'Mã khách hàng', Customer.name as 'Họ tên', Customer.cccd as 'Căn cước', Rooms.roomNo as 'Số phòng', BillRoom.date_check_in as 'Ngày checkin' "
+            string query = "SELECT BillRoom.ID as 'Mã HĐ Phòng', BillRoom.customer_id as 'Mã khách hàng', Customer.name as 'Họ tên', Customer.cccd as 'Căn cước', Rooms.roomNo as 'Số phòng', BillRoom.date_check_in as 'Ngày checkin', BillRoom.date_check_out as 'Check Out'  "
                 + "FROM BillRoom INNER JOIN Rooms ON BillRoom.room_ID = Rooms.id "
                 + "INNER JOIN Customer ON BillRoom.customer_id = Customer.ID "
                 + "WHERE BillRoom.status=0 AND (Customer.name LIKE '%" + name + "%' OR Customer.cccd LIKE '%" + name + "%')";

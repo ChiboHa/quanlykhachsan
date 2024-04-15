@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace QL_KhachSan
 {
@@ -19,11 +20,17 @@ namespace QL_KhachSan
             hoTenBox.ReadOnly = true;
             cccdBox.ReadOnly = true;
             b_Add.Hide();
+            for (int i = 0; i < 100; i++)
+            {
+                listKhachHang.Rows.Add(new object[]
+                {
+
+                });
+            }
         }
 
         private void F_DatPhong_Load(object sender, EventArgs e)
         {
-            listBillRoom();
             try
             {
                 // Thiết lập giao diện cho tabControl1
@@ -46,13 +53,13 @@ namespace QL_KhachSan
         private void b_ThanhToanTab_Click(object sender, EventArgs e)
         {
             bunifuPages1.PageIndex = 1;
-            listBillRoom();
+            //listBillRoom();
         }
 
 
         private void b_Next_Click(object sender, EventArgs e)
         {
-            
+
             if (string.IsNullOrWhiteSpace(sdtBox.Text) || string.IsNullOrWhiteSpace(hoTenBox.Text) || string.IsNullOrWhiteSpace(cccdBox.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
@@ -136,40 +143,6 @@ namespace QL_KhachSan
             }
         }
 
-
-        /*private void b_DatPhong_Click(object sender, EventArgs e)
-        {
-            if (validate())
-            {
-                // Lấy ID khách hàng từ textbox sdtBox
-                string id_KhachHang = sdtBox.Text;
-
-                // Kiểm tra xem có chọn phòng không
-                if (soPhongBox.SelectedItem != null)
-                {
-                    Item selectedItem = soPhongBox.SelectedItem as Item;
-                    try
-                    {
-                        // Thêm hóa đơn phòng mới với ID khách hàng có sẵn và ID phòng được chọn
-                        Bill_Room_DAO.Instance.InsertBillRoom("" + selectedItem.Value, id_KhachHang);
-
-                        // Đặt trạng thái phòng đã được đặt thành "YES"
-                        Rooms_DAO.Instance.setBooked("YES", "" + selectedItem.Value);
-
-                        MessageBox.Show("Đặt phòng thành công!");
-                        reset();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng chọn số phòng!");
-                }
-            }
-        }*/
         private void b_DatPhong_Click(object sender, EventArgs e)
         {
             if (validate())
@@ -210,18 +183,6 @@ namespace QL_KhachSan
             }
         }
 
-
-
-        private void n_reset_Click(object sender, EventArgs e)
-        {
-            reset();
-        }
-
-        private void soPhongBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txt_error6.Text = "";
-        }
-
         private void hoTenBox_TextChanged(object sender, EventArgs e)
         {
             txt_error1.Text = "";
@@ -237,34 +198,6 @@ namespace QL_KhachSan
             txt_error3.Text = "";
         }
 
-        private void b_ThanhToan_Click(object sender, EventArgs e)
-        {
-            checkOut();
-            listBillRoom();
-        }
-
-
-        private void b_Refresh_Click(object sender, EventArgs e)
-        {
-            hoTenTTBox.Text = "";
-            soPhongTTBox.Text = "";
-            listBillRoom();
-        }
-        private void listKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            id_HDP = listKhachHang.CurrentRow.Cells[0].Value.ToString();
-            id_KH = listKhachHang.CurrentRow.Cells[1].Value.ToString();
-            hoTenTTBox.Text = listKhachHang.CurrentRow.Cells[2].Value.ToString();
-            cccdBox.Text = listKhachHang.CurrentRow.Cells[3].Value.ToString();
-            soPhongTTBox.Text = listKhachHang.CurrentRow.Cells[4].Value.ToString();
-        }
-
-        private void listBillRoom()
-        {
-            try
-            { using (DataTable data = Bill_Room_DAO.Instance.GetBillRoomsWithStatus()) { listKhachHang.DataSource = data; } }
-            catch (Exception ex) { }
-        }
         private bool validate()
         {
             bool status = true;
@@ -318,18 +251,6 @@ namespace QL_KhachSan
         }
 
 
-        private void b_searchTT_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (DataTable data = Bill_Room_DAO.Instance.searchBillRooms(searchTTBox.Text))
-                { listKhachHang.DataSource = data; }
-            }
-            catch (Exception ex) { }
-        }
-
-        
-
         private void loaiPhongBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Kiểm tra xem cả hai combobox đã được chọn hay chưa
@@ -362,33 +283,6 @@ namespace QL_KhachSan
             }
         }
 
-
-        /*private void checkOut()
-        {
-            String room_id = Bill_Room_DAO.Instance.GetRoomID(id_HDP);
-            Rooms_DAO.Instance.setBooked("NO", room_id);
-            Bill_Room_DAO.Instance.checkOut(id_HDP);
-            double TotalHours = Convert.ToDouble(Bill_Room_DAO.Instance.getTotalHours(id_HDP)),
-                price = Rooms_DAO.Instance.GetPrice(room_id);
-            double result = TotalHours * price;
-
-            MessageBox.Show("Số tiền phải trả là: " + TotalHours + " Giờ * " + price + " = " + result + " VND", "Hóa đơn", MessageBoxButtons.OK);
-        }*/
-
-        private void checkOut()
-        {
-            String room_id = Bill_Room_DAO.Instance.GetRoomID(id_HDP);
-            Rooms_DAO.Instance.setBooked("NO", room_id);
-            Bill_Room_DAO.Instance.checkOut(id_HDP);
-
-            string totalDays = Bill_Room_DAO.Instance.getTotalDays(id_HDP);
-
-            double pricePerDay = Rooms_DAO.Instance.GetPrice(room_id);
-
-            double totalAmount = Convert.ToDouble(totalDays) * pricePerDay;
-
-            MessageBox.Show("Số tiền phải trả là: " + totalDays + " Ngày * " + pricePerDay + " = " + totalAmount + " VND", "Hóa đơn", MessageBoxButtons.OK);
-        }
     }
 
     public class Item
