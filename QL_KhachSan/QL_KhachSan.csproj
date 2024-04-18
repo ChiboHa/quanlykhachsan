@@ -243,6 +243,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillF.Designer.cs">
+      <DependentUpon>BillF.cs</DependentUpon>
+    </Compile>
     <Compile Include="CropForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +378,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BillF.resx">
+      <DependentUpon>BillF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CropForm.resx">
       <DependentUpon>CropForm.cs</DependentUpon>
     </EmbeddedResource>

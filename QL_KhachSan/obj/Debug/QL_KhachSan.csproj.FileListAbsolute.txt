@@ -276,3 +276,4 @@ C:\Users\Admin\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_Khac
 C:\Users\Admin\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.CopyComplete
 C:\Users\Admin\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.exe
 C:\Users\Admin\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.pdb
+C:\Users\Admin\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.BillF.resources

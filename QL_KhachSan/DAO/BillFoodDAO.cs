@@ -26,11 +26,14 @@ namespace QL_KhachSan.DAO
         public List<BillFood> GetDsBill()
         {
             List<BillFood> list = new List<BillFood>();
-            string query = string.Format("Select * From BillFood");
+
+            string query = "Select * From BillFood";
+            
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            
             foreach (DataRow item in data.Rows)
             {
-                BillFood pos = new BillFood();
+                BillFood pos = new BillFood(item);
                 list.Add(pos);
             }
 

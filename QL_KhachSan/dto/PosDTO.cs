@@ -29,13 +29,13 @@ namespace QL_KhachSan.DTOs
         }
         public PosDTO(DataRow item)
         {
-            this.ID = Convert.ToInt32(item["ID"]);
-            this.BillID = Convert.ToInt32(item["BillID"]);
-            this.FoodCode = Convert.ToInt32(item["foodcode"]);
+            this.ID = (int)item["ID"];
+            this.BillID = (int)item["BillID"];
+            this.FoodCode = (int)item["foodcode"];
             this.FoodName = item["foodname"].ToString();
-            this.Cost = Convert.ToInt32(item["cost"]);
-            this.Quantity = Convert.ToInt32(item["qty"]);
-            this.TotalPrice = Convert.ToInt32(item["totalprice"]);
+            this.Cost = (int)item["cost"];
+            this.Quantity = (int)item["qty"];
+            this.TotalPrice = (int)item["totalprice"];
         }
     }
 }

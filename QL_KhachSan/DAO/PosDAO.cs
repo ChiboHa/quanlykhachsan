@@ -24,14 +24,14 @@ namespace QL_KhachSan.DAO
 
         private PosDAO() { }
 
-        public List<PosDTO> GetListBillF()
+        public List<PosDTO> GetListBillF(int id)
         {
             List<PosDTO> list = new List<PosDTO>();
-            string query = string.Format("Select * From Pos");
+            string query = string.Format("Select * From Pos Where billID = {0}",id);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
-                PosDTO pos = new PosDTO();
+                PosDTO pos = new PosDTO(item);
                 list.Add(pos);
             }
 
@@ -45,11 +45,10 @@ namespace QL_KhachSan.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-
-        // Phương thức để thêm hóa đơn mới và các món ăn vào bảng Pos
-        
-
-
+        public DataTable GetPosByBillID(int id)
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Pos Where ID = {0}", new object[] {id});
+        }
 
     }
 }

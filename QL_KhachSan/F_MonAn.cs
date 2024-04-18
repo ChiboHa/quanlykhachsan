@@ -12,7 +12,7 @@ namespace QL_KhachSan
 {
     public partial class F_MonAn : Form
     {
-        
+        BillF billf;
 
 
         public F_MonAn()
@@ -354,5 +354,23 @@ namespace QL_KhachSan
         }
 
 
+        private void billbtn_Click(object sender, EventArgs e)
+        {
+            if (billf == null)
+            {
+                billf = new BillF();
+                billf.FormClosed += Billf_FormClosed;
+                billf.Show();
+            }
+            else
+            {
+                billf.Activate();
+            }
+        }
+
+        private void Billf_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            billf = null;
+        }
     }
 }
