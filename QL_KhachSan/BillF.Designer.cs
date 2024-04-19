@@ -65,7 +65,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.billFview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.billFview.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.billFview.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.billFview.BackgroundColor = System.Drawing.Color.White;
             this.billFview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.billFview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.billFview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -109,14 +109,14 @@
             this.billFview.HeaderBackColor = System.Drawing.Color.MediumVioletRed;
             this.billFview.HeaderBgColor = System.Drawing.Color.Empty;
             this.billFview.HeaderForeColor = System.Drawing.Color.White;
-            this.billFview.Location = new System.Drawing.Point(2, 84);
+            this.billFview.Location = new System.Drawing.Point(2, 0);
             this.billFview.Margin = new System.Windows.Forms.Padding(0);
             this.billFview.Name = "billFview";
             this.billFview.ReadOnly = true;
             this.billFview.RowHeadersVisible = false;
             this.billFview.RowTemplate.Height = 40;
             this.billFview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.billFview.Size = new System.Drawing.Size(514, 411);
+            this.billFview.Size = new System.Drawing.Size(514, 495);
             this.billFview.TabIndex = 0;
             this.billFview.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.MediumVioletRed;
             this.billFview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.billFview_CellClick);
@@ -275,7 +275,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.ColumnHeadersHeight = 80;
+            this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(211)))), ((int)(((byte)(211)))));
             this.dataGridView1.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.dataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -330,8 +330,10 @@
             this.ClientSize = new System.Drawing.Size(834, 495);
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.billFview);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "BillF";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.billFview)).EndInit();
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel2.ResumeLayout(false);

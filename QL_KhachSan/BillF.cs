@@ -51,7 +51,7 @@ namespace QL_KhachSan
                 dataGridView1.Columns["cost"].HeaderText = "Đơn giá";
                 dataGridView1.Columns["quantity"].HeaderText = "Số lượng";
                 dataGridView1.Columns["totalprice"].HeaderText = "Giá";
-
+                dataGridView1.ColumnHeadersHeight = 60; // Thay đổi chiều cao của phần tiêu đề thành 50 pixels
                 // Hiển thị tên khách hàng
                 KhachHang kh = KhachHang_DAO.Instance.GetCustomerById(idkh);
                 if (kh != null)
