@@ -12,6 +12,7 @@ namespace QL_KhachSan
 {
     public partial class F_DatPhong : Form
     {
+        F_EditKH editKH;
         String id_KH, id_HDP;
 
         public F_DatPhong()
@@ -20,17 +21,75 @@ namespace QL_KhachSan
             hoTenBox.ReadOnly = true;
             cccdBox.ReadOnly = true;
             b_Add.Hide();
-            for (int i = 0; i < 100; i++)
-            {
-                listKhachHang.Rows.Add(new object[]
-                {
+            LoadKhach();
+        }
+        public void LoadKhach()
+        {
+            listKhachHang.DataSource = KhachHang_DAO.Instance.GetListKH();
 
-                });
+            // Thiết lập vị trí hiển thị cho cột "edit" và "delete" thành chỉ số của cột cuối cùng
+            int lastIndex = listKhachHang.Columns.Count - 1;
+            listKhachHang.Columns["Edit"].DisplayIndex = lastIndex;
+            listKhachHang.Columns["Delete"].DisplayIndex = lastIndex;
+
+            // Thiết lập tiêu đề cho các cột
+            listKhachHang.Columns["Id"].HeaderText = "Số điện thoại";
+            listKhachHang.Columns["Name"].HeaderText = "Họ và tên";
+            listKhachHang.Columns["Cccd"].HeaderText = "Căn cước công dân";
+        }
+        private void listKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Kiểm tra xem cột được nhấp là cột "Edit" và không phải hàng header
+            if (e.ColumnIndex == listKhachHang.Columns["Edit"].Index && e.RowIndex != -1)
+            {
+                // Lấy thông tin khách hàng từ hàng được chọn
+                DataGridViewRow selectedRow = listKhachHang.Rows[e.RowIndex];
+                string sdt = selectedRow.Cells["Id"].Value.ToString();
+                string hoTen = selectedRow.Cells["Name"].Value.ToString();
+                string cccd = selectedRow.Cells["Cccd"].Value.ToString();
+
+                // Mở hoặc kích hoạt form F_EditKH và truyền thông tin vào các TextBox tương ứng
+                if (editKH == null || editKH.IsDisposed)
+                {
+                    editKH = new F_EditKH();
+                    editKH.FormClosed += EditKH_FormClosed;
+                    editKH.SetInfo(sdt, hoTen, cccd); // Truyền thông tin vào form F_EditKH
+                    editKH.Show();
+                }
+                else
+                {
+                    editKH.Activate();
+                    editKH.SetInfo(sdt, hoTen, cccd); // Truyền thông tin vào form F_EditKH
+                }
             }
+            if(e.ColumnIndex == listKhachHang.Columns["Delete"].Index && e.RowIndex != -1)
+            {
+                DataGridViewRow selectedRow = listKhachHang.Rows[e.RowIndex];
+                string sdt = selectedRow.Cells["Id"].Value.ToString();
+                if (KhachHang_DAO.Instance.DelKH(sdt))
+                {
+                    MessageBox.Show("Xóa thành công!");
+                    LoadKhach();
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi");
+                }
+            }
+        }
+        private void resetbtn_Click(object sender, EventArgs e)
+        {
+            LoadKhach();
+        }
+
+        private void EditKH_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            editKH = null;
         }
 
         private void F_DatPhong_Load(object sender, EventArgs e)
         {
+            
             try
             {
                 // Thiết lập giao diện cho tabControl1
@@ -42,6 +101,7 @@ namespace QL_KhachSan
             {
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message);
             }
+            
         }
 
         private void b_DatPhongTab_Click(object sender, EventArgs e)
@@ -269,6 +329,28 @@ namespace QL_KhachSan
                 // Gọi hàm để lấy danh sách số phòng dựa trên loại phòng và loại giường được chọn
                 getRoomNo();
             }
+        }
+
+        void Search()
+        {
+            string tk = txtsearch.Text;
+            if (string.IsNullOrEmpty(tk))
+            {
+                LoadKhach();
+            }
+            else
+            {
+                listKhachHang.DataSource = KhachHang_DAO.Instance.SearchKH(tk);
+            }
+        }
+        private void txtsearch_TextChanged(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Search();
         }
 
         // Theo dõi lựa chọn loại phòng, giường lấy ra số phòng

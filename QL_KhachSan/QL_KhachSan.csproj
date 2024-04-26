@@ -298,6 +298,12 @@
     <Compile Include="F_DatPhong.Designer.cs">
       <DependentUpon>F_DatPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_EditKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_EditKH.Designer.cs">
+      <DependentUpon>F_EditKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_KhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -402,6 +408,9 @@
     <EmbeddedResource Include="F_DatPhong.resx">
       <DependentUpon>F_DatPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_EditKH.resx">
+      <DependentUpon>F_EditKH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_KhachHang.resx">
       <DependentUpon>F_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -502,6 +511,8 @@
     <None Include="Resources\update.png" />
     <None Include="Resources\update_hover.png" />
     <None Include="Resources\106230_add_icon.png" />
+    <None Include="Resources\211882_refresh_icon.png" />
+    <None Include="Resources\211817_search_strong_icon.png" />
     <Content Include="Resources\icons8-delete-24.png" />
     <None Include="Resources\icons8-delete-241.png" />
     <Content Include="Resources\icons8-edit-24.png" />
