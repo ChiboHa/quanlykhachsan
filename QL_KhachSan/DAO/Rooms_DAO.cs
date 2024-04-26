@@ -130,5 +130,17 @@ namespace QL_KhachSan.DAO
             return Convert.ToDouble(DataProvider.Instance.ExecuteQuery(query, new object[] { id }).Rows[0][0].ToString());
         }
 
+        public String GetRoomType(String id)
+        {
+            string query = "SELECT roomType FROM Rooms WHERE id = @id";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id }).Rows[0][0].ToString();
+        }
+
+        public String GetRoomNo(String id)
+        {
+            string query = "SELECT RoomNo FROM Rooms WHERE id = @id";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { id }).Rows[0][0].ToString();
+        }
+
     }
 }
