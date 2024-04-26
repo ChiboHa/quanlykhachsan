@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace QL_KhachSan
 {
@@ -72,76 +73,63 @@ namespace QL_KhachSan
             }
         }
 
-        private void UpdateChartToday()
-        {
-            // Xóa dữ liệu cũ trước khi cập nhật mới
-            c_ThongKeDoanhThu.Series["TotalRevenue"].Points.Clear();
-
-            // Lấy dữ liệu và cập nhật biểu đồ cho ngày hôm nay
-            decimal totalRevenueToday = _dashboard.GetTotalRevenueToday();
-
-            // Cập nhật dữ liệu cho biểu đồ c_ThongKeDoanhThu
-            c_ThongKeDoanhThu.Series["TotalRevenue"].Points.AddXY("Today", totalRevenueToday);
-        }
-
-        private void UpdateChart7DaysAgo()
-        {
-            // Xóa dữ liệu cũ trước khi cập nhật mới
-            c_ThongKeDoanhThu.Series["TotalRevenue"].Points.Clear();
-
-            // Lấy dữ liệu và cập nhật biểu đồ cho 7 ngày trước
-            decimal totalRevenue7DaysAgo = _dashboard.GetTotalRevenueLast7Days();
-
-            // Cập nhật dữ liệu cho biểu đồ c_ThongKeDoanhThu
-            c_ThongKeDoanhThu.Series["TotalRevenue"].Points.AddXY("7 Days Ago", totalRevenue7DaysAgo);
-        }
-
-        private void UpdateChart30DaysAgo()
-        {
-            // Xóa dữ liệu cũ trước khi cập nhật mới
-            c_ThongKeDoanhThu.Series["TotalRevenue"].Points.Clear();
-
-            // Lấy dữ liệu và cập nhật biểu đồ cho 30 ngày trước
-            decimal totalRevenue30DaysAgo = _dashboard.GetTotalRevenueLast30Days();
-
-            // Cập nhật dữ liệu cho biểu đồ c_ThongKeDoanhThu
-            c_ThongKeDoanhThu.Series["TotalRevenue"].Points.AddXY("30 Days Ago", totalRevenue30DaysAgo);
-        }
-
-        private void UpdateChartThisYear()
-        {
-            // Xóa dữ liệu cũ trước khi cập nhật mới
-            c_ThongKeDoanhThu.Series["TotalRevenue"].Points.Clear();
-
-            // Lấy dữ liệu và cập nhật biểu đồ cho năm nay
-            decimal totalRevenueThisYear = _dashboard.GetTotalRevenueThisYear();
-
-            // Cập nhật dữ liệu cho biểu đồ c_ThongKeDoanhThu
-            c_ThongKeDoanhThu.Series["TotalRevenue"].Points.AddXY("This Year", totalRevenueThisYear);
-        }
 
         private void b_Today_Click(object sender, EventArgs e)
         {
-            c_ThongKeDoanhThu.Series["TotalRevenue"].Points.Clear();
-            UpdateChartToday();
+            
         }
 
         private void b_7DaysAgo_Click(object sender, EventArgs e)
         {
-            c_ThongKeDoanhThu.Series["TotalRevenue"].Points.Clear();
-            UpdateChart7DaysAgo();
+           
         }
 
         private void b_30DaysAgo_Click(object sender, EventArgs e)
         {
-            c_ThongKeDoanhThu.Series["TotalRevenue"].Points.Clear();
-            UpdateChart30DaysAgo();
+            
         }
 
         private void b_ThisYear_Click(object sender, EventArgs e)
         {
-            c_ThongKeDoanhThu.Series["TotalRevenue"].Points.Clear();
-            UpdateChartThisYear();
+           
+        }
+
+        private void b_TodayFood_Click(object sender, EventArgs e)
+        {
+            // Get today's date without time
+            string dateOnly = DateTime.Now.Date.ToString("yyyy-MM-dd");
+
+            // Load top 5 best-selling food data for today
+            DataTable top5FoodData = _dashboard.GetTop5BestSellingFood(dateOnly);
+
+            // Check if there is data to display
+            if (top5FoodData.Rows.Count > 0)
+            {
+                // Clear existing data in chart2
+                chart2.Series["chart2"].Points.Clear();
+
+                // Loop through data and add points to chart2
+                foreach (DataRow row in top5FoodData.Rows)
+                {
+                    string foodName = row["FoodName"].ToString();
+                    decimal totalSold = Convert.ToDecimal(row["TotalSold"]);
+
+                    chart2.Series["chart2"].Points.AddXY(foodName, totalSold);
+                }
+            }
+            else
+            {
+                // Show message if no data found
+                MessageBox.Show("Không có dữ liệu về món ăn bán chạy hôm nay!");
+            }
+        }
+
+
+
+
+        private void b_AllFood_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

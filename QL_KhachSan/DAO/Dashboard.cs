@@ -75,145 +75,58 @@ namespace QL_KhachSan.DAO
             }
         }
 
-        //Tổng bill food hôm nay
-        public decimal GetTotalFoodRevenueToday()
-        {
-            DateTime today = DateTime.Today;
-            string query = @"SELECT SUM(GrandToTal) AS TotalRevenue FROM BillFood WHERE transdate = @date";
-            decimal totalRevenue = (decimal)DataProvider.Instance.ExecuteScalar(query, new object[] { today });
-            return totalRevenue;
-        }
-
         //Tổng doanh thu phòng và món ăn từ trước đến nay
         public decimal GetTotalRevenue()
         {
             return GetTotalFoodRevenue() + GetTotalRoomRevenue();
         }
 
-        //Tổng bill room hôm nay theo số ngày thuê trả hôm nay
-        public decimal GetTotalRoomRevenueToday()
+        public DataTable GetTop5BestSellingFood(string date)
         {
-            DateTime today = DateTime.Today;
-            string query = @"SELECT SUM(Total) AS TotalRevenue 
-            FROM (SELECT BillRoom.ID, (DATEDIFF(DAY, date_check_in, date_check_out) + 1) * Rooms.price AS Total FROM BillRoom
-            INNER JOIN Rooms ON BillRoom.room_ID = Rooms.ID
-            WHERE date_check_in = @date) AS RevenueData";
-            decimal totalRevenue = (decimal)DataProvider.Instance.ExecuteScalar(query, new object[] { today });
-            return totalRevenue;
-        }
-
-        //Top 5 food bán chạy nhất hôm nay
-        public List<KeyValuePair<string, int>> GetTop5MostOrderedFoodsToday()
-        {
-            DateTime today = DateTime.Today;
-            string query = @"SELECT TOP 5 Food.Ten AS FoodName, SUM(Pos.qty) AS TotalQuantity
-            FROM Pos
-            INNER JOIN Food ON Pos.foodcode = Food.ID
-            INNER JOIN BillFood ON BillFood.ID = Pos.BillID 
-            WHERE BillFood.transdate = @date
-            GROUP BY Food.Ten
-            ORDER BY TotalQuantity DESC";
-            List<KeyValuePair<string, int>> topFoods = new List<KeyValuePair<string, int>>();
-            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { today });
-            foreach (DataRow row in data.Rows)
+            // Chỉ trích xuất phần ngày từ chuỗi ngày giờ
+            DateTime parsedDate;
+            if (!DateTime.TryParse(date, out parsedDate))
             {
-                topFoods.Add(new KeyValuePair<string, int>(row["FoodName"].ToString(), (int)row["TotalQuantity"]));
+                // Xử lý trường hợp không thể chuyển đổi chuỗi ngày thành kiểu DateTime
+                Console.WriteLine("Invalid date format!");
+                return null;
             }
-            return topFoods;
-        }
 
-        //Top 5 food bán chạy nhất từ trước đến nay
-        public List<KeyValuePair<string, int>> GetTop5MostOrderedFoods()
-        {
-            string query = @"SELECT TOP 5 Food.Ten AS FoodName, SUM(Pos.qty) AS TotalQuantity
-            FROM Pos
-            INNER JOIN Food ON Pos.foodcode = Food.ID
-            GROUP BY Food.Ten
-            ORDER BY TotalQuantity DESC";
-            List<KeyValuePair<string, int>> topFoods = new List<KeyValuePair<string, int>>();
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow row in data.Rows)
+            // Chỉ sử dụng phần ngày trong parsedDate
+            string dateString = parsedDate.ToString("yyyy-MM-dd");
+
+            string query = @"
+        SELECT TOP(5) f.Ten AS FoodName, SUM(p.qty) AS TotalSold
+        FROM Food f
+        INNER JOIN Pos p ON f.ID = p.foodcode
+        INNER JOIN BillFood bf ON bf.ID = p.BillID
+        WHERE CONVERT(date, bf.transdate) = @date
+        GROUP BY f.Ten
+        ORDER BY TotalSold DESC;
+    ";
+
+            // Trước khi thực hiện truy vấn
+            Console.WriteLine($"Query: {query}, Date: {dateString}");
+
+            DataTable top5FoodData = null;
+
+            try
             {
-                topFoods.Add(new KeyValuePair<string, int>(row["FoodName"].ToString(), (int)row["TotalQuantity"]));
+                // Thực hiện truy vấn
+                top5FoodData = DataProvider.Instance.ExecuteQuery(query, new object[] { dateString });
+
+                // Sau khi thực hiện truy vấn
+                Console.WriteLine($"Rows returned: {top5FoodData.Rows.Count}");
             }
-            return topFoods;
+            catch (Exception ex)
+            {
+                // Xử lý các ngoại lệ và ghi log thông tin về chúng
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
+
+            return top5FoodData;
         }
 
-        //Tổng doanh thu gộp từ hóa đơn món ăn + hóa đơn phòng hôm nay
-        public decimal GetTotalRevenueToday()
-        {
-            return GetTotalFoodRevenueToday() + GetTotalRoomRevenueToday();
-        }
 
-        //Tổng doanh thu gộp từ hóa đơn món ăn + hóa đơn phòng 30 ngày trước
-        public decimal GetTotalRevenueLast30Days()
-        {
-            DateTime today = DateTime.Today;
-            DateTime thirtyDaysAgo = today.AddDays(-30);
-            string query = @"SELECT SUM(GrandToTal) AS TotalFoodRevenue
-            FROM BillFood
-            WHERE transdate BETWEEN @startDate AND @endDate
-  
-            UNION ALL
-  
-            SELECT SUM(Total) AS TotalRoomRevenue
-            FROM (
-                SELECT BillRoom.ID, 
-                    (DATEDIFF(DAY, date_check_in, date_check_out) + 1) * Rooms.price AS Total
-            FROM BillRoom
-            INNER JOIN Rooms ON BillRoom.room_ID = Rooms.ID
-            WHERE date_check_in BETWEEN @startDate AND @endDate
-            ) AS RevenueData";
-            decimal totalRevenue = (decimal)DataProvider.Instance.ExecuteScalar(query, new object[] { thirtyDaysAgo, today });
-            return totalRevenue;
-        }
-
-        //Tổng doanh thu gộp từ hóa đơn món ăn + hóa đơn phòng 7 ngày trước
-        public decimal GetTotalRevenueLast7Days()
-        {
-            DateTime today = DateTime.Today;
-            DateTime sevenDaysAgo = today.AddDays(-7);
-            string query = @"
-            SELECT SUM(GrandToTal) AS TotalFoodRevenue
-            FROM BillFood
-            WHERE transdate BETWEEN @startDate AND @endDate
-  
-            UNION ALL
-  
-            SELECT SUM(Total) AS TotalRoomRevenue
-            FROM (
-            SELECT BillRoom.ID, 
-                    (DATEDIFF(DAY, date_check_in, date_check_out) + 1) * Rooms.price AS Total
-            FROM BillRoom
-            INNER JOIN Rooms ON BillRoom.room_ID = Rooms.ID
-            WHERE date_check_in BETWEEN @startDate AND @endDate
-            ) AS RevenueData";
-            decimal totalRevenue = (decimal)DataProvider.Instance.ExecuteScalar(query, new object[] { sevenDaysAgo, today });
-            return totalRevenue;
-        }
-
-        //Tổng doanh thu gộp từ hóa đơn món ăn + hóa đơn phòng năm nay
-        public decimal GetTotalRevenueThisYear()
-        {
-            DateTime today = DateTime.Today;
-            DateTime firstDayOfYear = new DateTime(today.Year, 1, 1);
-            string query = @"
-            SELECT SUM(GrandToTal) AS TotalFoodRevenue
-            FROM BillFood
-            WHERE transdate BETWEEN @startDate AND @endDate
-  
-            UNION ALL
-  
-            SELECT SUM(Total) AS TotalRoomRevenue
-            FROM (
-            SELECT BillRoom.ID, 
-                    (DATEDIFF(DAY, date_check_in, date_check_out) + 1) * Rooms.price AS Total
-            FROM BillRoom
-            INNER JOIN Rooms ON BillRoom.room_ID = Rooms.ID
-            WHERE date_check_in BETWEEN @startDate AND @endDate
-            ) AS RevenueData";
-            decimal totalRevenue = (decimal)DataProvider.Instance.ExecuteScalar(query, new object[] { firstDayOfYear, today });
-            return totalRevenue;
-        }
     }
 }
