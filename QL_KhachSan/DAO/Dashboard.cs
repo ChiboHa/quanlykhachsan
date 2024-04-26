@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace QL_KhachSan.DAO
 {
@@ -142,6 +144,36 @@ namespace QL_KhachSan.DAO
             return top5FoodData;
         }
 
+        // Lấy top 5 món ăn bán chạy nhất trong ngày
+        public DataTable GetTop5BestSellingFoodToday(string date)
+        {
+            string query =
+    @"SELECT TOP(5) f.Ten AS FoodName, SUM(p.qty) AS TotalSold
+    FROM Food f
+    INNER JOIN Pos p ON f.ID = p.foodcode
+    INNER JOIN BillFood bf ON bf.ID = p.BillID
+    WHERE CONVERT(date, bf.transdate) = '" + date + "' GROUP BY f.Ten ORDER BY TotalSold DESC";
+            // Trước khi thực hiện truy vấn
+            Console.WriteLine($"Query: {query}, Date: {date}");
+
+            DataTable top5FoodData = null;
+
+            try
+            {
+                // Thực hiện truy vấn
+                top5FoodData = DataProvider.Instance.ExecuteQuery(query);
+
+                // Sau khi thực hiện truy vấn
+                Console.WriteLine($"Rows returned: {top5FoodData.Rows.Count}");
+            }
+            catch (Exception ex)
+            {
+                // Xử lý các ngoại lệ và ghi log thông tin về chúng
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
+
+            return top5FoodData;
+        }
 
     }
 }

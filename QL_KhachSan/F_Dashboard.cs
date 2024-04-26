@@ -97,13 +97,11 @@ namespace QL_KhachSan
 
         private void b_TodayFood_Click(object sender, EventArgs e)
         {
-
-            chart2.Series["chart2"].Points.Clear();
             // Get today's date without time
             string dateOnly = DateTime.Now.Date.ToString("yyyy-MM-dd");
 
             // Load top 5 best-selling food data for today
-            DataTable top5FoodData = _dashboard.GetTop5BestSellingFood(dateOnly);
+            DataTable top5FoodData = _dashboard.GetTop5BestSellingFoodToday(dateOnly);
 
             // Check if there is data to display
             if (top5FoodData.Rows.Count > 0)
@@ -122,7 +120,8 @@ namespace QL_KhachSan
             }
             else
             {
-
+                // Show message if no data found
+                MessageBox.Show("Không có dữ liệu về món ăn bán chạy hôm nay!");
             }
         }
 
