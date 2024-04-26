@@ -48,7 +48,30 @@ namespace QL_KhachSan.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query, parameters);
             return result > 0;
         }
-
+        public bool EditKH(string name, string CCCD, string id)
+        {
+            string query = string.Format("UPDATE dbo.Customer SET Name = N'{0}', CCCD = '{1}' WHERE ID = '{2}'", name, CCCD, id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool DelKH(string id)
+        {
+            string query = string.Format("DELETE dbo.Customer WHERE ID = '{0}'", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public List<KhachHang> SearchKH(string searchTerm)
+        {
+            List<KhachHang> list = new List<KhachHang>();
+            string query = "SELECT * FROM dbo.Customer WHERE name LIKE N'%" + searchTerm + "%' OR ID LIKE '%" + searchTerm + "%' OR CCCD LIKE '%" + searchTerm + "%'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                KhachHang kh = new KhachHang(item);
+                list.Add(kh);
+            }
+            return list;
+        }
         public KhachHang GetCustomerById(string customerId)
         {
             string query = "SELECT * FROM Customer WHERE ID = @customerId";
