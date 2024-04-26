@@ -78,6 +78,8 @@ namespace QL_KhachSan
             this.dtpSalaryMonth.Size = new System.Drawing.Size(114, 26);
             this.dtpSalaryMonth.TabIndex = 1;
             this.dtpSalaryMonth.ValueChanged += new System.EventHandler(this.dtpSalaryMonth_ValueChanged);
+            this.dtpSalaryMonth.Format = DateTimePickerFormat.Custom;
+            this.dtpSalaryMonth.CustomFormat = "MM/yyyy";
             // 
             // tableLayoutPanel1
             // 
@@ -256,6 +258,8 @@ namespace QL_KhachSan
             this.dtpSalary.Name = "dtpSalary";
             this.dtpSalary.Size = new System.Drawing.Size(114, 26);
             this.dtpSalary.TabIndex = 4;
+            this.dtpSalary.Format = DateTimePickerFormat.Custom;
+            this.dtpSalary.CustomFormat = "MM/yyyy";
             // 
             // dataGridViewImageColumn1
             // 

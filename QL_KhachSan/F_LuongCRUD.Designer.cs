@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_LuongCRUD));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.cboEmployees = new System.Windows.Forms.ComboBox();
             this.lbl_Employees = new System.Windows.Forms.Label();
             this.dtpSalaryMonth = new System.Windows.Forms.DateTimePicker();
@@ -62,8 +62,9 @@
             // 
             // dtpSalaryMonth
             // 
+            this.dtpSalaryMonth.CustomFormat = "MM/yyyy";
             this.dtpSalaryMonth.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.dtpSalaryMonth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpSalaryMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpSalaryMonth.Location = new System.Drawing.Point(216, 148);
             this.dtpSalaryMonth.Name = "dtpSalaryMonth";
             this.dtpSalaryMonth.Size = new System.Drawing.Size(268, 30);
@@ -115,11 +116,11 @@
             this.btnAddSalary.ColorContrastOnClick = 45;
             this.btnAddSalary.ColorContrastOnHover = 45;
             this.btnAddSalary.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnAddSalary.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnAddSalary.CustomizableEdges = borderEdges1;
             this.btnAddSalary.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddSalary.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddSalary.DisabledFillColor = System.Drawing.Color.Empty;
