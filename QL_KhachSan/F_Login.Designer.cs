@@ -68,7 +68,7 @@
             // 
             this.usernameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.usernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameBox.Location = new System.Drawing.Point(65, 206);
+            this.usernameBox.Location = new System.Drawing.Point(65, 205);
             this.usernameBox.Multiline = true;
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(202, 23);
@@ -106,7 +106,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(31, 232);
+            this.panel2.Location = new System.Drawing.Point(31, 231);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(236, 1);
             this.panel2.TabIndex = 11;
@@ -141,7 +141,7 @@
             this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reset.Location = new System.Drawing.Point(219, 353);
             this.reset.Name = "reset";
-            this.reset.Size = new System.Drawing.Size(48, 16);
+            this.reset.Size = new System.Drawing.Size(49, 16);
             this.reset.TabIndex = 17;
             this.reset.Text = "Reset";
             this.reset.Click += new System.EventHandler(this.reset_Click);

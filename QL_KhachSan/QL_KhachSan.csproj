@@ -286,6 +286,12 @@
     <Compile Include="F_AddRoom.Designer.cs">
       <DependentUpon>F_AddRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_CheckOut_Messages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_CheckOut_Messages.Designer.cs">
+      <DependentUpon>F_CheckOut_Messages.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_DatPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -389,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_BangLuong.resx">
       <DependentUpon>F_BangLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_CheckOut_Messages.resx">
+      <DependentUpon>F_CheckOut_Messages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_DatPhong.resx">
       <DependentUpon>F_DatPhong.cs</DependentUpon>

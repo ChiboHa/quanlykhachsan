@@ -16,6 +16,7 @@ namespace QL_KhachSan
     public partial class F_DVKhac : Form
     {
         String id_KH, id_HDP;
+
         public F_DVKhac()
         {
             InitializeComponent();
@@ -23,10 +24,10 @@ namespace QL_KhachSan
 
         private void b_ThanhToan_Click(object sender, EventArgs e)
         {
+            F_CheckOut_Messages f = new F_CheckOut_Messages(id_HDP);
+            f.ShowDialog();
             hoTenTTBox.Text = "";
             soPhongTTBox.Text = "";
-            checkOut();
-            listBillRoom();
         }
 
         private void b_searchTT_Click(object sender, EventArgs e)
@@ -39,20 +40,7 @@ namespace QL_KhachSan
             catch (Exception ex) { }
         }
 
-        private void checkOut()
-        {
-            String room_id = Bill_Room_DAO.Instance.GetRoomID(id_HDP);
-            Rooms_DAO.Instance.setBooked("NO", room_id);
-            Bill_Room_DAO.Instance.checkOut(id_HDP);
-
-            string totalDays = Bill_Room_DAO.Instance.getTotalDays(id_HDP);
-
-            double pricePerDay = Rooms_DAO.Instance.GetPrice(room_id);
-
-            double totalAmount = Convert.ToDouble(totalDays) * pricePerDay;
-
-            MessageBox.Show("Số tiền phải trả là: " + totalDays + " Ngày * " + pricePerDay + " = " + totalAmount + " VND", "Hóa đơn", MessageBoxButtons.OK);
-        }
+      
 
         private void F_DVKhac_Load(object sender, EventArgs e)
         {
@@ -64,6 +52,7 @@ namespace QL_KhachSan
             listBillRoom();
         }
 
+        // Sự kiện click vào để lấy ra thông tin phòng + khách hàng từ DataGridView
         private void listKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             id_HDP = listKhachHang.CurrentRow.Cells[0].Value.ToString();
@@ -73,7 +62,8 @@ namespace QL_KhachSan
             soPhongTTBox.Text = listKhachHang.CurrentRow.Cells[4].Value.ToString();
         }
 
-        private void listBillRoom()
+        // Đưa danh sách các phòng chưa thanh toán lên DataGridView
+        public void listBillRoom()
         {
             try
             { using (DataTable data = Bill_Room_DAO.Instance.GetBillRoomsWithStatus()) { listKhachHang.DataSource = data; } }

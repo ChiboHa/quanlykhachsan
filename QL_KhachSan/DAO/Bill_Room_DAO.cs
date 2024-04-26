@@ -102,6 +102,7 @@ namespace QL_KhachSan.DAO
             return DataProvider.Instance.ExecuteQuery(query);
         }*/
 
+        // Lấy ra danh sách các hóa đơn phòng chưa thanh toán
         public DataTable GetBillRoomsWithStatus()
         {
             List<BillRoom> billRooms = new List<BillRoom>();
