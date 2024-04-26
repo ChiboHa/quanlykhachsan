@@ -196,5 +196,10 @@ namespace QL_KhachSan
                     ReloadRooms();
                 }
         }
+
+        private void resetbtn_Click(object sender, EventArgs e)
+        {
+            ReloadRooms();
+        }
     }
 }

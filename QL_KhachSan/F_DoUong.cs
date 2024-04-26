@@ -27,7 +27,7 @@ namespace QL_KhachSan
             
         }
 
-        
+        int id_new;
 
         void LoadFood()
         {
@@ -59,6 +59,7 @@ namespace QL_KhachSan
         {
             if (e.RowIndex >= 0 && dtgfmenu.CurrentRow != null) // Check for valid row selection
             {
+                int id = Convert.ToInt32(dtgfmenu.CurrentRow.Cells[0].Value);
                 txtNameF.Text = dtgfmenu.CurrentRow.Cells[1].Value.ToString();
                 txtCostF.Text = dtgfmenu.CurrentRow.Cells[3].Value.ToString();
                 string cate = dtgfmenu.CurrentRow.Cells[2].Value.ToString();
@@ -74,6 +75,7 @@ namespace QL_KhachSan
                         cbCateF.SelectedIndex = -1;
                         break;
                 }
+                this.id_new = id;
             }
         }
         private void btneditF_Click(object sender, EventArgs e)
@@ -82,7 +84,7 @@ namespace QL_KhachSan
             string catgory = cbCateF.Text;
             int cost = Convert.ToInt32(txtCostF.Text);
             
-            if (Food_DAO.Instance.EditFood(name, catgory, cost))
+            if (Food_DAO.Instance.EditFood(name, catgory, cost,id_new))
             {
                 MessageBox.Show("Sửa thành công.");
                 LoadFood();
@@ -95,8 +97,8 @@ namespace QL_KhachSan
 
         private void btndelF_Click(object sender, EventArgs e)
         {
-            string id = txtNameF.Text ;
-            if (Food_DAO.Instance.DelFood(id))
+            
+            if (Food_DAO.Instance.DelFood(id_new))
             {
                 MessageBox.Show("Xóa thành công.");
                 LoadFood();

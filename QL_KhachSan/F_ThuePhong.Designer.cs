@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_ThuePhong));
             this.panel_properties = new System.Windows.Forms.Panel();
             this.txt_roomPrice = new ReaLTaiizor.Controls.FoxLabel();
             this.txt_bedType = new ReaLTaiizor.Controls.FoxLabel();
@@ -45,6 +46,7 @@
             this.btn_updateRoom = new System.Windows.Forms.PictureBox();
             this.btt_removeRoom = new System.Windows.Forms.PictureBox();
             this.btn_addroom = new ReaLTaiizor.Controls.HopePictureBox();
+            this.resetbtn = new Bunifu.UI.WinForms.BunifuImageButton();
             this.panel_properties.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_updateRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btt_removeRoom)).BeginInit();
@@ -242,6 +244,41 @@
             this.btn_addroom.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.btn_addroom.Click += new System.EventHandler(this.btn_addroom_Click);
             // 
+            // resetbtn
+            // 
+            this.resetbtn.ActiveImage = null;
+            this.resetbtn.AllowAnimations = true;
+            this.resetbtn.AllowBuffering = false;
+            this.resetbtn.AllowToggling = false;
+            this.resetbtn.AllowZooming = true;
+            this.resetbtn.AllowZoomingOnFocus = false;
+            this.resetbtn.BackColor = System.Drawing.Color.Transparent;
+            this.resetbtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.resetbtn.ErrorImage = ((System.Drawing.Image)(resources.GetObject("resetbtn.ErrorImage")));
+            this.resetbtn.FadeWhenInactive = false;
+            this.resetbtn.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.resetbtn.Image = global::QL_KhachSan.Properties.Resources._211882_refresh_icon;
+            this.resetbtn.ImageActive = null;
+            this.resetbtn.ImageLocation = null;
+            this.resetbtn.ImageMargin = 20;
+            this.resetbtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.resetbtn.ImageZoomSize = new System.Drawing.Size(40, 40);
+            this.resetbtn.InitialImage = ((System.Drawing.Image)(resources.GetObject("resetbtn.InitialImage")));
+            this.resetbtn.Location = new System.Drawing.Point(581, 6);
+            this.resetbtn.Name = "resetbtn";
+            this.resetbtn.Rotation = 0;
+            this.resetbtn.ShowActiveImage = true;
+            this.resetbtn.ShowCursorChanges = true;
+            this.resetbtn.ShowImageBorders = true;
+            this.resetbtn.ShowSizeMarkers = false;
+            this.resetbtn.Size = new System.Drawing.Size(40, 40);
+            this.resetbtn.TabIndex = 15;
+            this.resetbtn.ToolTipText = "";
+            this.resetbtn.WaitOnLoad = false;
+            this.resetbtn.Zoom = 20;
+            this.resetbtn.ZoomSpeed = 10;
+            this.resetbtn.Click += new System.EventHandler(this.resetbtn_Click);
+            // 
             // F_ThuePhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,6 +286,7 @@
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(768, 596);
             this.ControlBox = false;
+            this.Controls.Add(this.resetbtn);
             this.Controls.Add(this.btn_updateRoom);
             this.Controls.Add(this.btt_removeRoom);
             this.Controls.Add(this.panel_properties);
@@ -290,5 +328,6 @@
         private ReaLTaiizor.Controls.FoxLabel txt_roomNumber;
         private System.Windows.Forms.PictureBox btt_removeRoom;
         private System.Windows.Forms.PictureBox btn_updateRoom;
+        private Bunifu.UI.WinForms.BunifuImageButton resetbtn;
     }
 }

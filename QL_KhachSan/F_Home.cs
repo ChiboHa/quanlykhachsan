@@ -150,7 +150,7 @@ namespace QL_KhachSan
         {
             if (sidebarExpand == false)
             {
-                sidebar.Width += 20;
+                sidebar.Width += 50;
                 if (sidebar.Width >= 243)
                 {
                     sidebarExpand = true;

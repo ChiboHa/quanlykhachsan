@@ -282,3 +282,6 @@ C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\
 C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_EditKH.resources
 C:\Users\Admin\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_CheckOut_Messages.resources
 C:\Users\Admin\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_EditKH.resources
+C:\Users\Nguyen Long\Documents\Code\C#\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.BillF.resources
+C:\Users\Nguyen Long\Documents\Code\C#\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_CheckOut_Messages.resources
+C:\Users\Nguyen Long\Documents\Code\C#\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.F_EditKH.resources
