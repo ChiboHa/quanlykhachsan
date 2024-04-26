@@ -81,6 +81,21 @@ namespace QL_KhachSan.DAO
             return GetTotalFoodRevenue() + GetTotalRoomRevenue();
         }
 
+        public DataTable GetTop5BestSellingFood()
+        {
+            string query = @"
+            SELECT TOP(5) f.Ten AS FoodName, SUM(p.qty) AS TotalSold
+            FROM Food f
+            INNER JOIN Pos p ON f.ID = p.foodcode
+            GROUP BY f.Ten
+            ORDER BY TotalSold DESC;
+            ";
+
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+
+
         public DataTable GetTop5BestSellingFood(string date)
         {
             // Chỉ trích xuất phần ngày từ chuỗi ngày giờ

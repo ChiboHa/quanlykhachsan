@@ -21,6 +21,7 @@ namespace QL_KhachSan
         {
             InitializeComponent();
             LoadDashboardData();
+            LoadTop5BestSellingFood();
 
             // Initialize and start the timer
             _refreshTimer = new Timer();
@@ -96,6 +97,8 @@ namespace QL_KhachSan
 
         private void b_TodayFood_Click(object sender, EventArgs e)
         {
+
+            chart2.Series["chart2"].Points.Clear();
             // Get today's date without time
             string dateOnly = DateTime.Now.Date.ToString("yyyy-MM-dd");
 
@@ -119,17 +122,42 @@ namespace QL_KhachSan
             }
             else
             {
-                // Show message if no data found
-                MessageBox.Show("Không có dữ liệu về món ăn bán chạy hôm nay!");
+
             }
         }
 
 
+        private void LoadTop5BestSellingFood()
+        {
 
+            // Xóa dữ liệu cũ trong chart2
+            chart2.Series["chart2"].Points.Clear();
+
+            DataTable top5FoodData = _dashboard.GetTop5BestSellingFood();
+
+            if (top5FoodData != null && top5FoodData.Rows.Count > 0)
+            {
+                // Hiển thị dữ liệu mới
+                foreach (DataRow row in top5FoodData.Rows)
+                {
+                    //Lấy giá trị FoodName trong bảng pos chuyển thành string
+                    string foodName = row["FoodName"].ToString();
+                    //Lấy giá trị totalsold trong bảng pos chuyển thành decimal
+                    decimal totalSold = Convert.ToDecimal(row["TotalSold"]);
+
+                    //Thêm một điểm trên biểu đồ (chart2). Trục x là tên món ăn (foodName) và trục y là tổng số lượng đã bán (totalSold).
+                    chart2.Series["chart2"].Points.AddXY(foodName, totalSold);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu về món ăn bán chạy!");
+            }
+        }
 
         private void b_AllFood_Click(object sender, EventArgs e)
         {
-
+            LoadTop5BestSellingFood ();
         }
     }
 }
