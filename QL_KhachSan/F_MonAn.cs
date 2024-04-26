@@ -120,8 +120,7 @@ namespace QL_KhachSan
             try
             {
                 int foodcode = Convert.ToInt32(((Button)sender).Tag); // Trích xuất giá trị food code từ Tag
-                                                                      // Tiếp tục xử lý dữ liệu
-
+                
                 Food food = Food_DAO.Instance.GetFoodByID(foodcode);
                 if (food != null)
                 {
@@ -200,14 +199,6 @@ namespace QL_KhachSan
             lbl_time.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
-        private void new_order()
-        {
-            LoadFoods();
-            dataGridView1.Rows.Clear();
-            lbl_date.Text = DateTime.Now.ToString("yyyy-MM-dd");
-
-
-        }
         void AddComboBox()
         {
             List<KhachHang> list = KhachHang_DAO.Instance.GetListKH();
@@ -314,25 +305,17 @@ namespace QL_KhachSan
                 }
                 else
                 {
-                    // Giảm số lượng của hàng được chọn đi 1
-                    dataGridView1.Rows[e.RowIndex].Cells[4].Value = currentQuantity - 1;
+                    dataGridView1.Rows[e.RowIndex].Cells[3].Value = currentQuantity - 1;
 
-                    // Cập nhật tổng tiền của hàng
                     int price = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
                     dataGridView1.Rows[e.RowIndex].Cells[4].Value = price * (currentQuantity - 1);
                 }
             }
         }
-
-        private void namekh_Click(object sender, EventArgs e)
-        {
-
-        }
         private void txt_kh_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (txt_kh.SelectedItem == null)
             {
-                // Ẩn nhãn 'namekh' nếu không có mục nào được chọn
                 namekh.Hide();
                 return; // Thoát khỏi phương thức để tránh thực hiện các thao tác tiếp theo
             }
