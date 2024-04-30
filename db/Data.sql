@@ -43,18 +43,6 @@ CREATE TABLE NhanVien
 
 GO
 
-USE [QL_KhachSan]
-GO
-
-INSERT INTO [dbo].[NhanVien] ([ID], [ho], [ten], [gioiTinh], [ngaySinh], [CCCD], [email], [maSoThue], [soDienThoai], [luong1h], [role])
-VALUES 
-    ('NV001', N'Nguyễn', N'Văn A', N'Nam', '1990-01-01', '123456789012', 'nv_a@example.com', '1234567890', '0123456789', 35000, N'Nhân viên'),
-    ('NV002', N'Nguyễn', N'Thị B', N'Nữ', '1995-06-03', '234567890123', 'nv_b@example.com', '2345678901', '1234567890', 35000, N'Nhân viên'),
-    ('BV001', N'Phạm', N'Bảo Vệ',N'Nam', '1991-05-01', '345678901234', 'bao_ve@example.com', '3456789012', '2345678901', 30000, N'Bảo vệ'),
-    ('KT001', N'Lý', N'Kế Toán', N'Nữ','1995-09-05', '456789012345', 'ke_toan@example.com', '4567890123', '3456789012', 45000, N'Kế toán'),
-    ('GD001', N'Phùng', N'Giám Đốc',N'Nam','1999-05-05', '567890123456', 'giam_doc@example.com', '5678901234', '4567890123', 80000, N'Giám đốc');
-GO
-
 -- Bang luong thang nhan vien
 CREATE TABLE Luong
 (
@@ -134,17 +122,6 @@ create table Rooms
 )
 GO
 
-
-
-INSERT INTO Rooms (roomNo, roomType, bedType, price, booked)
-VALUES 
-    (101, N'Phòng thường', N'Giường đơn', 5000, 'YES'),
-    (102, N'Phòng thường', N'Giường đôi', 7000, 'YES'),
-    (103, N'Phòng thường', N'Giường đơn', 10000, 'NO'),
-    (104, N'Phòng VIP', N'Giường đôi', 15000, 'YES');
-GO
-
-
 -- Bang hoa don phong
 Create table BillRoom
 (
@@ -154,6 +131,7 @@ Create table BillRoom
     	date_check_in DATE,
     	date_check_out DATE,
     	status int not null,
+        GrandTotal INT DEFAULT 0,
     	FOREIGN KEY (room_ID) REFERENCES Rooms(id),
     	FOREIGN KEY (customer_id) REFERENCES Customer(ID)
 )

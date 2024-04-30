@@ -120,8 +120,7 @@ namespace QL_KhachSan
             }
             else
             {
-                // Show message if no data found
-                MessageBox.Show("Không có dữ liệu về món ăn bán chạy hôm nay!");
+                Console.WriteLine("Không có dữ liệu về món ăn bán chạy hôm nay!");
             }
         }
 
@@ -150,7 +149,7 @@ namespace QL_KhachSan
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu về món ăn bán chạy!");
+                Console.WriteLine("Không có dữ liệu về món ăn bán chạy hôm nay!");
             }
         }
 

@@ -39,31 +39,7 @@ namespace QL_KhachSan.DAO
 
             return billRooms;
         }
-        public bool UpdateStatus(int ID)
-        {
-            string query = "UPDATE BillRoom SET status = 1 WHERE ID = @ID";
 
-            // Sử dụng DataProvider để thực hiện câu lệnh SQL
-            int rowsAffected = DataProvider.Instance.ExecuteNonQuery(query, new object[] { ID });
-
-            // Kiểm tra xem có hàng nào bị ảnh hưởng (cập nhật thành công) hay không
-            if (rowsAffected > 0)
-            {
-                MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return true;
-            }
-            else
-            {
-                MessageBox.Show("Thanh toán không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-        }
-
-        /*public bool InsertBillRoom(String room_ID, String customer_id)
-        {
-            string query = "INSERT INTO BillRoom(room_ID,customer_id,status) VALUES( @room_ID , @customer_id , '0' )";
-            return (DataProvider.Instance.ExecuteNonQuery(query, new object[] { room_ID, customer_id })) > 0;
-        }*/
         public bool InsertBillRoom(string roomID, string customerID, DateTime checkInDate, DateTime checkOutDate)
         {
             string query = "INSERT INTO BillRoom (room_ID, customer_id, date_check_in, date_check_out,status) VALUES (@roomID, @customerID, @checkInDate, @checkOutDate, '0' )";
@@ -88,19 +64,6 @@ namespace QL_KhachSan.DAO
                 return false;
             }
         }
-
-
-
-
-        /*public DataTable GetBillRoomsWithStatus()
-        {
-            List<BillRoom> billRooms = new List<BillRoom>();
-            string query = "SELECT BillRoom.ID, BillRoom.customer_id as 'Mã khách hàng', Customer.name as 'Họ tên', Customer.cccd as 'Căn cước', Rooms.roomNo as 'Số phòng', Rooms.roomType as 'Loại phòng', BillRoom.date_check_in as 'Ngày checkin' "
-                + "FROM BillRoom INNER JOIN Rooms ON BillRoom.room_ID = Rooms.id "
-                + "INNER JOIN Customer ON BillRoom.customer_id = Customer.ID "
-                + "WHERE BillRoom.status=0";
-            return DataProvider.Instance.ExecuteQuery(query);
-        }*/
 
         // Lấy ra danh sách các hóa đơn phòng chưa thanh toán
         public DataTable GetBillRoomsWithStatus()
@@ -168,15 +131,31 @@ namespace QL_KhachSan.DAO
 
         /*public bool checkOut(String id)
         {
-            string query = "UPDATE BillRoom SET date_check_out = GETDATE() ,status = 1 WHERE id = @id ";
-            return (DataProvider.Instance.ExecuteNonQuery(query, new object[] { id })) > 0;
-        }*/
-
-        public bool checkOut(String id)
-        {
             string query = "UPDATE BillRoom SET status = 1 WHERE id = @id ";
             return (DataProvider.Instance.ExecuteNonQuery(query, new object[] { id })) > 0;
+        }*/
+        public bool checkOut(string id, double totalAmount)
+        {
+            string query = "UPDATE BillRoom SET status = 1, GrandTotal = @totalAmount WHERE id = @id ";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(DataProvider.Instance.ConnectionString))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@totalAmount", totalAmount);
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error checking out: " + ex.Message);
+                return false;
+            }
         }
+
 
         public string GetRoomID(String id)
         {

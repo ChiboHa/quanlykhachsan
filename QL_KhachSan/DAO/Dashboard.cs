@@ -54,7 +54,7 @@ namespace QL_KhachSan.DAO
         }
 
 
-        public decimal GetTotalRoomRevenue()
+        /*public decimal GetTotalRoomRevenue()
         {
             string query = @"SELECT SUM(ISNULL(Total, 0)) AS TotalRevenue 
             FROM (SELECT BillRoom.ID, (DATEDIFF(DAY, date_check_in, date_check_out) + 1) * ISNULL(Rooms.price, 0) AS Total 
@@ -75,7 +75,25 @@ namespace QL_KhachSan.DAO
                 // Trả về 0 nếu kết quả là NULL
                 return 0;
             }
+        }*/
+        public decimal GetTotalRoomRevenue()
+        {
+            string query = "SELECT SUM(ISNULL(GrandToTal, 0)) AS TotalRevenue FROM BillRoom WHERE status = '1'";
+            object result = DataProvider.Instance.ExecuteScalar(query);
+
+            // Kiểm tra xem kết quả có phải là NULL không
+            if (result != DBNull.Value)
+            {
+                // Ép kiểu kết quả sang decimal và trả về
+                return Convert.ToDecimal(result);
+            }
+            else
+            {
+                // Trả về 0 nếu kết quả là NULL
+                return 0;
+            }
         }
+
 
         //Tổng doanh thu phòng và món ăn từ trước đến nay
         public decimal GetTotalRevenue()

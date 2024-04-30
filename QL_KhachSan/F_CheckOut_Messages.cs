@@ -96,6 +96,7 @@ namespace QL_KhachSan
             {
                 string GetRoomNo = Rooms_DAO.Instance.GetRoomNo(room_id);
                 getQR("Thanh toan tien phong " + GetRoomNo, totalAmount + "");
+                checkOut(totalAmount);
                 bunifuPages1.PageIndex = 1;
             }
         }
@@ -111,10 +112,17 @@ namespace QL_KhachSan
         }
 
         // Hàm thanh toán
-        private void checkOut()
+        /*private void checkOut()
         {
             Rooms_DAO.Instance.setBooked("NO", room_id);
             Bill_Room_DAO.Instance.checkOut(id_HDP);
+        }*/
+
+        // Hàm thanh toán
+        private void checkOut(double totalAmount)
+        {
+            Rooms_DAO.Instance.setBooked("NO", room_id);
+            Bill_Room_DAO.Instance.checkOut(id_HDP, totalAmount);
         }
 
         private void getQR(String noidung, String soTien)
@@ -156,7 +164,7 @@ namespace QL_KhachSan
 
             if (result == DialogResult.Yes)
             {
-                checkOut();
+                checkOut(totalAmount);
                 this.Close();
             }
         }
