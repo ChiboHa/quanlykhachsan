@@ -29,20 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new ReaLTaiizor.Controls.Panel();
@@ -69,7 +68,6 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lbl_TKDoanhThu = new System.Windows.Forms.Label();
             this.b_Today = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.b_ThisYear = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.b_7DaysAgo = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.b_30DaysAgo = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -443,7 +441,6 @@
             this.panel6.Controls.Add(this.chart1);
             this.panel6.Controls.Add(this.lbl_TKDoanhThu);
             this.panel6.Controls.Add(this.b_Today);
-            this.panel6.Controls.Add(this.b_ThisYear);
             this.panel6.Controls.Add(this.b_7DaysAgo);
             this.panel6.Controls.Add(this.b_30DaysAgo);
             this.panel6.Location = new System.Drawing.Point(16, 233);
@@ -454,21 +451,24 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(0, 123);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Room";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Food";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Room";
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Food";
+            this.chart1.Series.Add(series4);
+            this.chart1.Series.Add(series5);
             this.chart1.Size = new System.Drawing.Size(877, 384);
             this.chart1.TabIndex = 6;
             this.chart1.Text = "chart1";
@@ -504,11 +504,11 @@
             this.b_Today.ColorContrastOnClick = 45;
             this.b_Today.ColorContrastOnHover = 45;
             this.b_Today.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.b_Today.CustomizableEdges = borderEdges1;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.b_Today.CustomizableEdges = borderEdges6;
             this.b_Today.DialogResult = System.Windows.Forms.DialogResult.None;
             this.b_Today.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.b_Today.DisabledFillColor = System.Drawing.Color.Empty;
@@ -534,7 +534,7 @@
             this.b_Today.IdleIconLeftImage = null;
             this.b_Today.IdleIconRightImage = null;
             this.b_Today.IndicateFocus = false;
-            this.b_Today.Location = new System.Drawing.Point(462, 67);
+            this.b_Today.Location = new System.Drawing.Point(604, 67);
             this.b_Today.Name = "b_Today";
             this.b_Today.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.b_Today.OnDisabledState.BorderRadius = 1;
@@ -577,98 +577,6 @@
             this.b_Today.UseDefaultRadiusAndThickness = true;
             this.b_Today.Click += new System.EventHandler(this.b_Today_Click);
             // 
-            // b_ThisYear
-            // 
-            this.b_ThisYear.AllowAnimations = true;
-            this.b_ThisYear.AllowMouseEffects = true;
-            this.b_ThisYear.AllowToggling = false;
-            this.b_ThisYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.b_ThisYear.AnimationSpeed = 200;
-            this.b_ThisYear.AutoGenerateColors = false;
-            this.b_ThisYear.AutoRoundBorders = false;
-            this.b_ThisYear.AutoSizeLeftIcon = true;
-            this.b_ThisYear.AutoSizeRightIcon = true;
-            this.b_ThisYear.BackColor = System.Drawing.Color.Transparent;
-            this.b_ThisYear.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.b_ThisYear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("b_ThisYear.BackgroundImage")));
-            this.b_ThisYear.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.b_ThisYear.ButtonText = "Năm nay";
-            this.b_ThisYear.ButtonTextMarginLeft = 0;
-            this.b_ThisYear.ColorContrastOnClick = 45;
-            this.b_ThisYear.ColorContrastOnHover = 45;
-            this.b_ThisYear.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.b_ThisYear.CustomizableEdges = borderEdges2;
-            this.b_ThisYear.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.b_ThisYear.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.b_ThisYear.DisabledFillColor = System.Drawing.Color.Empty;
-            this.b_ThisYear.DisabledForecolor = System.Drawing.Color.Empty;
-            this.b_ThisYear.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.b_ThisYear.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.b_ThisYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.b_ThisYear.IconLeft = null;
-            this.b_ThisYear.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.b_ThisYear.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.b_ThisYear.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.b_ThisYear.IconMarginLeft = 11;
-            this.b_ThisYear.IconPadding = 10;
-            this.b_ThisYear.IconRight = null;
-            this.b_ThisYear.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.b_ThisYear.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.b_ThisYear.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.b_ThisYear.IconSize = 25;
-            this.b_ThisYear.IdleBorderColor = System.Drawing.Color.Empty;
-            this.b_ThisYear.IdleBorderRadius = 0;
-            this.b_ThisYear.IdleBorderThickness = 0;
-            this.b_ThisYear.IdleFillColor = System.Drawing.Color.Empty;
-            this.b_ThisYear.IdleIconLeftImage = null;
-            this.b_ThisYear.IdleIconRightImage = null;
-            this.b_ThisYear.IndicateFocus = false;
-            this.b_ThisYear.Location = new System.Drawing.Point(657, 67);
-            this.b_ThisYear.Name = "b_ThisYear";
-            this.b_ThisYear.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.b_ThisYear.OnDisabledState.BorderRadius = 1;
-            this.b_ThisYear.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.b_ThisYear.OnDisabledState.BorderThickness = 1;
-            this.b_ThisYear.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.b_ThisYear.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.b_ThisYear.OnDisabledState.IconLeftImage = null;
-            this.b_ThisYear.OnDisabledState.IconRightImage = null;
-            this.b_ThisYear.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.b_ThisYear.onHoverState.BorderRadius = 1;
-            this.b_ThisYear.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.b_ThisYear.onHoverState.BorderThickness = 1;
-            this.b_ThisYear.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.b_ThisYear.onHoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.b_ThisYear.onHoverState.IconLeftImage = null;
-            this.b_ThisYear.onHoverState.IconRightImage = null;
-            this.b_ThisYear.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.b_ThisYear.OnIdleState.BorderRadius = 1;
-            this.b_ThisYear.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.b_ThisYear.OnIdleState.BorderThickness = 1;
-            this.b_ThisYear.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.b_ThisYear.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(40)))), ((int)(((byte)(70)))));
-            this.b_ThisYear.OnIdleState.IconLeftImage = null;
-            this.b_ThisYear.OnIdleState.IconRightImage = null;
-            this.b_ThisYear.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(40)))));
-            this.b_ThisYear.OnPressedState.BorderRadius = 1;
-            this.b_ThisYear.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.b_ThisYear.OnPressedState.BorderThickness = 1;
-            this.b_ThisYear.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(41)))), ((int)(((byte)(40)))));
-            this.b_ThisYear.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.b_ThisYear.OnPressedState.IconLeftImage = null;
-            this.b_ThisYear.OnPressedState.IconRightImage = null;
-            this.b_ThisYear.Size = new System.Drawing.Size(168, 39);
-            this.b_ThisYear.TabIndex = 3;
-            this.b_ThisYear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.b_ThisYear.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.b_ThisYear.TextMarginLeft = 0;
-            this.b_ThisYear.TextPadding = new System.Windows.Forms.Padding(0);
-            this.b_ThisYear.UseDefaultRadiusAndThickness = true;
-            // 
             // b_7DaysAgo
             // 
             this.b_7DaysAgo.AllowAnimations = true;
@@ -689,11 +597,11 @@
             this.b_7DaysAgo.ColorContrastOnClick = 45;
             this.b_7DaysAgo.ColorContrastOnHover = 45;
             this.b_7DaysAgo.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.b_7DaysAgo.CustomizableEdges = borderEdges3;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.b_7DaysAgo.CustomizableEdges = borderEdges7;
             this.b_7DaysAgo.DialogResult = System.Windows.Forms.DialogResult.None;
             this.b_7DaysAgo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.b_7DaysAgo.DisabledFillColor = System.Drawing.Color.Empty;
@@ -719,7 +627,7 @@
             this.b_7DaysAgo.IdleIconLeftImage = null;
             this.b_7DaysAgo.IdleIconRightImage = null;
             this.b_7DaysAgo.IndicateFocus = false;
-            this.b_7DaysAgo.Location = new System.Drawing.Point(256, 67);
+            this.b_7DaysAgo.Location = new System.Drawing.Point(347, 67);
             this.b_7DaysAgo.Name = "b_7DaysAgo";
             this.b_7DaysAgo.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.b_7DaysAgo.OnDisabledState.BorderRadius = 1;
@@ -760,6 +668,7 @@
             this.b_7DaysAgo.TextMarginLeft = 0;
             this.b_7DaysAgo.TextPadding = new System.Windows.Forms.Padding(0);
             this.b_7DaysAgo.UseDefaultRadiusAndThickness = true;
+            this.b_7DaysAgo.Click += new System.EventHandler(this.b_7DaysAgo_Click);
             // 
             // b_30DaysAgo
             // 
@@ -781,11 +690,11 @@
             this.b_30DaysAgo.ColorContrastOnClick = 45;
             this.b_30DaysAgo.ColorContrastOnHover = 45;
             this.b_30DaysAgo.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.b_30DaysAgo.CustomizableEdges = borderEdges4;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.b_30DaysAgo.CustomizableEdges = borderEdges8;
             this.b_30DaysAgo.DialogResult = System.Windows.Forms.DialogResult.None;
             this.b_30DaysAgo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.b_30DaysAgo.DisabledFillColor = System.Drawing.Color.Empty;
@@ -811,7 +720,7 @@
             this.b_30DaysAgo.IdleIconLeftImage = null;
             this.b_30DaysAgo.IdleIconRightImage = null;
             this.b_30DaysAgo.IndicateFocus = false;
-            this.b_30DaysAgo.Location = new System.Drawing.Point(59, 67);
+            this.b_30DaysAgo.Location = new System.Drawing.Point(100, 67);
             this.b_30DaysAgo.Name = "b_30DaysAgo";
             this.b_30DaysAgo.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.b_30DaysAgo.OnDisabledState.BorderRadius = 1;
@@ -852,6 +761,7 @@
             this.b_30DaysAgo.TextMarginLeft = 0;
             this.b_30DaysAgo.TextPadding = new System.Windows.Forms.Padding(0);
             this.b_30DaysAgo.UseDefaultRadiusAndThickness = true;
+            this.b_30DaysAgo.Click += new System.EventHandler(this.b_30DaysAgo_Click);
             // 
             // panel7
             // 
@@ -869,31 +779,33 @@
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            this.chart2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend2.Alignment = System.Drawing.StringAlignment.Center;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Font = new System.Drawing.Font("Segoe UI", 8F);
-            legend2.IsTextAutoFit = false;
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            this.chart2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
+            legend4.Alignment = System.Drawing.StringAlignment.Center;
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend4.Font = new System.Drawing.Font("Segoe UI", 8F);
+            legend4.IsTextAutoFit = false;
+            legend4.Name = "Legend1";
+            this.chart2.Legends.Add(legend4);
             this.chart2.Location = new System.Drawing.Point(0, 67);
             this.chart2.Name = "chart2";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series3.IsValueShownAsLabel = true;
-            series3.Legend = "Legend1";
-            series3.Name = "chart2";
-            this.chart2.Series.Add(series3);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series6.IsValueShownAsLabel = true;
+            series6.Legend = "Legend1";
+            series6.Name = "chart2";
+            this.chart2.Series.Add(series6);
             this.chart2.Size = new System.Drawing.Size(396, 439);
             this.chart2.TabIndex = 8;
             this.chart2.Text = "chart2";
-            title1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "Top 5 Món Ăn Bán Chạy";
-            this.chart2.Titles.Add(title1);
+            title2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.Name = "Title1";
+            title2.Text = "Top 5 Món Ăn Bán Chạy";
+            this.chart2.Titles.Add(title2);
             // 
             // b_TodayFood
             // 
@@ -915,11 +827,11 @@
             this.b_TodayFood.ColorContrastOnClick = 45;
             this.b_TodayFood.ColorContrastOnHover = 45;
             this.b_TodayFood.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.b_TodayFood.CustomizableEdges = borderEdges5;
+            borderEdges9.BottomLeft = true;
+            borderEdges9.BottomRight = true;
+            borderEdges9.TopLeft = true;
+            borderEdges9.TopRight = true;
+            this.b_TodayFood.CustomizableEdges = borderEdges9;
             this.b_TodayFood.DialogResult = System.Windows.Forms.DialogResult.None;
             this.b_TodayFood.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.b_TodayFood.DisabledFillColor = System.Drawing.Color.Empty;
@@ -1008,11 +920,11 @@
             this.b_AllFood.ColorContrastOnClick = 45;
             this.b_AllFood.ColorContrastOnHover = 45;
             this.b_AllFood.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.b_AllFood.CustomizableEdges = borderEdges6;
+            borderEdges10.BottomLeft = true;
+            borderEdges10.BottomRight = true;
+            borderEdges10.TopLeft = true;
+            borderEdges10.TopRight = true;
+            this.b_AllFood.CustomizableEdges = borderEdges10;
             this.b_AllFood.DialogResult = System.Windows.Forms.DialogResult.None;
             this.b_AllFood.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.b_AllFood.DisabledFillColor = System.Drawing.Color.Empty;
@@ -1146,7 +1058,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton b_Today;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton b_ThisYear;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton b_7DaysAgo;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton b_30DaysAgo;
         private System.Windows.Forms.Label lbl_TKDoanhThu;

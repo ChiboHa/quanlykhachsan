@@ -193,5 +193,133 @@ namespace QL_KhachSan.DAO
             return top5FoodData;
         }
 
+        public decimal GetTotalRoomRevenueToday(string date)
+        {
+            string query = "SELECT SUM(ISNULL(GrandToTal, 0)) AS TotalRevenue FROM BillRoom WHERE status = '1' AND CONVERT(date, date_check_out) = @date";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { date });
+
+            // Kiểm tra xem kết quả có phải là NULL không
+            if (result != DBNull.Value)
+            {
+                // Ép kiểu kết quả sang decimal và trả về
+                return Convert.ToDecimal(result);
+            }
+            else
+            {
+                // Trả về 0 nếu kết quả là NULL
+                return 0;
+            }
+        }
+
+        public decimal GetTotalFoodRevenueToday(string date)
+        {
+            string query = "SELECT SUM(ISNULL(GrandToTal, 0)) AS TotalRevenue FROM BillFood WHERE CONVERT(date, transdate) = @date";
+            object result = DataProvider.Instance.ExecuteScalar(query, new object[] { date });
+
+            // Kiểm tra xem kết quả có phải là NULL không
+            if (result != DBNull.Value)
+            {
+                // Ép kiểu kết quả sang decimal và trả về
+                return Convert.ToDecimal(result);
+            }
+            else
+            {
+                // Trả về 0 nếu kết quả là NULL
+                return 0;
+            }
+        }
+
+        public decimal GetTotalRoomRevenue7days(string thirtyDaysAgoString)
+        {
+            string query = "SELECT SUM(ISNULL(GrandToTal, 0)) AS TotalRevenue FROM BillRoom WHERE CONVERT(date, date_check_out) BETWEEN DATEADD(day, -7, CONVERT(date, GETDATE())) AND CONVERT(date, GETDATE())";
+            object result = DataProvider.Instance.ExecuteScalar(query);
+
+            // Kiểm tra xem kết quả có phải là NULL không
+            if (result != DBNull.Value)
+            {
+                // Ép kiểu kết quả sang decimal và trả về
+                return Convert.ToDecimal(result);
+            }
+            else
+            {
+                // Trả về 0 nếu kết quả là NULL
+                return 0;
+            }
+        }
+
+        public decimal GetTotalFoodRevenue7days(string thirtyDaysAgoString)
+        {
+            string query = "SELECT SUM(ISNULL(GrandToTal, 0)) AS TotalRevenue FROM BillFood WHERE CONVERT(date, transdate) BETWEEN DATEADD(day, -7, CONVERT(date, GETDATE())) AND CONVERT(date, GETDATE())";
+            object result = DataProvider.Instance.ExecuteScalar(query);
+
+            // Kiểm tra xem kết quả có phải là NULL không
+            if (result != DBNull.Value)
+            {
+                // Ép kiểu kết quả sang decimal và trả về
+                return Convert.ToDecimal(result);
+            }
+            else
+            {
+                // Trả về 0 nếu kết quả là NULL
+                return 0;
+            }
+        }
+
+        public decimal GetTotalRoomRevenue30days(string thirtyDaysAgoString)
+        {
+            string query = "SELECT SUM(ISNULL(GrandToTal, 0)) AS TotalRevenue FROM BillRoom WHERE CONVERT(date, date_check_out) BETWEEN DATEADD(day, -30, CONVERT(date, GETDATE())) AND CONVERT(date, GETDATE())";
+            object result = DataProvider.Instance.ExecuteScalar(query);
+
+            // Kiểm tra xem kết quả có phải là NULL không
+            if (result != DBNull.Value)
+            {
+                // Ép kiểu kết quả sang decimal và trả về
+                return Convert.ToDecimal(result);
+            }
+            else
+            {
+                // Trả về 0 nếu kết quả là NULL
+                return 0;
+            }
+        }
+
+        public decimal GetTotalFoodRevenue30days(string thirtyDaysAgoString)
+        {
+            string query = "SELECT SUM(ISNULL(GrandToTal, 0)) AS TotalRevenue FROM BillFood WHERE CONVERT(date, transdate) BETWEEN DATEADD(day, -30, CONVERT(date, GETDATE())) AND CONVERT(date, GETDATE())";
+            object result = DataProvider.Instance.ExecuteScalar(query);
+
+            // Kiểm tra xem kết quả có phải là NULL không
+            if (result != DBNull.Value)
+            {
+                // Ép kiểu kết quả sang decimal và trả về
+                return Convert.ToDecimal(result);
+            }
+            else
+            {
+                // Trả về 0 nếu kết quả là NULL
+                return 0;
+            }
+        }
+
+        public List<string> GetDistinctDatesWithBill()
+        {
+            string query = @"
+    SELECT DISTINCT CONVERT(date, transdate) AS BillDate
+    FROM BillFood
+    UNION
+    SELECT DISTINCT CONVERT(date, date_check_out) AS BillDate
+    FROM BillRoom";
+
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            List<string> dates = new List<string>();
+            foreach (DataRow row in result.Rows)
+            {
+                string date = Convert.ToDateTime(row["BillDate"]).ToString("yyyy-MM-dd");
+                dates.Add(date);
+            }
+
+            return dates;
+        }
+
     }
 }
