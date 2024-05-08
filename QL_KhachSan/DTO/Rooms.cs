@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QL_KhachSan.DTO
 {
-    internal class Rooms
+    public class Rooms
     {
         public Rooms(int id, string roomNo, string roomType, string bedType, int price, string booked)
         {
