@@ -520,6 +520,7 @@
     <None Include="Resources\phone.png" />
     <None Include="Resources\id.png" />
     <None Include="Resources\name.png" />
+    <None Include="Resources\reload.png" />
     <Content Include="Resources\user.jpg" />
     <None Include="Resources\user1.jpg" />
   </ItemGroup>

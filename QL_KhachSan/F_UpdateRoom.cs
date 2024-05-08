@@ -14,10 +14,23 @@ namespace QL_KhachSan
 {
     public partial class F_UpdateRoom : Form
     {
-        public F_UpdateRoom()
+        private Rooms selectedRoom;
+
+        public F_UpdateRoom(Rooms room)
         {
             InitializeComponent();
+            if (room != null)
+            {
+                selectedRoom = room;
+                DisplaySelectedRoom();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một căn phòng để cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
+
 
         private void btn_close_Click(object sender, EventArgs e)
         {
@@ -43,5 +56,17 @@ namespace QL_KhachSan
                 MessageBox.Show("Hãy nhập đầy đủ thông tin!!!", "Thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        private void DisplaySelectedRoom()
+        {
+            if (selectedRoom != null)
+            {
+                txtBox_roomNumber.Text = selectedRoom.RoomNo;
+                comboBox_roomType.SelectedItem = selectedRoom.RoomType;
+                comboBox_bedType.SelectedItem = selectedRoom.BedType;
+                txtBox_roomPrice.Text = selectedRoom.Price.ToString();
+                comboBox_booked.SelectedItem = selectedRoom.Booked;
+            }
+        }
+
     }
 }

@@ -42,10 +42,12 @@
             this.layoutpanel_normal = new System.Windows.Forms.FlowLayoutPanel();
             this.skyLabel2 = new ReaLTaiizor.Controls.SkyLabel();
             this.skyLabel1 = new ReaLTaiizor.Controls.SkyLabel();
+            this.btn_reload = new System.Windows.Forms.PictureBox();
             this.btn_updateRoom = new System.Windows.Forms.PictureBox();
             this.btt_removeRoom = new System.Windows.Forms.PictureBox();
             this.btn_addroom = new ReaLTaiizor.Controls.HopePictureBox();
             this.panel_properties.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_reload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_updateRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btt_removeRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_addroom)).BeginInit();
@@ -203,6 +205,17 @@
             this.skyLabel1.TabIndex = 7;
             this.skyLabel1.Text = "Phòng thường:";
             // 
+            // btn_reload
+            // 
+            this.btn_reload.Image = global::QL_KhachSan.Properties.Resources.reload;
+            this.btn_reload.Location = new System.Drawing.Point(581, 6);
+            this.btn_reload.Name = "btn_reload";
+            this.btn_reload.Size = new System.Drawing.Size(40, 40);
+            this.btn_reload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_reload.TabIndex = 15;
+            this.btn_reload.TabStop = false;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
+            // 
             // btn_updateRoom
             // 
             this.btn_updateRoom.Image = global::QL_KhachSan.Properties.Resources.update;
@@ -249,6 +262,7 @@
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(768, 596);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_reload);
             this.Controls.Add(this.btn_updateRoom);
             this.Controls.Add(this.btt_removeRoom);
             this.Controls.Add(this.panel_properties);
@@ -263,6 +277,7 @@
             this.Text = "F_ThuePhong";
             this.panel_properties.ResumeLayout(false);
             this.panel_properties.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_reload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_updateRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btt_removeRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_addroom)).EndInit();
@@ -290,5 +305,6 @@
         private ReaLTaiizor.Controls.FoxLabel txt_roomNumber;
         private System.Windows.Forms.PictureBox btt_removeRoom;
         private System.Windows.Forms.PictureBox btn_updateRoom;
+        private System.Windows.Forms.PictureBox btn_reload;
     }
 }

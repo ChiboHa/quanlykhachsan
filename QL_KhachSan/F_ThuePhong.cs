@@ -42,6 +42,7 @@ namespace QL_KhachSan
                 btn.Click += (sender, e) =>
                 {
                     Rooms room = (Rooms)btn.Tag;
+                    panel_properties.Tag = room;
                     panel_properties.Visible = false;
                     ClearRoomDetails();
                     panel_properties.Visible = true;
@@ -190,11 +191,21 @@ namespace QL_KhachSan
                 MessageBox.Show("Vui lòng chọn một căn phòng để cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            using (var f_updateRoom = new F_UpdateRoom())
+
+            Rooms selectedRoom = (Rooms)panel_properties.Tag;
+
+            using (var f_updateRoom = new F_UpdateRoom(selectedRoom))
+            {
                 if (f_updateRoom.ShowDialog() == DialogResult.OK)
                 {
                     ReloadRooms();
                 }
+            }
+        }
+
+        private void btn_reload_Click(object sender, EventArgs e)
+        {
+            ReloadRooms();
         }
     }
 }
