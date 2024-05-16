@@ -66,6 +66,10 @@
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -244,6 +248,7 @@
       <HintPath>..\packages\System.Threading.AccessControl.6.0.0\lib\net461\System.Threading.AccessControl.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Web.Services.Description, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Web.Services.Description.4.9.0\lib\net461\System.Web.Services.Description.dll</HintPath>
@@ -267,11 +272,23 @@
     <Compile Include="BillF.Designer.cs">
       <DependentUpon>BillF.cs</DependentUpon>
     </Compile>
+    <Compile Include="BillReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillReport.Designer.cs">
+      <DependentUpon>BillReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="CropForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CropForm.Designer.cs">
       <DependentUpon>CropForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAO\BillFoodDAO.cs" />
     <Compile Include="DAO\Bill_Room_DAO.cs" />
@@ -285,6 +302,11 @@
     <Compile Include="DAO\NhanVien_DAO.cs" />
     <Compile Include="DAO\PosDAO.cs" />
     <Compile Include="DAO\TongLuong_DAO.cs" />
+    <Compile Include="DataSetBill.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetBill.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DTO\BillFood.cs" />
     <Compile Include="DTO\Food.cs" />
     <Compile Include="DTO\KhachHang.cs" />
@@ -412,8 +434,15 @@
     <EmbeddedResource Include="BillF.resx">
       <DependentUpon>BillF.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BillReport.resx">
+      <DependentUpon>BillReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CropForm.resx">
       <DependentUpon>CropForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="F_AddRoom.resx">
       <DependentUpon>F_AddRoom.cs</DependentUpon>
@@ -478,6 +507,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DataSetBill.xsc">
+      <DependentUpon>DataSetBill.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetBill.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetBill.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetBill.xss">
+      <DependentUpon>DataSetBill.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -497,7 +537,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\z4878326209887_bafeb271c1264d11273f88d359ec5c56.jpg" />
   </ItemGroup>

@@ -355,5 +355,10 @@ namespace QL_KhachSan
         {
             billf = null;
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            new BillReport().Show();
+        }
     }
 }

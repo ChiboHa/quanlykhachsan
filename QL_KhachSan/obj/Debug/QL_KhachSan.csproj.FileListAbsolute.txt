@@ -353,3 +353,8 @@ D:\Git Learning\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.csproj.Fody.Cop
 D:\Git Learning\quanlykhachsan\QL_KhachSan\obj\Debug\QL_Khach.BD06C0C0.Up2Date
 D:\Git Learning\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.exe
 D:\Git Learning\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.pdb
+C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Nguyen thi ha chau\Source\Repos\ChiboHa\quanlykhachsan\QL_KhachSan\obj\Debug\QL_KhachSan.BillReport.resources
