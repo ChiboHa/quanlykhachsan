@@ -80,5 +80,18 @@ namespace QL_KhachSan.DAO
                               "@subject = N'" + code + " là mã khôi phục mật khẩu của bạn '  \n";
             DataProvider.Instance.ExecuteNonQuery(sql);
         }
+
+        public string getRole(string username, string password)
+        {
+            string query = "SELECT Role FROM Account WHERE UserName = @username AND PassWord = @password";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password });
+
+            if (data.Rows.Count > 0)
+            {
+                return data.Rows[0]["Role"].ToString();
+            }
+            return string.Empty;
+        }
+
     }
 }

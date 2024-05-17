@@ -329,7 +329,22 @@ namespace QL_KhachSan
             {
                 lDisplayName.Text = "Không có DisplayName";
             }
+
+            CheckUserRole();
         }
+
+        private void CheckUserRole()
+        {
+            string role = Account_DAO.Instance.getRole(username, password);
+
+            if (role == "USER")
+            {
+                bDVKhac.Enabled = false;
+                bDoUong.Enabled = false;
+                b_QuanLyNV.Enabled = false;
+            }
+        }
+
 
         private void bDangXuat_Click(object sender, EventArgs e)
         {

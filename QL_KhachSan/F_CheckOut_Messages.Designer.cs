@@ -63,11 +63,11 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.b_DatPhong = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.txt_totalAmount_2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.b_DatPhong = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuPages1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -90,15 +90,17 @@
             this.bunifuPages1.Controls.Add(this.tabPage1);
             this.bunifuPages1.Controls.Add(this.tabPage2);
             this.bunifuPages1.Controls.Add(this.tabPage3);
-            this.bunifuPages1.Location = new System.Drawing.Point(-5, -4);
+            this.bunifuPages1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuPages1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuPages1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuPages1.Multiline = true;
             this.bunifuPages1.Name = "bunifuPages1";
-            this.bunifuPages1.Page = this.tabPage3;
-            this.bunifuPages1.PageIndex = 2;
-            this.bunifuPages1.PageName = "tabPage3";
-            this.bunifuPages1.PageTitle = "tabPage3";
+            this.bunifuPages1.Page = this.tabPage1;
+            this.bunifuPages1.PageIndex = 0;
+            this.bunifuPages1.PageName = "tabPage1";
+            this.bunifuPages1.PageTitle = "tabPage1";
             this.bunifuPages1.SelectedIndex = 0;
-            this.bunifuPages1.Size = new System.Drawing.Size(328, 449);
+            this.bunifuPages1.Size = new System.Drawing.Size(545, 631);
             this.bunifuPages1.TabIndex = 0;
             animation1.AnimateOnlyDifferences = false;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -139,9 +141,10 @@
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(320, 423);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(537, 602);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -194,7 +197,8 @@
             this.bt_continue.IdleIconLeftImage = null;
             this.bt_continue.IdleIconRightImage = null;
             this.bt_continue.IndicateFocus = false;
-            this.bt_continue.Location = new System.Drawing.Point(156, 381);
+            this.bt_continue.Location = new System.Drawing.Point(316, 522);
+            this.bt_continue.Margin = new System.Windows.Forms.Padding(4);
             this.bt_continue.Name = "bt_continue";
             this.bt_continue.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bt_continue.OnDisabledState.BorderRadius = 40;
@@ -228,7 +232,7 @@
             this.bt_continue.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.bt_continue.OnPressedState.IconLeftImage = null;
             this.bt_continue.OnPressedState.IconRightImage = null;
-            this.bt_continue.Size = new System.Drawing.Size(150, 40);
+            this.bt_continue.Size = new System.Drawing.Size(200, 49);
             this.bt_continue.TabIndex = 124;
             this.bt_continue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bt_continue.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -240,7 +244,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(208, 83);
+            this.panel1.Location = new System.Drawing.Point(277, 102);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(0, 0);
             this.panel1.TabIndex = 125;
@@ -248,26 +253,29 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(3, 206);
+            this.panel2.Location = new System.Drawing.Point(4, 405);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(318, 1);
+            this.panel2.Size = new System.Drawing.Size(550, 1);
             this.panel2.TabIndex = 123;
             // 
             // txt_totalAmount
             // 
-            this.txt_totalAmount.AllowParentOverrides = false;
+            this.txt_totalAmount.AllowParentOverrides = true;
+            this.txt_totalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_totalAmount.AutoEllipsis = false;
             this.txt_totalAmount.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_totalAmount.CursorType = System.Windows.Forms.Cursors.Default;
-            this.txt_totalAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.txt_totalAmount.ForeColor = System.Drawing.Color.Gray;
-            this.txt_totalAmount.Location = new System.Drawing.Point(118, 231);
+            this.txt_totalAmount.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold);
+            this.txt_totalAmount.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_totalAmount.Location = new System.Drawing.Point(395, 434);
+            this.txt_totalAmount.Margin = new System.Windows.Forms.Padding(4);
             this.txt_totalAmount.Name = "txt_totalAmount";
             this.txt_totalAmount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_totalAmount.Size = new System.Drawing.Size(70, 21);
+            this.txt_totalAmount.Size = new System.Drawing.Size(121, 37);
             this.txt_totalAmount.TabIndex = 122;
-            this.txt_totalAmount.Text = "200.000Đ";
-            this.txt_totalAmount.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txt_totalAmount.Text = "200.000 VNĐ";
+            this.txt_totalAmount.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.txt_totalAmount.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel14
@@ -275,11 +283,12 @@
             this.bunifuLabel14.AllowParentOverrides = false;
             this.bunifuLabel14.AutoEllipsis = false;
             this.bunifuLabel14.CursorType = null;
-            this.bunifuLabel14.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel14.Location = new System.Drawing.Point(49, 229);
+            this.bunifuLabel14.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel14.Location = new System.Drawing.Point(24, 434);
+            this.bunifuLabel14.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel14.Name = "bunifuLabel14";
             this.bunifuLabel14.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel14.Size = new System.Drawing.Size(61, 23);
+            this.bunifuLabel14.Size = new System.Drawing.Size(96, 36);
             this.bunifuLabel14.TabIndex = 121;
             this.bunifuLabel14.Text = "Tổng tiền:";
             this.bunifuLabel14.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -291,15 +300,16 @@
             this.txt_roomType.AutoEllipsis = false;
             this.txt_roomType.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_roomType.CursorType = System.Windows.Forms.Cursors.Default;
-            this.txt_roomType.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.txt_roomType.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold);
             this.txt_roomType.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_roomType.Location = new System.Drawing.Point(95, 172);
+            this.txt_roomType.Location = new System.Drawing.Point(322, 214);
+            this.txt_roomType.Margin = new System.Windows.Forms.Padding(4);
             this.txt_roomType.Name = "txt_roomType";
             this.txt_roomType.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_roomType.Size = new System.Drawing.Size(41, 13);
+            this.txt_roomType.Size = new System.Drawing.Size(99, 40);
             this.txt_roomType.TabIndex = 120;
-            this.txt_roomType.Text = "Thường";
-            this.txt_roomType.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txt_roomType.Text = "Phòng VIP";
+            this.txt_roomType.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.txt_roomType.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txt_pricePerDay
@@ -308,15 +318,16 @@
             this.txt_pricePerDay.AutoEllipsis = false;
             this.txt_pricePerDay.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_pricePerDay.CursorType = System.Windows.Forms.Cursors.Default;
-            this.txt_pricePerDay.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.txt_pricePerDay.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold);
             this.txt_pricePerDay.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_pricePerDay.Location = new System.Drawing.Point(237, 172);
+            this.txt_pricePerDay.Location = new System.Drawing.Point(322, 331);
+            this.txt_pricePerDay.Margin = new System.Windows.Forms.Padding(4);
             this.txt_pricePerDay.Name = "txt_pricePerDay";
             this.txt_pricePerDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_pricePerDay.Size = new System.Drawing.Size(57, 13);
+            this.txt_pricePerDay.Size = new System.Drawing.Size(104, 37);
             this.txt_pricePerDay.TabIndex = 119;
             this.txt_pricePerDay.Text = "20000 VND";
-            this.txt_pricePerDay.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txt_pricePerDay.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.txt_pricePerDay.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txt_totalDay
@@ -325,15 +336,16 @@
             this.txt_totalDay.AutoEllipsis = false;
             this.txt_totalDay.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_totalDay.CursorType = System.Windows.Forms.Cursors.Default;
-            this.txt_totalDay.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.txt_totalDay.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold);
             this.txt_totalDay.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_totalDay.Location = new System.Drawing.Point(189, 172);
+            this.txt_totalDay.Location = new System.Drawing.Point(406, 274);
+            this.txt_totalDay.Margin = new System.Windows.Forms.Padding(4);
             this.txt_totalDay.Name = "txt_totalDay";
             this.txt_totalDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_totalDay.Size = new System.Drawing.Size(12, 13);
+            this.txt_totalDay.Size = new System.Drawing.Size(20, 37);
             this.txt_totalDay.TabIndex = 118;
             this.txt_totalDay.Text = "10";
-            this.txt_totalDay.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txt_totalDay.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.txt_totalDay.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txt_roomNo
@@ -342,15 +354,16 @@
             this.txt_roomNo.AutoEllipsis = false;
             this.txt_roomNo.Cursor = System.Windows.Forms.Cursors.Default;
             this.txt_roomNo.CursorType = System.Windows.Forms.Cursors.Default;
-            this.txt_roomNo.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.txt_roomNo.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold);
             this.txt_roomNo.ForeColor = System.Drawing.Color.DimGray;
-            this.txt_roomNo.Location = new System.Drawing.Point(15, 172);
+            this.txt_roomNo.Location = new System.Drawing.Point(322, 160);
+            this.txt_roomNo.Margin = new System.Windows.Forms.Padding(4);
             this.txt_roomNo.Name = "txt_roomNo";
             this.txt_roomNo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_roomNo.Size = new System.Drawing.Size(56, 13);
+            this.txt_roomNo.Size = new System.Drawing.Size(104, 37);
             this.txt_roomNo.TabIndex = 117;
             this.txt_roomNo.Text = "Phòng 302";
-            this.txt_roomNo.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txt_roomNo.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.txt_roomNo.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuLabel19
@@ -358,13 +371,14 @@
             this.bunifuLabel19.AllowParentOverrides = false;
             this.bunifuLabel19.AutoEllipsis = false;
             this.bunifuLabel19.CursorType = null;
-            this.bunifuLabel19.Font = new System.Drawing.Font("Bahnschrift Condensed", 13F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel19.Location = new System.Drawing.Point(87, 121);
+            this.bunifuLabel19.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel19.Location = new System.Drawing.Point(110, 219);
+            this.bunifuLabel19.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel19.Name = "bunifuLabel19";
             this.bunifuLabel19.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel19.Size = new System.Drawing.Size(59, 21);
+            this.bunifuLabel19.Size = new System.Drawing.Size(112, 36);
             this.bunifuLabel19.TabIndex = 116;
-            this.bunifuLabel19.Text = "Loại phòng";
+            this.bunifuLabel19.Text = "Loại phòng:";
             this.bunifuLabel19.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel19.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -373,13 +387,14 @@
             this.bunifuLabel20.AllowParentOverrides = false;
             this.bunifuLabel20.AutoEllipsis = false;
             this.bunifuLabel20.CursorType = null;
-            this.bunifuLabel20.Font = new System.Drawing.Font("Bahnschrift Condensed", 13F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel20.Location = new System.Drawing.Point(244, 121);
+            this.bunifuLabel20.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel20.Location = new System.Drawing.Point(110, 333);
+            this.bunifuLabel20.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel20.Name = "bunifuLabel20";
             this.bunifuLabel20.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel20.Size = new System.Drawing.Size(42, 21);
+            this.bunifuLabel20.Size = new System.Drawing.Size(79, 36);
             this.bunifuLabel20.TabIndex = 115;
-            this.bunifuLabel20.Text = "Đơn giá";
+            this.bunifuLabel20.Text = "Đơn giá:";
             this.bunifuLabel20.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel20.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -388,13 +403,14 @@
             this.bunifuLabel21.AllowParentOverrides = false;
             this.bunifuLabel21.AutoEllipsis = false;
             this.bunifuLabel21.CursorType = null;
-            this.bunifuLabel21.Font = new System.Drawing.Font("Bahnschrift Condensed", 13F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel21.Location = new System.Drawing.Point(173, 121);
+            this.bunifuLabel21.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel21.Location = new System.Drawing.Point(110, 276);
+            this.bunifuLabel21.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel21.Name = "bunifuLabel21";
             this.bunifuLabel21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel21.Size = new System.Drawing.Size(43, 21);
+            this.bunifuLabel21.Size = new System.Drawing.Size(83, 36);
             this.bunifuLabel21.TabIndex = 114;
-            this.bunifuLabel21.Text = "Số ngày";
+            this.bunifuLabel21.Text = "Số ngày:";
             this.bunifuLabel21.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel21.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -404,13 +420,14 @@
             this.bunifuLabel22.AutoEllipsis = false;
             this.bunifuLabel22.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel22.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel22.Font = new System.Drawing.Font("Bahnschrift Condensed", 13F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel22.Location = new System.Drawing.Point(14, 121);
+            this.bunifuLabel22.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel22.Location = new System.Drawing.Point(110, 162);
+            this.bunifuLabel22.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel22.Name = "bunifuLabel22";
             this.bunifuLabel22.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel22.Size = new System.Drawing.Size(50, 21);
+            this.bunifuLabel22.Size = new System.Drawing.Size(96, 36);
             this.bunifuLabel22.TabIndex = 113;
-            this.bunifuLabel22.Text = "Số phòng";
+            this.bunifuLabel22.Text = "Số phòng:";
             this.bunifuLabel22.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel22.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -420,11 +437,12 @@
             this.bunifuLabel23.AutoEllipsis = false;
             this.bunifuLabel23.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel23.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel23.Font = new System.Drawing.Font("Bahnschrift Condensed", 30F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel23.Location = new System.Drawing.Point(100, 41);
+            this.bunifuLabel23.Font = new System.Drawing.Font("Bahnschrift Condensed", 48F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel23.Location = new System.Drawing.Point(146, 30);
+            this.bunifuLabel23.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel23.Name = "bunifuLabel23";
             this.bunifuLabel23.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel23.Size = new System.Drawing.Size(116, 48);
+            this.bunifuLabel23.Size = new System.Drawing.Size(230, 96);
             this.bunifuLabel23.TabIndex = 112;
             this.bunifuLabel23.Text = "HÓA ĐƠN ";
             this.bunifuLabel23.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -469,9 +487,10 @@
             "Tiền mặt",
             "Chuyển khoản"});
             this.dropdown_pttt.ItemTopMargin = 3;
-            this.dropdown_pttt.Location = new System.Drawing.Point(54, 322);
+            this.dropdown_pttt.Location = new System.Drawing.Point(24, 536);
+            this.dropdown_pttt.Margin = new System.Windows.Forms.Padding(4);
             this.dropdown_pttt.Name = "dropdown_pttt";
-            this.dropdown_pttt.Size = new System.Drawing.Size(198, 32);
+            this.dropdown_pttt.Size = new System.Drawing.Size(263, 32);
             this.dropdown_pttt.TabIndex = 101;
             this.dropdown_pttt.Text = null;
             this.dropdown_pttt.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
@@ -483,11 +502,12 @@
             this.bunifuLabel12.AutoEllipsis = false;
             this.bunifuLabel12.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel12.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel12.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel12.Location = new System.Drawing.Point(13, 283);
+            this.bunifuLabel12.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel12.Location = new System.Drawing.Point(24, 478);
+            this.bunifuLabel12.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel12.Name = "bunifuLabel12";
             this.bunifuLabel12.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel12.Size = new System.Drawing.Size(133, 19);
+            this.bunifuLabel12.Size = new System.Drawing.Size(247, 36);
             this.bunifuLabel12.TabIndex = 100;
             this.bunifuLabel12.Text = "Phương thức thanh toán:";
             this.bunifuLabel12.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -497,9 +517,10 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::QL_KhachSan.Properties.Resources.close;
-            this.pictureBox2.Location = new System.Drawing.Point(286, 9);
+            this.pictureBox2.Location = new System.Drawing.Point(507, 11);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox2.Size = new System.Drawing.Size(20, 18);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 99;
             this.pictureBox2.TabStop = false;
@@ -509,9 +530,10 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::QL_KhachSan.Properties.Resources.minus;
-            this.pictureBox1.Location = new System.Drawing.Point(249, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(458, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(17, 15);
+            this.pictureBox1.Size = new System.Drawing.Size(23, 18);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 88;
             this.pictureBox1.TabStop = false;
@@ -526,9 +548,10 @@
             this.tabPage2.Controls.Add(this.pictureBox4);
             this.tabPage2.Controls.Add(this.pictureBox_QRcode);
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(320, 423);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(537, 602);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             // 
@@ -580,7 +603,8 @@
             this.bunifuButton23.IdleIconLeftImage = null;
             this.bunifuButton23.IdleIconRightImage = null;
             this.bunifuButton23.IndicateFocus = false;
-            this.bunifuButton23.Location = new System.Drawing.Point(159, 407);
+            this.bunifuButton23.Location = new System.Drawing.Point(286, 529);
+            this.bunifuButton23.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuButton23.Name = "bunifuButton23";
             this.bunifuButton23.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton23.OnDisabledState.BorderRadius = 40;
@@ -614,7 +638,7 @@
             this.bunifuButton23.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.bunifuButton23.OnPressedState.IconLeftImage = null;
             this.bunifuButton23.OnPressedState.IconRightImage = null;
-            this.bunifuButton23.Size = new System.Drawing.Size(150, 40);
+            this.bunifuButton23.Size = new System.Drawing.Size(200, 49);
             this.bunifuButton23.TabIndex = 129;
             this.bunifuButton23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton23.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -627,16 +651,18 @@
             // 
             this.bunifuLabel3.AllowParentOverrides = false;
             this.bunifuLabel3.AutoEllipsis = false;
+            this.bunifuLabel3.AutoSize = false;
             this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Hand;
             this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel3.Location = new System.Drawing.Point(48, 412);
+            this.bunifuLabel3.Location = new System.Drawing.Point(56, 529);
+            this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(51, 17);
+            this.bunifuLabel3.Size = new System.Drawing.Size(117, 49);
             this.bunifuLabel3.TabIndex = 128;
             this.bunifuLabel3.Text = "Quay lại";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             this.bunifuLabel3.Click += new System.EventHandler(this.bunifuLabel3_Click);
             // 
@@ -645,9 +671,10 @@
             this.pictureBox3.BackColor = System.Drawing.Color.LightGray;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::QL_KhachSan.Properties.Resources.close;
-            this.pictureBox3.Location = new System.Drawing.Point(287, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(508, 9);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox3.Size = new System.Drawing.Size(20, 18);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 127;
             this.pictureBox3.TabStop = false;
@@ -658,9 +685,10 @@
             this.pictureBox4.BackColor = System.Drawing.Color.LightGray;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::QL_KhachSan.Properties.Resources.minus;
-            this.pictureBox4.Location = new System.Drawing.Point(250, 12);
+            this.pictureBox4.Location = new System.Drawing.Point(458, 9);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(17, 15);
+            this.pictureBox4.Size = new System.Drawing.Size(23, 18);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 126;
             this.pictureBox4.TabStop = false;
@@ -669,9 +697,10 @@
             // pictureBox_QRcode
             // 
             this.pictureBox_QRcode.BackColor = System.Drawing.Color.White;
-            this.pictureBox_QRcode.Location = new System.Drawing.Point(43, 42);
+            this.pictureBox_QRcode.Location = new System.Drawing.Point(56, 52);
+            this.pictureBox_QRcode.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_QRcode.Name = "pictureBox_QRcode";
-            this.pictureBox_QRcode.Size = new System.Drawing.Size(234, 352);
+            this.pictureBox_QRcode.Size = new System.Drawing.Size(430, 430);
             this.pictureBox_QRcode.TabIndex = 100;
             this.pictureBox_QRcode.TabStop = false;
             // 
@@ -682,9 +711,10 @@
             this.tabPage3.Controls.Add(this.pictureBox7);
             this.tabPage3.Controls.Add(this.bunifuPanel1);
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(320, 423);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Size = new System.Drawing.Size(537, 602);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             // 
@@ -693,9 +723,10 @@
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::QL_KhachSan.Properties.Resources.close;
-            this.pictureBox5.Location = new System.Drawing.Point(287, 11);
+            this.pictureBox5.Location = new System.Drawing.Point(499, 14);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox5.Size = new System.Drawing.Size(20, 18);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 132;
             this.pictureBox5.TabStop = false;
@@ -706,9 +737,10 @@
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = global::QL_KhachSan.Properties.Resources.minus;
-            this.pictureBox7.Location = new System.Drawing.Point(250, 11);
+            this.pictureBox7.Location = new System.Drawing.Point(449, 14);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(17, 15);
+            this.pictureBox7.Size = new System.Drawing.Size(23, 18);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 131;
             this.pictureBox7.TabStop = false;
@@ -727,72 +759,13 @@
             this.bunifuPanel1.Controls.Add(this.txt_totalAmount_2);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel1);
             this.bunifuPanel1.Controls.Add(this.bunifuLabel4);
-            this.bunifuPanel1.Location = new System.Drawing.Point(-4, 0);
+            this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuPanel1.Location = new System.Drawing.Point(4, 4);
+            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(321, 464);
+            this.bunifuPanel1.Size = new System.Drawing.Size(529, 594);
             this.bunifuPanel1.TabIndex = 130;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.White;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(103, 63);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(123, 75);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 104;
-            this.pictureBox6.TabStop = false;
-            // 
-            // txt_totalAmount_2
-            // 
-            this.txt_totalAmount_2.AllowParentOverrides = false;
-            this.txt_totalAmount_2.AutoEllipsis = false;
-            this.txt_totalAmount_2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txt_totalAmount_2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.txt_totalAmount_2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.txt_totalAmount_2.ForeColor = System.Drawing.Color.Gray;
-            this.txt_totalAmount_2.Location = new System.Drawing.Point(120, 255);
-            this.txt_totalAmount_2.Name = "txt_totalAmount_2";
-            this.txt_totalAmount_2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_totalAmount_2.Size = new System.Drawing.Size(98, 21);
-            this.txt_totalAmount_2.TabIndex = 102;
-            this.txt_totalAmount_2.Text = "310.000 VNĐ";
-            this.txt_totalAmount_2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.txt_totalAmount_2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel1
-            // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuLabel1.Location = new System.Drawing.Point(66, 206);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(72, 29);
-            this.bunifuLabel1.TabIndex = 101;
-            this.bunifuLabel1.Text = "Tổng thu:";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // bunifuLabel4
-            // 
-            this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.AutoEllipsis = false;
-            this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Hand;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel4.Location = new System.Drawing.Point(35, 390);
-            this.bunifuLabel4.Name = "bunifuLabel4";
-            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(51, 17);
-            this.bunifuLabel4.TabIndex = 129;
-            this.bunifuLabel4.Text = "Quay lại";
-            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel4.Click += new System.EventHandler(this.bunifuLabel4_Click);
             // 
             // b_DatPhong
             // 
@@ -842,7 +815,8 @@
             this.b_DatPhong.IdleIconLeftImage = null;
             this.b_DatPhong.IdleIconRightImage = null;
             this.b_DatPhong.IndicateFocus = true;
-            this.b_DatPhong.Location = new System.Drawing.Point(168, 380);
+            this.b_DatPhong.Location = new System.Drawing.Point(274, 492);
+            this.b_DatPhong.Margin = new System.Windows.Forms.Padding(4);
             this.b_DatPhong.Name = "b_DatPhong";
             this.b_DatPhong.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.b_DatPhong.OnDisabledState.BorderRadius = 30;
@@ -876,7 +850,7 @@
             this.b_DatPhong.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.b_DatPhong.OnPressedState.IconLeftImage = null;
             this.b_DatPhong.OnPressedState.IconRightImage = null;
-            this.b_DatPhong.Size = new System.Drawing.Size(150, 40);
+            this.b_DatPhong.Size = new System.Drawing.Size(200, 49);
             this.b_DatPhong.TabIndex = 131;
             this.b_DatPhong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.b_DatPhong.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -885,13 +859,79 @@
             this.b_DatPhong.UseDefaultRadiusAndThickness = true;
             this.b_DatPhong.Click += new System.EventHandler(this.b_DatPhong_Click);
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.White;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(133, 78);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(262, 168);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 104;
+            this.pictureBox6.TabStop = false;
+            // 
+            // txt_totalAmount_2
+            // 
+            this.txt_totalAmount_2.AllowParentOverrides = false;
+            this.txt_totalAmount_2.AutoEllipsis = false;
+            this.txt_totalAmount_2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_totalAmount_2.CursorType = System.Windows.Forms.Cursors.Default;
+            this.txt_totalAmount_2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_totalAmount_2.ForeColor = System.Drawing.Color.Gray;
+            this.txt_totalAmount_2.Location = new System.Drawing.Point(140, 339);
+            this.txt_totalAmount_2.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_totalAmount_2.Name = "txt_totalAmount_2";
+            this.txt_totalAmount_2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_totalAmount_2.Size = new System.Drawing.Size(249, 54);
+            this.txt_totalAmount_2.TabIndex = 102;
+            this.txt_totalAmount_2.Text = "310.000 VNĐ";
+            this.txt_totalAmount_2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.txt_totalAmount_2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel1
+            // 
+            this.bunifuLabel1.AllowParentOverrides = false;
+            this.bunifuLabel1.AutoEllipsis = false;
+            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
+            this.bunifuLabel1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuLabel1.Location = new System.Drawing.Point(88, 282);
+            this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel1.Name = "bunifuLabel1";
+            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel1.Size = new System.Drawing.Size(90, 36);
+            this.bunifuLabel1.TabIndex = 101;
+            this.bunifuLabel1.Text = "Tổng thu:";
+            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // bunifuLabel4
+            // 
+            this.bunifuLabel4.AllowParentOverrides = false;
+            this.bunifuLabel4.AutoEllipsis = false;
+            this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Hand;
+            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel4.Location = new System.Drawing.Point(60, 506);
+            this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuLabel4.Name = "bunifuLabel4";
+            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel4.Size = new System.Drawing.Size(69, 23);
+            this.bunifuLabel4.TabIndex = 129;
+            this.bunifuLabel4.Text = "Quay lại";
+            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.bunifuLabel4.Click += new System.EventHandler(this.bunifuLabel4_Click);
+            // 
             // F_CheckOut_Messages
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 453);
+            this.ClientSize = new System.Drawing.Size(545, 631);
             this.Controls.Add(this.bunifuPages1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F_CheckOut_Messages";
             this.Text = " ";
             this.Load += new System.EventHandler(this.F_CheckOut_Messages_Load);
@@ -901,7 +941,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_QRcode)).EndInit();
